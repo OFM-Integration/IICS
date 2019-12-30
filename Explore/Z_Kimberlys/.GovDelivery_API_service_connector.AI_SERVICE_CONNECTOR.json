@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "5xzWzOwOZSIbuB41TrXWid",
+    "name" : "GovDelivery_API_service_connector",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "txcnfXjISUXL86z-gt-3258031-2019-12-18T16:15:40.322Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

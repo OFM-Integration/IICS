@@ -1,0 +1,140 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ibf3TzAnOjseGbc-gt-1018509-2019-12-12T23:05:36.142Z::svc.xml</types1:EntryId>
+      <types1:Name>Customer_and_Invoice_details</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Invoice actions from Customer invoicing service. This is build using OData-based service.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:CreatedBy>
+      <types1:CreationDate>2019-12-12T23:05:36Z</types1:CreationDate>
+      <types1:ModifiedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:ModifiedBy>
+      <types1:ModificationDate>2019-12-13T00:54:35Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:PublishedBy>
+      <types1:PublicationDate>2019-12-13T00:54:40Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/Customer_and_Invoice_details/Customer_and_Invoice_details_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="Customer and Invoice details"
+                            label=""
+                            name="Customer_and_Invoice_details"
+                            uuid="0be6682d-2f3c-4cb8-8e77-4ea1d663ed68">
+            <description>Invoice actions from Customer invoicing service. This is build using OData-based service.</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="This field gives the endpoint for this Service Connector"
+                                    masked="false"
+                                    name="baseURL"
+                                    required="true"
+                                    testWith="https://na1.ai.dm-us.informaticacloud.com/active-bpel/odata/v4/JDBC-MySQL-ThomasBayer"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category="Invoice"
+                       failOnError="true"
+                       forSearch="false"
+                       label="getInvoice"
+                       maxRedirects="100"
+                       name="getInvoice"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter description="Invoice ID"
+                                label="Invoice ID"
+                                name="invoiceID"
+                                nogen="true"
+                                required="true"
+                                testWith="12"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$baseURL}/INVOICE({$invoiceID})"
+                                        verb="GET">
+                        <authentication>
+                           <username>testuser2</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Invoice ID"
+                            name="INVOICEID"
+                            property="INVOICEID"
+                            type="string"/>
+                     <field description="Customer ID"
+                            name="CUSTOMERID"
+                            property="CUSTOMERID"
+                            type="string"/>
+                     <field description="Total Invoice Value"
+                            name="TOTAL"
+                            property="TOTAL"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category="Customer"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GetCustomer"
+                       maxRedirects="100"
+                       name="GetCustomer"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>This service returns customer details based on a customer ID.</description>
+                  <input>
+                     <parameter description="Customer ID"
+                                label="Customer ID"
+                                name="customerID"
+                                nogen="true"
+                                required="true"
+                                testWith="2"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{$baseURL}/CUSTOMER({$customerID})" verb="GET">
+                        <authentication>
+                           <username>testuser2</username>
+                           <password>password2#</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Customer ID" name="ID" property="ID" type="string"/>
+                     <field description="Customer Firstname"
+                            name="FIRSTNAME"
+                            property="FIRSTNAME"
+                            type="string"/>
+                     <field description="Customer Lastname"
+                            name="LASTNAME"
+                            property="LASTNAME"
+                            type="string"/>
+                     <field description="Customer Street Address"
+                            name="STREET"
+                            property="STREET"
+                            type="string"/>
+                     <field description="Customer City"
+                            name="CITY"
+                            property="CITY"
+                            type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>8Cg1CmtZ6FbdBLZyQf6Gy9</types1:GUID>
+      <types1:DisplayName>Customer and Invoice details</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-30T23:01:41.797Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

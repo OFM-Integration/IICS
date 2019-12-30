@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "5t56JS6uOwfiRCGiiuEDG7",
+    "name" : "eTime-ECY-AppConnection",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "kNXHVOJ2oTVMTon-gt-14826440-2019-12-11T01:01:11.622Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "gEfSvf9QkGWf8gNPKIMBAM",
+    "name" : "eTime_ECY_ServiceConnector",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "1OdwWcn6Hbf13Er-gt-9030966-2019-12-11T00:59:30.846Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Z_Kimberlys"
+  } ]
+}

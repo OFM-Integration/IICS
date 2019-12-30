@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "68wyfi4RQvyj1zTkEbf3yF",
+    "name" : "B2G_OMWBE_CertificationManagement",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "5oplp6oIuQaaabc-gt-3584465-2019-11-22T18:03:09.912Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "1xyaF3zrZMbge6xj1O0g8d",
+    "name" : "B2G-OMWBE",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UWplp6oIuQaaabc-gt-7684621-2019-11-22T17:53:36.753Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Z_Kimberlys"
+  } ]
+}

@@ -1,0 +1,326 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>eF96fPAreFRqXpI-gt-7562029-2019-11-22T16:46:54.071Z::gt.xml</types1:EntryId>
+      <types1:Name>Guide1</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OFM_DEV2</types1:CreatedBy>
+      <types1:CreationDate>2019-11-22T16:46:54Z</types1:CreationDate>
+      <types1:ModifiedBy>OFM_DEV2</types1:ModifiedBy>
+      <types1:ModificationDate>2019-11-22T17:18:00Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="Guide1"
+                         doneOnEndStep="false"
+                         name="Guide1"
+                         runAsUser="$current">
+            <description/>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="Idea Title" required="false" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="Idea Description"
+                          required="false"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="What problem are you trying to solve"
+                          required="false"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="Category your idea best falls in"
+                          required="false"
+                          type="picklist">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="Your Name" required="false" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="Your Email" required="false" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="o_IdeaTitle" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="o_IdeaDescription" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="o_IdeaSubmittedDate" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="o_IdeaSubmittedBy" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="o_IdeaOutcome" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="TodaysDate" type="date">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">SYSDATE</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="" id="jd300kk3_k3ad56d8" targetScreen="k3ad56d8">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="k3ad56d8">
+                  <title>Welcome</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;strong&gt;Welcome to the Idea Center!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What would you like to do?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="" id="k3ad56d8_k3ad56eg" targetScreen="k3ad56eg">
+                        <text>Submit New Idea</text>
+                     </action>
+                     <action alt="" id="k3ad56d8_k3ad56ey" targetScreen="k3ad56ey">
+                        <text>See Existing Ideas</text>
+                     </action>
+                     <action alt="" id="k3ad56d8_k3ad56dn" targetScreen="k3ad56dn">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+               </screen>
+               <screen id="k3ad56eg">
+                  <title>Idea Capture</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;strong&gt;Idea Suggestion Form&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Idea Title &lt;input name="input.Idea Title" type="text" value="Idea Title (input)"&gt;&lt;/p&gt;
+&lt;p&gt;Idea Description &lt;input name="input.Idea Description" title="Idea Description (input)" type="text" value="Idea Description (input)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;What problem are you trying to solve &lt;input name="input.What problem are you trying to solve" title="What problem are you trying to solve (input)" type="text" value="What problem are you trying to solve (input)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Category your idea best falls in &lt;input name="input.Category your idea best falls in" title="Category your idea best falls in (input)" type="text" value="Category your idea best falls in (input)*"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Your Name &lt;input name="input.Your Name" type="text" value="Your Name (input)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Your Email &lt;input name="input.Your Email" type="text" value="Your Email (input)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="" id="k3ad56eg_k3ad56i7" targetScreen="k3ad56i7">
+                        <text>Continue</text>
+                     </action>
+                     <action alt="" id="k3ad56eg_k3ad56eh" targetScreen="k3ad56eh">
+                        <text>Cancel</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="input.Category your idea best falls in"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"Physical Environment","value":"Physical Environment"},{"label":"Workplace Culture/Morale","value":"Workplace Culture/Morale"},{"label":"Work Process","value":"Work Process"}]</option>
+                           <option name="required">true</option>
+                           <option hide="true" name="valuelist.source">csv</option>
+                           <option hide="true" name="valuelist.csvdata">Physical Environment, Workplace Culture/Morale, Work Process</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.Idea Description"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.Idea Title"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.What problem are you trying to solve"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.Your Name"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.Your Email"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="k3ad56ey">
+                  <title>Screen 1</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;input name="output.o_IdeaSubmittedDate" title="o_IdeaSubmittedDate (output)" style="-moz-appearance: none; background-color: lightgrey; border: none;" type="text" readonly="readonly" value="o_IdeaSubmittedDate (output)"&gt;&amp;nbsp; &lt;input name="output.o_IdeaTitle" style="-moz-appearance: none; background-color: lightgrey; border: none;" type="text" readonly="readonly" value="o_IdeaTitle (output)"&gt;&amp;nbsp; &lt;input name="output.o_IdeaSubmittedBy" title="o_IdeaSubmittedBy (output)" style="-moz-appearance: none; background-color: lightgrey; border: none;" type="text" readonly="readonly" value="o_IdeaSubmittedBy (output)"&gt;&amp;nbsp; &lt;input name="output.o_IdeaOutcome" title="o_IdeaOutcome (output)" style="-moz-appearance: none; background-color: lightgrey; border: none;" type="text" readonly="readonly" value="o_IdeaOutcome (output)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="" id="k3ad56ey_k3ad56ht" targetScreen="k3ad56ht">
+                        <text>Continue</text>
+                     </action>
+                     <action alt="" id="k3ad56ey_k3ad56ht_1" targetScreen="k3ad56ht">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.o_IdeaSubmittedDate"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.o_IdeaTitle"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.o_IdeaSubmittedBy"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.o_IdeaOutcome"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen id="jd4cwa59">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="k3ad56dn">
+                  <actions>
+                     <action alt="" id="k3ad56dn_jd4cwa59" targetScreen="jd4cwa59">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="k3ad56eh">
+                  <actions>
+                     <action alt="" id="k3ad56eh_k3ad56dn" targetScreen="k3ad56dn">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="k3ad56ht">
+                  <actions>
+                     <action alt="" id="k3ad56ht_k3ad56dn" targetScreen="k3ad56dn">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <create id="k3ad56q9">
+                  <title>Create 1</title>
+                  <entityName/>
+                  <actions>
+                     <action alt="" id="k3ad56q9_k3ad56eh" targetScreen="k3ad56eh">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </create>
+               <assignment id="k3ad56i7">
+                  <title>Assignment to TodaysDate</title>
+                  <operation source="constant" to="temp.TodaysDate">2019-11-22</operation>
+                  <actions>
+                     <action alt="" id="k3ad56i7_k3ad56q9" targetScreen="k3ad56q9">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>ggtpaBzSqIYjsgVuNXI3ON</types1:GUID>
+      <types1:DisplayName>Guide1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-30T23:01:38.751Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

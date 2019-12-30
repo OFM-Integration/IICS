@@ -1,0 +1,46 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>UWplp6oIuQaaabc-gt-7684621-2019-11-22T17:53:36.753Z::conn.xml</types1:EntryId>
+      <types1:Name>B2G-OMWBE</types1:Name>
+      <types1:ParentFlowIds>5oplp6oIuQaaabc-gt-3584465-2019-11-22T18:03:09.912Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OFM_DEV2</types1:CreatedBy>
+      <types1:CreationDate>2019-11-22T17:53:37Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OFM_DEV2</types1:PublishedBy>
+      <types1:PublicationDate>2019-11-22T17:53:43Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/B2G-OMWBE/B2G-OMWBE.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="B2G-OMWBE"
+                     label="B2G-OMWBE"
+                     name="B2G-OMWBE">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/OMWBE/OMWBE_svcDef.xml"
+                               guid="66a81zzppevbJL0J5xCECn"
+                               name="OMWBE"
+                               supportsConnectionTest="false"
+                               uuid="9eb3e99b-e0a0-471a-8e93-767ffd9c688b">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>1xyaF3zrZMbge6xj1O0g8d</types1:GUID>
+      <types1:DisplayName>B2G-OMWBE</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-30T23:01:41.715Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

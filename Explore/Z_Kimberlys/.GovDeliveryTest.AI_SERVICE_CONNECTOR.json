@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "bRijh97e6cab0P0yikewcm",
+    "name" : "GovDeliveryTest",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "1701BchMYeOm6S6-gt-3610934-2019-12-19T00:16:06.854Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

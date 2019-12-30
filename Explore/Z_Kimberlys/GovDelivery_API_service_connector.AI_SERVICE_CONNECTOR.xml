@@ -1,0 +1,240 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>txcnfXjISUXL86z-gt-3258031-2019-12-18T16:15:40.322Z::svc.xml</types1:EntryId>
+      <types1:Name>GovDelivery_API_service_connector</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:CreatedBy>
+      <types1:CreationDate>2019-12-18T16:15:40Z</types1:CreationDate>
+      <types1:ModifiedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:ModifiedBy>
+      <types1:ModificationDate>2019-12-19T00:10:47Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="GovDelivery_API_service_connector"
+                            label=""
+                            name="GovDelivery_API_service_connector"
+                            uuid="d642ff39-3e58-447f-a739-2649d509f596">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="Host Name"
+                                    masked="false"
+                                    name="hostName"
+                                    required="true"
+                                    testWith="stage-api.govdelivery.com"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category="GovDeliveryAddSubscription"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GovDeliveryAddSubscription"
+                       maxRedirects="100"
+                       name="GovDeliveryAddSubscription"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="body"
+                                name="body"
+                                required="true"
+                                testWith="&lt;subscriber&gt;&#xA;  &lt;email&gt;kcsullivan@comcast.net&lt;/email&gt;&#xA;  &lt;send-notifications type='boolean'&gt;true&lt;/send-notifications&gt;&#xA;  &lt;topics type='array'&gt;&#xA;    &lt;topic&gt;&#xA;      &lt;code&gt;WADES_1&lt;/code&gt;&#xA;    &lt;/topic&gt;&#xA;  &lt;/topics&gt;&#xA;&lt;/subscriber&gt;"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">GovDeliveryAddSubscription_subscriber</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/api/account/WADES/subscriptions.xml"
+                                        verb="POST">
+                        <authentication>
+                           <username>kimberly.sullivan@ofm.wa.gov</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/xml</header>
+                           <header name="Accept">application/xml</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="false"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="successful operation"
+                            entireResponse="true"
+                            name="GovDeliveryAddSubscription"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">GovDeliveryAddSubscription</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GovDeliveryAddSubscription">
+                  <description/>
+                  <detail>
+                     <field name="subscriber" type="reference">
+                        <options>
+                           <option name="referenceTo">GovDeliveryAddSubscription_subscriber</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GovDeliveryAddSubscription_subscriber">
+                  <description/>
+                  <detail>
+                     <field name="subscriber_uri" type="string"/>
+                     <field name="to_param" type="string"/>
+                     <field name="link" type="reference">
+                        <options>
+                           <option name="referenceTo">GovDeliveryAddSubscription_subscriber_link</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GovDeliveryAddSubscription_Request_body_subscriber_send_notifications">
+                  <description/>
+                  <detail>
+                     <field name="type" type="string"/>
+                     <field name="content" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GovDeliveryAddSubscription_Request_body">
+                  <description/>
+                  <detail>
+                     <field name="subscriber" type="reference">
+                        <options>
+                           <option name="referenceTo">GovDeliveryAddSubscription_Request_body_subscriber</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GovDeliveryAddSubscription_subscriber_link">
+                  <description/>
+                  <detail>
+                     <field name="rel" type="string"/>
+                     <field name="href" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GovDeliveryAddSubscription_Request_body_subscriber">
+                  <description/>
+                  <detail>
+                     <field name="send_notifications" type="reference">
+                        <options>
+                           <option name="referenceTo">GovDeliveryAddSubscription_Request_body_subscriber_send_notifications</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="topics" type="reference">
+                        <options>
+                           <option name="referenceTo">GovDeliveryAddSubscription_Request_body_subscriber_topics</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="email" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GovDeliveryAddSubscription_Request_body_subscriber_topics_topic">
+                  <description/>
+                  <detail>
+                     <field name="code" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GovDeliveryAddSubscription_Request">
+                  <description/>
+                  <detail>
+                     <field name="body" type="reference">
+                        <options>
+                           <option name="referenceTo">GovDeliveryAddSubscription_Request_body</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GovDeliveryAddSubscription_Request_body_subscriber_topics">
+                  <description/>
+                  <detail>
+                     <field name="topic" type="reference">
+                        <options>
+                           <option name="referenceTo">GovDeliveryAddSubscription_Request_body_subscriber_topics_topic</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="type" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="string">
+                  <description/>
+                  <detail>
+                     <field name="string" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="boolean">
+                  <description/>
+                  <detail>
+                     <field name="boolean" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="double">
+                  <description/>
+                  <detail>
+                     <field name="double" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="integer">
+                  <description/>
+                  <detail>
+                     <field name="integer" type="int"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>5xzWzOwOZSIbuB41TrXWid</types1:GUID>
+      <types1:DisplayName>GovDelivery_API_service_connector</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-30T23:01:38.758Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
