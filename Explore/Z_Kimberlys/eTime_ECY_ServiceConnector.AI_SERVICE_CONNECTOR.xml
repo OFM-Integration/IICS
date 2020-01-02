@@ -1,0 +1,832 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>1OdwWcn6Hbf13Er-gt-9030966-2019-12-11T00:59:30.846Z::svc.xml</types1:EntryId>
+      <types1:Name>eTime_ECY_ServiceConnector</types1:Name>
+      <types1:ParentFlowIds>kNXHVOJ2oTVMTon-gt-14826440-2019-12-11T01:01:11.622Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:CreatedBy>
+      <types1:CreationDate>2019-12-11T00:59:31Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:PublishedBy>
+      <types1:PublicationDate>2019-12-11T00:59:35Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/eTime_ECY_ServiceConnector/eTime_ECY_ServiceConnector_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="eTime_ECY_ServiceConnector"
+                            label=""
+                            name="eTime_ECY_ServiceConnector"
+                            uuid="df045af3-581f-4904-a71b-e6a17fa0b469">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="true"
+                       label="BaseAction"
+                       maxRedirects="100"
+                       name="BaseAction"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://etime-dev.workforcehosting.com/workforce/services/E2G_importEmployees.E2G_importEmployeesHttpsSoap11Endpoint/"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">text/xml; charset=utf-8</header>
+                        </httpHeaders>
+                        <body/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="BaseAction"
+                       label="E2G_importEmployees"
+                       maxRedirects="100"
+                       name="E2G_importEmployees"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <section type="body">
+                           <attribute inherit="overwrite" name="content" type="content"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="E2G_importEmployees"
+                                required="false"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">E2G_importEmployees_AnonymousType</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="https://etime-dev.workforcehosting.com/workforce/services/E2G_importEmployees.E2G_importEmployeesHttpsSoap11Endpoint/"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="SOAPAction">"urn:E2G_importEmployees"</header>
+                        </httpHeaders>
+                        <body>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;ns:E2G_importEmployees xmlns:ns="http://services.workforcesoftware.com/xsd"&gt;
+            &lt;ns:payload&gt;
+                &lt;ns1:data xmlns:ns1="http://ws.apache.org/axis2/xsd"&gt;
+                    {
+                        for $person in $E2G_importEmployees/payload/data/person
+                        return
+                        &lt;ns1:person&gt;
+                            &lt;ns1:birth_date&gt;{$person/birth_date/text()}&lt;/ns1:birth_date&gt;
+                            &lt;ns1:email_addresses&gt;
+                                {
+                                    for $email_address in $person/email_addresses/email_address
+                                    return
+                                    &lt;ns1:email_address&gt;
+                                        &lt;ns1:email_address&gt;{$email_address/email_address/text()}&lt;/ns1:email_address&gt;
+                                        &lt;ns1:type&gt;{$email_address/type/text()}&lt;/ns1:type&gt;
+                                    &lt;/ns1:email_address&gt;
+                                }
+                            &lt;/ns1:email_addresses&gt;
+                            &lt;ns1:employee_data&gt;
+                                {
+                                    for $assignment in $person/employee_data/assignment
+                                    return
+                                    &lt;ns1:assignment&gt;
+                                        &lt;ns1:assignment_match_id&gt;{$assignment/assignment_match_id/text()}&lt;/ns1:assignment_match_id&gt;
+                                        &lt;ns1:eff_dated_info&gt;
+                                            {
+                                                for $data in $assignment/eff_dated_info/data
+                                                return
+                                                &lt;ns1:data&gt;
+                                                    &lt;ns1:adjusted_begin_date&gt;{$data/adjusted_begin_date/text()}&lt;/ns1:adjusted_begin_date&gt;
+                                                    &lt;ns1:assignment_description&gt;{$data/assignment_description/text()}&lt;/ns1:assignment_description&gt;
+                                                    &lt;ns1:assignment_end_date&gt;{$data/assignment_end_date/text()}&lt;/ns1:assignment_end_date&gt;
+                                                    &lt;ns1:badge_id&gt;{$data/badge_id/text()}&lt;/ns1:badge_id&gt;
+                                                    &lt;ns1:business_address&gt;
+                                                        &lt;ns1:address1&gt;{$E2G_importEmployees/payload/data/person/employee_data/assignment/eff_dated_info/data/business_address/address1/text()}&lt;/ns1:address1&gt;
+                                                        &lt;ns1:address2&gt;{$E2G_importEmployees/payload/data/person/employee_data/assignment/eff_dated_info/data/business_address/address2/text()}&lt;/ns1:address2&gt;
+                                                        &lt;ns1:address3&gt;{$E2G_importEmployees/payload/data/person/employee_data/assignment/eff_dated_info/data/business_address/address3/text()}&lt;/ns1:address3&gt;
+                                                        &lt;ns1:city&gt;{$E2G_importEmployees/payload/data/person/employee_data/assignment/eff_dated_info/data/business_address/city/text()}&lt;/ns1:city&gt;
+                                                        &lt;ns1:country&gt;{$E2G_importEmployees/payload/data/person/employee_data/assignment/eff_dated_info/data/business_address/country/text()}&lt;/ns1:country&gt;
+                                                        &lt;ns1:postal_code&gt;{$E2G_importEmployees/payload/data/person/employee_data/assignment/eff_dated_info/data/business_address/postal_code/text()}&lt;/ns1:postal_code&gt;
+                                                        &lt;ns1:state_or_province&gt;{$E2G_importEmployees/payload/data/person/employee_data/assignment/eff_dated_info/data/business_address/state_or_province/text()}&lt;/ns1:state_or_province&gt;
+                                                    &lt;/ns1:business_address&gt;
+                                                    &lt;ns1:company_code&gt;{$data/company_code/text()}&lt;/ns1:company_code&gt;
+                                                    &lt;ns1:cost_center&gt;{$data/cost_center/text()}&lt;/ns1:cost_center&gt;
+                                                    &lt;ns1:department_code&gt;{$data/department_code/text()}&lt;/ns1:department_code&gt;
+                                                    &lt;ns1:district_code&gt;{$data/district_code/text()}&lt;/ns1:district_code&gt;
+                                                    &lt;ns1:division_code&gt;{$data/division_code/text()}&lt;/ns1:division_code&gt;
+                                                    &lt;ns1:effective_date&gt;{$data/effective_date/text()}&lt;/ns1:effective_date&gt;
+                                                    &lt;ns1:employment_type&gt;{$data/employment_type/text()}&lt;/ns1:employment_type&gt;
+                                                    &lt;ns1:external_payroll_id&gt;{$data/external_payroll_id/text()}&lt;/ns1:external_payroll_id&gt;
+                                                    &lt;ns1:flsa_status&gt;{$data/flsa_status/text()}&lt;/ns1:flsa_status&gt;
+                                                    &lt;ns1:fulltime_equivalency_percentage&gt;{$data/fulltime_equivalency_percentage/text()}&lt;/ns1:fulltime_equivalency_percentage&gt;
+                                                    &lt;ns1:fulltime_parttime_flag&gt;{$data/fulltime_parttime_flag/text()}&lt;/ns1:fulltime_parttime_flag&gt;
+                                                    &lt;ns1:generic_fields&gt;
+                                                        {
+                                                            for $generic_field in $data/generic_fields/generic_field
+                                                            return
+                                                            &lt;ns1:generic_field&gt;
+                                                                &lt;ns1:fieldName&gt;{$generic_field/fieldName/text()}&lt;/ns1:fieldName&gt;
+                                                                &lt;ns1:fieldValue&gt;{$generic_field/fieldValue/text()}&lt;/ns1:fieldValue&gt;
+                                                            &lt;/ns1:generic_field&gt;
+                                                        }
+                                                    &lt;/ns1:generic_fields&gt;
+                                                    &lt;ns1:hourly_salary_flag&gt;{$data/hourly_salary_flag/text()}&lt;/ns1:hourly_salary_flag&gt;
+                                                    &lt;ns1:hr_status&gt;{$data/hr_status/text()}&lt;/ns1:hr_status&gt;
+                                                    &lt;ns1:is_earliest_effective_dated&gt;{$data/is_earliest_effective_dated/text()}&lt;/ns1:is_earliest_effective_dated&gt;
+                                                    &lt;ns1:is_primary&gt;{$data/is_primary/text()}&lt;/ns1:is_primary&gt;
+                                                    &lt;ns1:is_terminated&gt;{$data/is_terminated/text()}&lt;/ns1:is_terminated&gt;
+                                                    &lt;ns1:job_code&gt;{$data/job_code/text()}&lt;/ns1:job_code&gt;
+                                                    &lt;ns1:job_level&gt;{$data/job_level/text()}&lt;/ns1:job_level&gt;
+                                                    &lt;ns1:job_title&gt;{$data/job_title/text()}&lt;/ns1:job_title&gt;
+                                                    &lt;ns1:latest_assignment_begin_date&gt;{$data/latest_assignment_begin_date/text()}&lt;/ns1:latest_assignment_begin_date&gt;
+                                                    &lt;ns1:location_code&gt;{$data/location_code/text()}&lt;/ns1:location_code&gt;
+                                                    &lt;ns1:manager_ids&gt;
+                                                        {
+                                                            for $manager_id in $data/manager_ids/manager_id
+                                                            return
+                                                            &lt;ns1:manager_id&gt;
+                                                                &lt;ns1:manager_id&gt;{$manager_id/manager_id/text()}&lt;/ns1:manager_id&gt;
+                                                                &lt;ns1:type&gt;{$manager_id/type/text()}&lt;/ns1:type&gt;
+                                                            &lt;/ns1:manager_id&gt;
+                                                        }
+                                                    &lt;/ns1:manager_ids&gt;
+                                                    &lt;ns1:original_assignment_begin_date&gt;{$data/original_assignment_begin_date/text()}&lt;/ns1:original_assignment_begin_date&gt;
+                                                    &lt;ns1:pay_currency&gt;{$data/pay_currency/text()}&lt;/ns1:pay_currency&gt;
+                                                    &lt;ns1:pay_grade&gt;{$data/pay_grade/text()}&lt;/ns1:pay_grade&gt;
+                                                    &lt;ns1:pay_rates&gt;
+                                                        {
+                                                            for $pay_rate in $data/pay_rates/pay_rate
+                                                            return
+                                                            &lt;ns1:pay_rate&gt;
+                                                                &lt;ns1:frequency&gt;{$pay_rate/frequency/text()}&lt;/ns1:frequency&gt;
+                                                                &lt;ns1:pay_rate&gt;{$pay_rate/pay_rate/text()}&lt;/ns1:pay_rate&gt;
+                                                                &lt;ns1:type&gt;{$pay_rate/type/text()}&lt;/ns1:type&gt;
+                                                            &lt;/ns1:pay_rate&gt;
+                                                        }
+                                                    &lt;/ns1:pay_rates&gt;
+                                                    &lt;ns1:payroll_system_id&gt;{$data/payroll_system_id/text()}&lt;/ns1:payroll_system_id&gt;
+                                                    &lt;ns1:policy_profile_match_id&gt;{$data/policy_profile_match_id/text()}&lt;/ns1:policy_profile_match_id&gt;
+                                                    &lt;ns1:region_code&gt;{$data/region_code/text()}&lt;/ns1:region_code&gt;
+                                                    &lt;ns1:schedule_template_match_id&gt;{$data/schedule_template_match_id/text()}&lt;/ns1:schedule_template_match_id&gt;
+                                                    &lt;ns1:seniority_date&gt;{$data/seniority_date/text()}&lt;/ns1:seniority_date&gt;
+                                                    &lt;ns1:standard_daily_hours&gt;{$data/standard_daily_hours/text()}&lt;/ns1:standard_daily_hours&gt;
+                                                    &lt;ns1:standard_period_hours&gt;{$data/standard_period_hours/text()}&lt;/ns1:standard_period_hours&gt;
+                                                    &lt;ns1:standard_weekly_hours&gt;{$data/standard_weekly_hours/text()}&lt;/ns1:standard_weekly_hours&gt;
+                                                    &lt;ns1:time_zone&gt;{$data/time_zone/text()}&lt;/ns1:time_zone&gt;
+                                                    &lt;ns1:union_code&gt;{$data/union_code/text()}&lt;/ns1:union_code&gt;
+                                                &lt;/ns1:data&gt;
+                                            }
+                                        &lt;/ns1:eff_dated_info&gt;
+                                    &lt;/ns1:assignment&gt;
+                                }
+                                &lt;ns1:eff_dated_info&gt;
+                                    {
+                                        for $data in $person/employee_data/eff_dated_info/data
+                                        return
+                                        &lt;ns1:data&gt;
+                                            &lt;ns1:act_company&gt;{$data/act_company/text()}&lt;/ns1:act_company&gt;
+                                            &lt;ns1:act_employee_group&gt;{$data/act_employee_group/text()}&lt;/ns1:act_employee_group&gt;
+                                            &lt;ns1:act_location&gt;
+                                                &lt;ns1:city&gt;{$E2G_importEmployees/payload/data/person/employee_data/eff_dated_info/data/act_location/city/text()}&lt;/ns1:city&gt;
+                                                &lt;ns1:country&gt;{$E2G_importEmployees/payload/data/person/employee_data/eff_dated_info/data/act_location/country/text()}&lt;/ns1:country&gt;
+                                                &lt;ns1:county&gt;{$E2G_importEmployees/payload/data/person/employee_data/eff_dated_info/data/act_location/county/text()}&lt;/ns1:county&gt;
+                                                &lt;ns1:state_or_province&gt;{$E2G_importEmployees/payload/data/person/employee_data/eff_dated_info/data/act_location/state_or_province/text()}&lt;/ns1:state_or_province&gt;
+                                            &lt;/ns1:act_location&gt;
+                                            &lt;ns1:adjusted_hire_date&gt;{$data/adjusted_hire_date/text()}&lt;/ns1:adjusted_hire_date&gt;
+                                            &lt;ns1:country_code&gt;{$data/country_code/text()}&lt;/ns1:country_code&gt;
+                                            &lt;ns1:effective_date&gt;{$data/effective_date/text()}&lt;/ns1:effective_date&gt;
+                                            &lt;ns1:fifty_employees_in_75_mile_radius_flag&gt;{$data/fifty_employees_in_75_mile_radius_flag/text()}&lt;/ns1:fifty_employees_in_75_mile_radius_flag&gt;
+                                            &lt;ns1:fulltime_equivalency_percentage&gt;{$data/fulltime_equivalency_percentage/text()}&lt;/ns1:fulltime_equivalency_percentage&gt;
+                                            &lt;ns1:gender&gt;{$data/gender/text()}&lt;/ns1:gender&gt;
+                                            &lt;ns1:generic_fields&gt;
+                                                {
+                                                    for $generic_field in $data/generic_fields/generic_field
+                                                    return
+                                                    &lt;ns1:generic_field&gt;
+                                                        &lt;ns1:fieldName&gt;{$generic_field/fieldName/text()}&lt;/ns1:fieldName&gt;
+                                                        &lt;ns1:fieldValue&gt;{$generic_field/fieldValue/text()}&lt;/ns1:fieldValue&gt;
+                                                    &lt;/ns1:generic_field&gt;
+                                                }
+                                            &lt;/ns1:generic_fields&gt;
+                                            &lt;ns1:hr_status&gt;{$data/hr_status/text()}&lt;/ns1:hr_status&gt;
+                                            &lt;ns1:is_earliest_effective_dated&gt;{$data/is_earliest_effective_dated/text()}&lt;/ns1:is_earliest_effective_dated&gt;
+                                            &lt;ns1:latest_hire_date&gt;{$data/latest_hire_date/text()}&lt;/ns1:latest_hire_date&gt;
+                                            &lt;ns1:leave_type&gt;{$data/leave_type/text()}&lt;/ns1:leave_type&gt;
+                                            &lt;ns1:original_hire_date&gt;{$data/original_hire_date/text()}&lt;/ns1:original_hire_date&gt;
+                                            &lt;ns1:standard_daily_hours&gt;{$data/standard_daily_hours/text()}&lt;/ns1:standard_daily_hours&gt;
+                                            &lt;ns1:standard_period_hours&gt;{$data/standard_period_hours/text()}&lt;/ns1:standard_period_hours&gt;
+                                            &lt;ns1:standard_weekly_hours&gt;{$data/standard_weekly_hours/text()}&lt;/ns1:standard_weekly_hours&gt;
+                                            &lt;ns1:termination_date&gt;{$data/termination_date/text()}&lt;/ns1:termination_date&gt;
+                                        &lt;/ns1:data&gt;
+                                    }
+                                &lt;/ns1:eff_dated_info&gt;
+                            &lt;/ns1:employee_data&gt;
+                            &lt;ns1:external_hr_id&gt;{$person/external_hr_id/text()}&lt;/ns1:external_hr_id&gt;
+                            &lt;ns1:first_name&gt;{$person/first_name/text()}&lt;/ns1:first_name&gt;
+                            &lt;ns1:home_address&gt;
+                                &lt;ns1:address1&gt;{$E2G_importEmployees/payload/data/person/home_address/address1/text()}&lt;/ns1:address1&gt;
+                                &lt;ns1:address2&gt;{$E2G_importEmployees/payload/data/person/home_address/address2/text()}&lt;/ns1:address2&gt;
+                                &lt;ns1:address3&gt;{$E2G_importEmployees/payload/data/person/home_address/address3/text()}&lt;/ns1:address3&gt;
+                                &lt;ns1:city&gt;{$E2G_importEmployees/payload/data/person/home_address/city/text()}&lt;/ns1:city&gt;
+                                &lt;ns1:country&gt;{$E2G_importEmployees/payload/data/person/home_address/country/text()}&lt;/ns1:country&gt;
+                                &lt;ns1:postal_code&gt;{$E2G_importEmployees/payload/data/person/home_address/postal_code/text()}&lt;/ns1:postal_code&gt;
+                                &lt;ns1:state_or_province&gt;{$E2G_importEmployees/payload/data/person/home_address/state_or_province/text()}&lt;/ns1:state_or_province&gt;
+                            &lt;/ns1:home_address&gt;
+                            &lt;ns1:last_modification_time&gt;{$person/last_modification_time/text()}&lt;/ns1:last_modification_time&gt;
+                            &lt;ns1:last_name&gt;{$person/last_name/text()}&lt;/ns1:last_name&gt;
+                            &lt;ns1:middle_name&gt;{$person/middle_name/text()}&lt;/ns1:middle_name&gt;
+                            &lt;ns1:phone_numbers&gt;
+                                {
+                                    for $phone_number in $person/phone_numbers/phone_number
+                                    return
+                                    &lt;ns1:phone_number&gt;
+                                        &lt;ns1:phone_number&gt;{$phone_number/phone_number/text()}&lt;/ns1:phone_number&gt;
+                                        &lt;ns1:type&gt;{$phone_number/type/text()}&lt;/ns1:type&gt;
+                                    &lt;/ns1:phone_number&gt;
+                                }
+                            &lt;/ns1:phone_numbers&gt;
+                            &lt;ns1:user_data&gt;
+                                &lt;ns1:authentication_match_id&gt;{$E2G_importEmployees/payload/data/person/user_data/authentication_match_id/text()}&lt;/ns1:authentication_match_id&gt;
+                                &lt;ns1:empcenter_login_id&gt;{$E2G_importEmployees/payload/data/person/user_data/empcenter_login_id/text()}&lt;/ns1:empcenter_login_id&gt;
+                                &lt;ns1:generic_fields&gt;
+                                    {
+                                        for $generic_field in $person/user_data/generic_fields/generic_field
+                                        return
+                                        &lt;ns1:generic_field&gt;
+                                            &lt;ns1:fieldName&gt;{$generic_field/fieldName/text()}&lt;/ns1:fieldName&gt;
+                                            &lt;ns1:fieldValue&gt;{$generic_field/fieldValue/text()}&lt;/ns1:fieldValue&gt;
+                                        &lt;/ns1:generic_field&gt;
+                                    }
+                                &lt;/ns1:generic_fields&gt;
+                                &lt;ns1:language&gt;{$E2G_importEmployees/payload/data/person/user_data/language/text()}&lt;/ns1:language&gt;
+                                {
+                                    for $manager_types in $person/user_data/manager_types
+                                    return
+                                    &lt;ns1:manager_types&gt;
+                                        &lt;ns1:manager_type&gt;{$manager_types/manager_type/text()}&lt;/ns1:manager_type&gt;
+                                    &lt;/ns1:manager_types&gt;
+                                }
+                                &lt;ns1:user_role_match_id&gt;{$E2G_importEmployees/payload/data/person/user_data/user_role_match_id/text()}&lt;/ns1:user_role_match_id&gt;
+                            &lt;/ns1:user_data&gt;
+                        &lt;/ns1:person&gt;
+                    }
+                &lt;/ns1:data&gt;
+                &lt;ns1:properties xmlns:ns1="http://ws.apache.org/axis2/xsd"&gt;
+                    {
+                        for $property in $E2G_importEmployees/payload/properties/property
+                        return
+                        &lt;ns1:property&gt;
+                            &lt;ns1:propertyName&gt;{$property/propertyName/text()}&lt;/ns1:propertyName&gt;
+                            &lt;ns1:propertyValue&gt;{$property/propertyValue/text()}&lt;/ns1:propertyValue&gt;
+                        &lt;/ns1:property&gt;
+                    }
+                &lt;/ns1:properties&gt;
+            &lt;/ns:payload&gt;
+        &lt;/ns:E2G_importEmployees&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="E2G_importEmployeesResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">E2G_importEmployeesResponse_AnonymousType</option>
+                        </options>
+                        <xquery>{util:simplifyXml(//*[local-name()='E2G_importEmployeesResponse'])}</xquery>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2G_importEmployeesResponse_AnonymousType">
+                  <description/>
+                  <detail>
+                     <field name="return" type="reference">
+                        <options>
+                           <option name="referenceTo">E2G_importEmployeesResult</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2G_importEmployeesResult">
+                  <description/>
+                  <detail>
+                     <field name="detailedErrorMessage" type="string"/>
+                     <field name="operationSuccessful" type="boolean"/>
+                     <field name="resultCode" type="double"/>
+                     <field name="resultDescription" type="string"/>
+                     <field name="result" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_response</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2G_importEmployees_AnonymousType">
+                  <description/>
+                  <detail>
+                     <field name="payload" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_payload</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_act_location">
+                  <description/>
+                  <detail>
+                     <field name="city" type="string"/>
+                     <field name="country" type="string"/>
+                     <field name="county" type="string"/>
+                     <field name="state_or_province" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_address">
+                  <description/>
+                  <detail>
+                     <field name="address1" type="string"/>
+                     <field name="address2" type="string"/>
+                     <field name="address3" type="string"/>
+                     <field name="city" type="string"/>
+                     <field name="country" type="string"/>
+                     <field name="postal_code" type="string"/>
+                     <field name="state_or_province" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_all_eff_dated_assignment_info">
+                  <description/>
+                  <detail>
+                     <field name="data" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_eff_dated_assignment_info</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_all_eff_dated_employee_info">
+                  <description/>
+                  <detail>
+                     <field name="data" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_eff_dated_employee_info</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_assignment">
+                  <description/>
+                  <detail>
+                     <field name="assignment_match_id" type="string"/>
+                     <field name="eff_dated_info" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_all_eff_dated_assignment_info</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_eff_dated_assignment_info">
+                  <description/>
+                  <detail>
+                     <field name="adjusted_begin_date" type="string"/>
+                     <field name="assignment_description" type="string"/>
+                     <field name="assignment_end_date" type="string"/>
+                     <field name="badge_id" type="string"/>
+                     <field name="company_code" type="string"/>
+                     <field name="cost_center" type="string"/>
+                     <field name="department_code" type="string"/>
+                     <field name="district_code" type="string"/>
+                     <field name="division_code" type="string"/>
+                     <field name="effective_date" type="string"/>
+                     <field name="employment_type" type="string"/>
+                     <field name="external_payroll_id" type="string"/>
+                     <field name="flsa_status" type="string"/>
+                     <field name="fulltime_equivalency_percentage" type="string"/>
+                     <field name="fulltime_parttime_flag" type="string"/>
+                     <field name="hourly_salary_flag" type="string"/>
+                     <field name="hr_status" type="string"/>
+                     <field name="is_earliest_effective_dated" type="boolean"/>
+                     <field name="is_primary" type="boolean"/>
+                     <field name="is_terminated" type="boolean"/>
+                     <field name="job_code" type="string"/>
+                     <field name="job_level" type="string"/>
+                     <field name="job_title" type="string"/>
+                     <field name="latest_assignment_begin_date" type="string"/>
+                     <field name="location_code" type="string"/>
+                     <field name="original_assignment_begin_date" type="string"/>
+                     <field name="pay_currency" type="string"/>
+                     <field name="pay_grade" type="string"/>
+                     <field name="payroll_system_id" type="string"/>
+                     <field name="policy_profile_match_id" type="string"/>
+                     <field name="region_code" type="string"/>
+                     <field name="schedule_template_match_id" type="string"/>
+                     <field name="seniority_date" type="string"/>
+                     <field name="standard_daily_hours" type="string"/>
+                     <field name="standard_period_hours" type="string"/>
+                     <field name="standard_weekly_hours" type="string"/>
+                     <field name="time_zone" type="string"/>
+                     <field name="union_code" type="string"/>
+                     <field name="business_address" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_address</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="generic_fields" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_generic_fields</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="manager_ids" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_manager_ids</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="pay_rates" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_pay_rates</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_eff_dated_employee_info">
+                  <description/>
+                  <detail>
+                     <field name="act_company" type="string"/>
+                     <field name="act_employee_group" type="string"/>
+                     <field name="adjusted_hire_date" type="string"/>
+                     <field name="country_code" type="string"/>
+                     <field name="effective_date" type="string"/>
+                     <field name="fifty_employees_in_75_mile_radius_flag" type="string"/>
+                     <field name="fulltime_equivalency_percentage" type="string"/>
+                     <field name="gender" type="string"/>
+                     <field name="hr_status" type="string"/>
+                     <field name="is_earliest_effective_dated" type="boolean"/>
+                     <field name="latest_hire_date" type="string"/>
+                     <field name="leave_type" type="string"/>
+                     <field name="original_hire_date" type="string"/>
+                     <field name="standard_daily_hours" type="string"/>
+                     <field name="standard_period_hours" type="string"/>
+                     <field name="standard_weekly_hours" type="string"/>
+                     <field name="termination_date" type="string"/>
+                     <field name="act_location" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_act_location</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="generic_fields" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_generic_fields</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_email_address">
+                  <description/>
+                  <detail>
+                     <field name="email_address" type="string"/>
+                     <field name="type" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_email_addresses">
+                  <description/>
+                  <detail>
+                     <field name="email_address" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_email_address</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_employee">
+                  <description/>
+                  <detail>
+                     <field name="assignment" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_assignment</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="eff_dated_info" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_all_eff_dated_employee_info</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_manager_id">
+                  <description/>
+                  <detail>
+                     <field name="manager_id" type="string"/>
+                     <field name="type" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_manager_ids">
+                  <description/>
+                  <detail>
+                     <field name="manager_id" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_manager_id</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_manager_type">
+                  <description/>
+                  <detail>
+                     <field name="manager_type" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_pay_rate">
+                  <description/>
+                  <detail>
+                     <field name="frequency" type="string"/>
+                     <field name="pay_rate" type="string"/>
+                     <field name="type" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_pay_rates">
+                  <description/>
+                  <detail>
+                     <field name="pay_rate" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_pay_rate</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_payload">
+                  <description/>
+                  <detail>
+                     <field name="data" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_people</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="properties" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_properties</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_people">
+                  <description/>
+                  <detail>
+                     <field name="person" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_person</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_person">
+                  <description/>
+                  <detail>
+                     <field name="birth_date" type="string"/>
+                     <field name="external_hr_id" type="string"/>
+                     <field name="first_name" type="string"/>
+                     <field name="last_modification_time" type="string"/>
+                     <field name="last_name" type="string"/>
+                     <field name="middle_name" type="string"/>
+                     <field name="email_addresses" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_email_addresses</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="employee_data" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_employee</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="home_address" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_address</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="phone_numbers" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_phone_numbers</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="user_data" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_user</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_phone_number">
+                  <description/>
+                  <detail>
+                     <field name="phone_number" type="string"/>
+                     <field name="type" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_phone_numbers">
+                  <description/>
+                  <detail>
+                     <field name="phone_number" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_phone_number</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_properties">
+                  <description/>
+                  <detail>
+                     <field name="property" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_property</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_property">
+                  <description/>
+                  <detail>
+                     <field name="propertyName" type="string"/>
+                     <field name="propertyValue" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_response">
+                  <description/>
+                  <detail>
+                     <field name="startDateTime" type="string"/>
+                     <field name="successful" type="boolean"/>
+                     <field name="jobId" type="reference">
+                        <options>
+                           <option name="referenceTo">WSGeneratedId</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_employee_import_user">
+                  <description/>
+                  <detail>
+                     <field name="authentication_match_id" type="string"/>
+                     <field name="empcenter_login_id" type="string"/>
+                     <field name="language" type="string"/>
+                     <field name="user_role_match_id" type="string"/>
+                     <field name="generic_fields" type="reference">
+                        <options>
+                           <option name="referenceTo">E2g_generic_fields</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="manager_types" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_employee_import_manager_type</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_generic_field">
+                  <description/>
+                  <detail>
+                     <field name="fieldName" type="string"/>
+                     <field name="fieldValue" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="E2g_generic_fields">
+                  <description/>
+                  <detail>
+                     <field name="generic_field" type="objectlist">
+                        <options>
+                           <option name="referenceTo">E2g_generic_field</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="WSGeneratedId">
+                  <description/>
+                  <detail>
+                     <field name="id" type="double"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>gEfSvf9QkGWf8gNPKIMBAM</types1:GUID>
+      <types1:DisplayName>eTime_ECY_ServiceConnector</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-30T23:01:38.735Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

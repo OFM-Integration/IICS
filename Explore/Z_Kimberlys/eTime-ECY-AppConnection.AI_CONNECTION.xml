@@ -1,0 +1,45 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>kNXHVOJ2oTVMTon-gt-14826440-2019-12-11T01:01:11.622Z::conn.xml</types1:EntryId>
+      <types1:Name>eTime-ECY-AppConnection</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:CreatedBy>
+      <types1:CreationDate>2019-12-11T01:01:12Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:PublishedBy>
+      <types1:PublicationDate>2019-12-11T01:01:20Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/eTime-ECY-AppConnection/eTime-ECY-AppConnection.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="eTime-ECY-AppConnection"
+                     label="eTime-ECY-AppConnection"
+                     name="eTime-ECY-AppConnection">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/eTime_ECY_ServiceConnector/eTime_ECY_ServiceConnector_svcDef.xml"
+                               guid="gEfSvf9QkGWf8gNPKIMBAM"
+                               name="eTime_ECY_ServiceConnector"
+                               supportsConnectionTest="false"
+                               uuid="df045af3-581f-4904-a71b-e6a17fa0b469">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>5t56JS6uOwfiRCGiiuEDG7</types1:GUID>
+      <types1:DisplayName>eTime-ECY-AppConnection</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-30T23:01:41.778Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

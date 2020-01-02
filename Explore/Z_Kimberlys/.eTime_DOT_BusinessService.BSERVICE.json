@@ -1,0 +1,50 @@
+{
+  "objectInfo" : {
+    "id" : "8CvwI81KtzxbRwWyD3Te4t",
+    "name" : "eTime_DOT_BusinessService",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010YZQ27000000000003"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "010YZQ28000000000003",
+        "value" : "8CvwI81KtzxbRwWyD3Te4t@E2G_importEmployees_SOAP1.2"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "3YazEOV8Uk3cjC6T9M1oOy",
+    "name" : "WS_DOT_Workforce_ImportEmployee",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010YZQ0B00000000000N"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

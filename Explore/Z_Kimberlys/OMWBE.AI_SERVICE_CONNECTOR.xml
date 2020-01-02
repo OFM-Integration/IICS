@@ -1,0 +1,77 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Saaaaa-gt-7566753-2019-11-22T17:42:01.71Z::svc.xml</types1:EntryId>
+      <types1:Name>OMWBE</types1:Name>
+      <types1:ParentFlowIds>UWplp6oIuQaaabc-gt-7684621-2019-11-22T17:53:36.753Z::conn.xml,AX0ZkL0jmu6lS01-gt-3586401-2019-11-22T18:09:03.421Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OFM_DEV2</types1:CreatedBy>
+      <types1:CreationDate>2019-11-22T17:42:02Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OFM_DEV2</types1:PublishedBy>
+      <types1:PublicationDate>2019-11-22T17:51:55Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/OMWBE/OMWBE_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="OMWBE"
+                            label=""
+                            name="OMWBE"
+                            uuid="9eb3e99b-e0a0-471a-8e93-767ffd9c688b">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Certification_Management"
+                       maxRedirects="100"
+                       name="Certification_Management"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="UserName"
+                                required="false"
+                                testWith="WS30000378Cert"
+                                type="string"/>
+                     <parameter name="Password"
+                                required="false"
+                                testWith="f2F6=Rz$eX"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://webservice.mwdbe.com/B2GnowWebService.asmx"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="CertificationID"
+                            property="CertificationID"
+                            type="string"/>
+                     <field description=""
+                            name="VendorID"
+                            property="VendorID"
+                            type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>66a81zzppevbJL0J5xCECn</types1:GUID>
+      <types1:DisplayName>OMWBE</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-30T23:01:38.792Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

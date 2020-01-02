@@ -1,0 +1,55 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>wsLruB3uopz4KhP-gt-1946717-2019-12-13T01:05:43.646Z::svc.xml</types1:EntryId>
+      <types1:Name>ServiceConnector1</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:CreatedBy>
+      <types1:CreationDate>2019-12-13T01:05:44Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="ServiceConnector1"
+                            label=""
+                            name="ServiceConnector1"
+                            uuid="868c8044-7e19-4d5d-b13d-c5fee8f694a5">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Customer-and-Invoice-details-actions"
+                       maxRedirects="100"
+                       name="Customer-and-Invoice-details-actions"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na1.ai.dm-us.informaticacloud.com/active-bpel/odata/v4/JDBC-MySQL-ThomasBayer"
+                                        verb="GET"/>
+                  </binding>
+                  <output/>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>eSHB71t5mSEcNC37HGTQk6</types1:GUID>
+      <types1:DisplayName>ServiceConnector1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-30T23:01:41.769Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

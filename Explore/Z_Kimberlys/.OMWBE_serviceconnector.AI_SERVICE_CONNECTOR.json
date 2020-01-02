@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "bt7Q1UaHUoZkOlK3Ecya2A",
+    "name" : "OMWBE_serviceconnector",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "EA5tIS7T1cnFKi9-gt-4960878-2019-12-19T00:28:27.494Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

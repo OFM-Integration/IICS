@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "e12Dx86JzcxbxJVFYXAVGB",
+    "name" : "Lookup Invoice and Customer Details Service",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "R4-gt-2987178-2019-12-13T01:02:47.064Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This service returns customer details when invoice ID is provided.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

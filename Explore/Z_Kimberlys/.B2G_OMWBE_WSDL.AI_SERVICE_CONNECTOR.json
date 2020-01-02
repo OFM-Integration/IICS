@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "1I7b4EiTOQJjWd4IS4beAw",
+    "name" : "B2G_OMWBE_WSDL",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "sZvEIAkRtO3M4Ww-gt-3593784-2019-11-22T18:29:36.297Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}
