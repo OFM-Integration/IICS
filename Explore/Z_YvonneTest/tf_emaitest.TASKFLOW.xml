@@ -1,0 +1,141 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>lx2CGeFRqXpIW7W-gt-9797019-2019-12-31T22:40:42.18Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_emaitest-1</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>yvonne.silver@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2019-12-31T22:40:42Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_emaitest"
+                   name="tf_emaitest-1">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Run_Mapping_param" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-testParam</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="k494rl25" targetId="k494rl2n"/>
+               </start>
+               <eventContainer id="k494rl2n">
+                  <service id="k494rl24">
+                     <title>Run_Mapping_param</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_testParam</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">6YW6yz5KMqqiRsJLtKPgQj</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-testParam">temp.Run_Mapping_param</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Run_Mapping_param/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="k494rl32" targetId="k494rl31"/>
+                  <events>
+                     <catch faultField="temp.Run_Mapping_param/fault"
+                            id="k494rl2l"
+                            interrupting="true"
+                            name="error"/>
+                     <catch faultField="temp.Run_Mapping_param/fault"
+                            id="k494rl2m"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="k494rl31" type="exclusive">
+                  <title>IsSucced</title>
+                  <flow id="k494rl35">
+                     <link id="k494rl36" targetId="k494rl31" type="containerLink"/>
+                  </flow>
+                  <flow id="k494rl38">
+                     <service id="k494rl4p">
+                        <title>Send email</title>
+                        <serviceName>emailNotificationService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Email To" source="constant">Srithar.Kaliyaperumal@ofm.wa.gov</parameter>
+                           <parameter name="Email Cc" source="constant">Srithar.Kaliyaperumal@ofm.wa.gov</parameter>
+                           <parameter name="Email Subject" source="constant">Task ran successfully</parameter>
+                           <parameter name="Email Content Type" source="constant">html</parameter>
+                           <parameter name="Email Body" source="formula">
+                              <expression language="XQuery">fn:concat("LogID ",$temp.Run_Mapping_param[1]/output[1]/Log_Id )
+
+</expression>
+                           </parameter>
+                        </serviceInput>
+                        <serviceOutput/>
+                     </service>
+                     <link id="k494rl39" targetId="k494rl31" type="containerLink"/>
+                  </flow>
+                  <link id="k494rl34" targetId="k494rl35" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.Run_Mapping_param[1]/output[1]/Task_Status}</arg>
+                           <arg name="right">1</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="k494rl37" targetId="k494rl38" type="containerLink"/>
+                  <link id="k494rl4o" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-testParam"
+                              isByCopy="true"
+                              name="mt-testParam">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>c29OOj6vUcLbwyT8CE9EQz</types1:GUID>
+      <types1:DisplayName>tf_emaitest</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-01-02T16:39:59.506Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
