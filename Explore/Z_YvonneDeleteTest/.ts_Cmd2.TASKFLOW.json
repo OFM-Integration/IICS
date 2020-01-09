@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "a3aNZuczAWJiE0IWVQMt4a",
+    "name" : "ts_Cmd2",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "NtycotFgpKi9zhF-gt-14883424-2020-01-09T15:50:08.663Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}
