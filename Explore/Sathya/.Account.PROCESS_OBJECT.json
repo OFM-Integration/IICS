@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "1l22G1zuGUDbxGYme26gwu",
+    "name" : "Account",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "TMneBjrabcmWR7h-gt-1636715-2020-02-28T15:36:17.732Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}
