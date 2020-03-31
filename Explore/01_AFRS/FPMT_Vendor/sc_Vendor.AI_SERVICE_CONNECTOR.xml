@@ -1,0 +1,65 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>t7M1reAFLK2D86C-gt-9493715-2020-03-30T22:03:06.315Z::svc.xml</types1:EntryId>
+      <types1:Name>sc_Vendor</types1:Name>
+      <types1:ParentFlowIds>YjhBjop81V4Adyp-gt-9553894-2020-03-30T22:03:06.813Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>srithar.kaliyaperumal@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-03-30T22:03:06Z</types1:CreationDate>
+      <types1:ModifiedBy>srithar.kaliyaperumal@ofm.wa.gov</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-31T16:50:43Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>srithar.kaliyaperumal@ofm.wa.gov</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-31T16:50:47Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/sc_Vendor/sc_Vendor_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="sc_Vendor"
+                            label=""
+                            name="sc_Vendor"
+                            uuid="17143ec9-ccd1-457d-8982-9e804dd1dd76">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="GetVendorList"
+                       maxRedirects="100"
+                       name="GetVendorList"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Service connector to get vendor list attachment</description>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://enaapintdv02:443/process-engine/public/rt/pr_VendorxmlAttach"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field attachments="true"
+                            description=""
+                            name="VendorAttach"
+                            type="attachment"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>5lpeZnVJAbVhjc4A304hSb</types1:GUID>
+      <types1:DisplayName>sc_Vendor</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-03-31T17:48:35.447Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
