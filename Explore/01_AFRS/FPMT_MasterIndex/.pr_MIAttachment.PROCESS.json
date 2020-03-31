@@ -1,0 +1,64 @@
+{
+  "objectInfo" : {
+    "id" : "gVRtD0CqXsgha39yWCgb2L",
+    "name" : "pr_MIAttachment",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "qoZBJRvDINciZBp-gt-5352799-2020-03-24T20:12:43.269Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Invoke the service to get the MI attachment and transfer to target folder",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "c1yvv2X20Ubdn6JgrIHms9",
+    "name" : "FileMIConn",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "ZTNkSmbduaa-gt-5411830-2020-03-24T20:12:42.835Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "File connection download the MI file to target",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/01_AFRS/FPMT_MasterIndex"
+  }, {
+    "id" : "8l0MvB69Jq8dWcqX8LmCIU",
+    "name" : "AppConnMIAttach",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "eDXJqEhynzYLnzY-gt-1904524-2020-03-24T20:12:43.069Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "App Connection to get MI attachment",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/01_AFRS/FPMT_MasterIndex"
+  } ]
+}
