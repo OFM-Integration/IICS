@@ -35,13 +35,7 @@
       "repoInfo" : {
         "repoHandle" : "010YZQ27000000000003"
       },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      }, {
-        "name" : "010YZQ28000000000003",
-        "value" : "8CvwI81KtzxbRwWyD3Te4t@E2G_importEmployees_SOAP1.2"
-      } ],
+      "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
