@@ -1,0 +1,62 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>V4KhPVEQrXhNUdy-gt-6653525-2020-04-29T20:39:01.177Z::svc.xml</types1:EntryId>
+      <types1:Name>FetchAttachment-3</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Downloads attachment from a location on an agent via http.  This sample has the location on agent set to http://localhost:9090/examples/upload  (see binding GET url).</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>yvonne.silver@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-04-29T20:39:01Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="true"
+                            debug="false"
+                            displayName="FetchAttachment"
+                            label=""
+                            name="FetchAttachment-3"
+                            uuid="82a2e42e-6972-4c0f-9f4a-cb343f13b425">
+            <description>Downloads attachment from a location on an agent via http.  This sample has the location on agent set to http://localhost:9090/examples/upload  (see binding GET url).</description>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Fetch"
+                       name="Fetch">
+                  <description/>
+                  <input>
+                     <parameter name="filename"
+                                nogen="true"
+                                required="false"
+                                testWith="445096.png"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://localhost:1010/examples/upload/{$filename}"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field attachment="true"
+                            description=""
+                            name="FileAttachment"
+                            type="attachment"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>4fueN4u4akjcnOcnL6p5yv</types1:GUID>
+      <types1:DisplayName>FetchAttachment</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-27T14:48:55.273Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

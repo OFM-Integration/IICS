@@ -1,0 +1,100 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>oDkdoGsF4Xkgbdo-gt-10526864-2020-04-29T20:39:01.623Z::pd.xml</types1:EntryId>
+      <types1:Name>FetchAttachment-3</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>yvonne.silver@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-04-29T20:39:02Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="FetchAttachment"
+                  name="FetchAttachment-3">
+            <appliesTo/>
+            <description/>
+            <generator>Informatica Process Designer 8</generator>
+            <input>
+               <parameter name="fname" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field name="fileOut" type="attachment">
+                  <options>
+                     <option hide="true" name="count">1</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field name="expResult" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field name="base64Result" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload outputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ijxdl2l8" targetId="c"/>
+               </start>
+               <service id="c">
+                  <title>Fetch</title>
+                  <serviceName>FetchAttachment:Fetch</serviceName>
+                  <serviceInput>
+                     <parameter name="filename" source="field" updatable="true">input.fname</parameter>
+                  </serviceInput>
+                  <link id="iewu5x9c" targetId="iewu5x9b"/>
+               </service>
+               <assignment id="iewu5x9b">
+                  <title>Copy attachment to output</title>
+                  <operation source="field" to="output.fileOut">output.FileAttachment</operation>
+                  <link id="ieyf06ek" targetId="ieyf06ej"/>
+               </assignment>
+               <assignment id="ieyf06ej">
+                  <title>set attachment name</title>
+                  <operation source="formula" to="temp.expResult">
+                     <expression language="XQuery">sff:set_attachment_attribute($output.fileOut, "content-location", $input.fname) and sff:set_attachment_name($output.fileOut,$input.fname)</expression>
+                  </operation>
+                  <link id="ik0dkw0r" targetId="ik0dkw0q"/>
+               </assignment>
+               <assignment id="ik0dkw0q">
+                  <title>Retrieve Base64 of the Output Attachment</title>
+                  <operation source="formula" to="temp.base64Result">
+                     <expression language="XQuery">sff:getBase64FromAttachment($output.FileAttachment)</expression>
+                  </operation>
+                  <link id="ik0dkw0s" targetId="d"/>
+               </assignment>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>1CFj7UeQx1SbiZlXxGkmCI</types1:GUID>
+      <types1:DisplayName>FetchAttachment</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-27T14:48:55.207Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
