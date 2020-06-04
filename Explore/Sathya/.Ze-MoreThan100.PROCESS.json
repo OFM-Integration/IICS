@@ -1,0 +1,64 @@
+{
+  "objectInfo" : {
+    "id" : "397BvYdEpoMfd4v9EWNLMv",
+    "name" : "Ze-MoreThan100",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "jvppppppppppppp-gt-1944757-2020-02-28T15:36:18.153Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "fe6L2hnoUwLh2vWxw67RYt",
+    "name" : "Z-OraBird2",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "ZBpDUQbgdwUiQLn-gt-1636725-2020-02-28T15:36:17.833Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Ze"
+  }, {
+    "id" : "1l22G1zuGUDbxGYme26gwu",
+    "name" : "Account",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "TMneBjrabcmWR7h-gt-1636715-2020-02-28T15:36:17.732Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Sathya"
+  } ]
+}

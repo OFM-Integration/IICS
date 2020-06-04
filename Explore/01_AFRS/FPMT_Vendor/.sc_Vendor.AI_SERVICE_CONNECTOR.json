@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "5lpeZnVJAbVhjc4A304hSb",
+    "name" : "sc_Vendor",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "t7M1reAFLK2D86C-gt-9493715-2020-03-30T22:03:06.315Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

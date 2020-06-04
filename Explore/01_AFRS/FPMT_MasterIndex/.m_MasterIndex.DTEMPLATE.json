@@ -1,22 +1,19 @@
 {
   "objectInfo" : {
-    "id" : "7cUpN09jgRRhdkTK6gskEX",
-    "name" : "GDjson2",
-    "type" : "BSERVICE",
+    "id" : "6kxZ8pXjrIUiJZecLXSZgZ",
+    "name" : "m_MasterIndex",
+    "type" : "DTEMPLATE",
     "metadata" : {
       "modelVersion" : {
         "major" : 0,
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "010YZQ27000000000005"
+        "repoHandle" : "010YZQ17000000000015"
       },
       "contextAttributes" : [ {
         "name" : "id",
         "value" : "@1"
-      }, {
-        "name" : "010YZQ28000000000005",
-        "value" : "7cUpN09jgRRhdkTK6gskEX@GDAddSubscription2"
       } ],
       "additionalInfo" : {
         "description" : "",
@@ -27,8 +24,8 @@
   },
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
-    "id" : "a8knH8VaXySfnFkmzhvjGX",
-    "name" : "GD_api2",
+    "id" : "k7EqXrN93cUghGAqc9gBQM",
+    "name" : "flatFile_Target",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
@@ -36,7 +33,27 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "010YZQ0B00000000001D"
+        "repoHandle" : "010YZQ0B00000000000T"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "1wFs4LGpbpJlBRZyWaBOGI",
+    "name" : "statewide_titles",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010YZQ0B00000000000G"
       },
       "contextAttributes" : null,
       "additionalInfo" : {

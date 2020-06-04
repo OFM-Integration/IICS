@@ -1,0 +1,118 @@
+[
+   {
+      "objectGuid": "2yl32muhF8LhdRHiVyeUwp",
+      "objectName": "m_TempConversion2",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Z_Kimberlys/TempConversion2",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "jRwtGYTWxaykHusFX8gkK8",
+            "k7EqXrN93cUghGAqc9gBQM",
+            "aGmorERMxqkeKANHBgNTih"
+         ],
+         "repoInfo": {
+            "repoHandle": "010YZQ17000000000020"
+         }
+      }
+   },
+   {
+      "objectGuid": "jRwtGYTWxaykHusFX8gkK8",
+      "objectName": "bs_TempConversion2",
+      "objectType": "BSERVICE",
+      "path": "/Explore/Z_Kimberlys/TempConversion2",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            },
+            {
+               "name": "010YZQ2800000000000I",
+               "value": "jRwtGYTWxaykHusFX8gkK8@FahrenheitToCelsius_SOAP1.2"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ2700000000000C"
+         }
+      }
+   },
+   {
+      "objectGuid": "k7EqXrN93cUghGAqc9gBQM",
+      "objectName": "flatFile_Target",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000T"
+         }
+      }
+   },
+   {
+      "objectGuid": "aGmorERMxqkeKANHBgNTih",
+      "objectName": "flatFile_Source",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000U"
+         }
+      }
+   }
+]

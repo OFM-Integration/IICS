@@ -1,7 +1,7 @@
 {
   "objectInfo" : {
-    "id" : "2WS6W6LxvePfZr4EIstDuZ",
-    "name" : "Mapping3",
+    "id" : "3kcwYXPDledexKDozxEeC5",
+    "name" : "m_EIStagingMI",
     "type" : "DTEMPLATE",
     "metadata" : {
       "modelVersion" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "010YZQ1700000000000L"
+        "repoHandle" : "010YZQ1700000000002R"
       },
       "contextAttributes" : [ {
         "name" : "id",
@@ -24,32 +24,6 @@
   },
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
-    "id" : "7cUpN09jgRRhdkTK6gskEX",
-    "name" : "GDjson2",
-    "type" : "BSERVICE",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 0,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "010YZQ27000000000005"
-      },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      }, {
-        "name" : "010YZQ28000000000005",
-        "value" : "7cUpN09jgRRhdkTK6gskEX@GDAddSubscription2"
-      } ],
-      "additionalInfo" : {
-        "description" : "",
-        "contentType" : "JSON",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/Z_Kimberlys"
-  }, {
     "id" : "gWgZ5LwPngOliJyLqp6kyt",
     "name" : "EIStaging",
     "type" : "Connection",
@@ -70,8 +44,8 @@
     },
     "path" : "/SYS"
   }, {
-    "id" : "k7EqXrN93cUghGAqc9gBQM",
-    "name" : "flatFile_Target",
+    "id" : "1wFs4LGpbpJlBRZyWaBOGI",
+    "name" : "statewide_titles",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
@@ -79,7 +53,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "010YZQ0B00000000000T"
+        "repoHandle" : "010YZQ0B00000000000G"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
