@@ -24,8 +24,8 @@
   },
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
-    "id" : "6dKHc1uY0vOk9iOoP3L84v",
-    "name" : "SecureAgent",
+    "id" : "4Q1XPFEz3ZLkGgoUUGgrIJ",
+    "name" : "SecureAgent_Dev",
     "type" : "AgentGroup",
     "metadata" : {
       "modelVersion" : {
@@ -33,7 +33,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "010YZQ25000000000003"
+        "repoHandle" : "010YZQ25000000000002"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
@@ -75,7 +75,10 @@
       "repoInfo" : {
         "repoHandle" : "010YZQ1700000000000J"
       },
-      "contextAttributes" : null,
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
