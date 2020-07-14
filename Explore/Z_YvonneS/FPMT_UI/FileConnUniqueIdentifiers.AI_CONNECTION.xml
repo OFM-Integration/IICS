@@ -1,0 +1,65 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>hMi4tciSrZMSPfX-gt-914020-2020-07-08T18:52:30.127Z::conn.xml</types1:EntryId>
+      <types1:Name>FileConnUniqueIdentifiers-1</types1:Name>
+      <types1:ParentFlowIds>A1vyoY2G7QnG5YL-gt-2145530-2020-07-08T18:52:33.422Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>File connection download the UniqueIdentifiers file</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SecureAgent</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>saleh.aal@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-07-08T18:52:30Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>saleh.aal@ofm.wa.gov</types1:PublishedBy>
+      <types1:PublicationDate>2020-07-08T23:54:57Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/FileConnUniqueIdentifiers-1/FileConnUniqueIdentifiers-1.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="FileConnUniqueIdentifiers"
+                     label="FileConnUniqueIdentifiers"
+                     name="FileConnUniqueIdentifiers-1">
+            <description>File connection download the UniqueIdentifiers file</description>
+            <tags>.agent:SecureAgent</tags>
+            <agent>SecureAgent</agent>
+            <attributes/>
+            <producers>
+               <producer enabled="true" name="TargetFile" typeName="FileWriter">
+                  <description>Use this event target to write output to a file.</description>
+                  <attributes>
+                     <attribute encrypted="false"
+                                name="directoryName"
+                                value="F:\IICS_Shared\SrcFiles"/>
+                     <attribute encrypted="false" name="fileExist" value="Override"/>
+                     <attribute encrypted="false" name="moveExisting" value=""/>
+                     <attribute encrypted="false" name="eagerDeleteTargetFile" value="true"/>
+                     <attribute encrypted="false" name="tempPrefix" value=""/>
+                     <attribute encrypted="false" name="tempFileName" value=""/>
+                     <attribute encrypted="false" name="forceWrites" value="true"/>
+                     <attribute encrypted="false" name="bufferSize" value=""/>
+                     <attribute encrypted="false" name="charset" value=""/>
+                  </attributes>
+               </producer>
+            </producers>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="true"
+                           plugin="Camel"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="false"
+                           supportsOData="false"
+                           type="File"
+                           uuid="ac000300-d9fe-11e4-8830-0800200c9a66">
+               <description>Provides connections to file monitoring brokers.</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>4Eh0mBipqwdh1Kdo2o9W2b</types1:GUID>
+      <types1:DisplayName>FileConnUniqueIdentifiers</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-07-13T23:31:27.968Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
