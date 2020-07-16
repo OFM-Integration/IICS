@@ -13,11 +13,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>saleh.aal@ofm.wa.gov</types1:CreatedBy>
       <types1:CreationDate>2020-07-08T21:47:17Z</types1:CreationDate>
-      <types1:ModifiedBy>saleh.aal@ofm.wa.gov</types1:ModifiedBy>
-      <types1:ModificationDate>2020-07-09T15:32:11Z</types1:ModificationDate>
+      <types1:ModifiedBy>OFM_Service_DEV</types1:ModifiedBy>
+      <types1:ModificationDate>2020-07-14T18:39:29Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>saleh.aal@ofm.wa.gov</types1:PublishedBy>
-      <types1:PublicationDate>2020-07-09T15:32:42Z</types1:PublicationDate>
+      <types1:PublishedBy>OFM_Service_DEV</types1:PublishedBy>
+      <types1:PublicationDate>2020-07-14T18:40:33Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/sc_FPMTSignIn1/sc_FPMTSignIn1_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -72,5 +72,5 @@
       <types1:GUID>6NUvi09mcvQkRi5Hpbu941</types1:GUID>
       <types1:DisplayName>sc_FPMTSignIn1</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-07-13T23:31:27.959Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-07-15T20:36:14.613Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
