@@ -13,11 +13,8 @@
       <types1:CreatedBy>saleh.aal@ofm.wa.gov</types1:CreatedBy>
       <types1:CreationDate>2020-07-08T21:47:17Z</types1:CreationDate>
       <types1:ModifiedBy>OFM_Service_DEV</types1:ModifiedBy>
-      <types1:ModificationDate>2020-07-14T18:39:30Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>OFM_Service_DEV</types1:PublishedBy>
-      <types1:PublicationDate>2020-07-14T18:40:32Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/rt.connection/ConnFPMTSignin1/ConnFPMTSignin1.conn.xml</types1:PublishedContributionId>
+      <types1:ModificationDate>2020-07-23T15:52:53Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
@@ -42,5 +39,5 @@
       <types1:GUID>je5docBHfuydQ9VI3epbeu</types1:GUID>
       <types1:DisplayName>ConnFPMTSignin1</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-07-15T20:36:14.71Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-08-07T17:53:28.124Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
