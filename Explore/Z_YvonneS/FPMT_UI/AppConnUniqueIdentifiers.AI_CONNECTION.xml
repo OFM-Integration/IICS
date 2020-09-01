@@ -12,10 +12,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>saleh.aal@ofm.wa.gov</types1:CreatedBy>
       <types1:CreationDate>2020-07-08T18:52:33Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>OFM_Service_DEV</types1:ModifiedBy>
+      <types1:ModificationDate>2020-08-24T17:52:24Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>saleh.aal@ofm.wa.gov</types1:PublishedBy>
-      <types1:PublicationDate>2020-07-08T23:55:10Z</types1:PublicationDate>
+      <types1:PublishedBy>OFM_Service_DEV</types1:PublishedBy>
+      <types1:PublicationDate>2020-08-24T17:52:39Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/AppConnUniqueIdentifiers-1/AppConnUniqueIdentifiers-1.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -41,5 +42,5 @@
       <types1:GUID>hnidxcduO0njqexv8b5Gw0</types1:GUID>
       <types1:DisplayName>AppConnUniqueIdentifiers</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-07-13T23:31:28.98Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-08-31T18:17:16.425Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
