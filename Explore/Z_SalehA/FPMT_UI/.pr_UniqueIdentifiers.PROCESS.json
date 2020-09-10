@@ -1,0 +1,122 @@
+[
+   {
+      "objectGuid": "jt83Eyhd5KEfEZMKtig6gr",
+      "objectName": "pr_UniqueIdentifiers",
+      "objectType": "PROCESS",
+      "path": "/Explore/Z_YvonneS/FPMT_UI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Invoke the service to get the Unique Identifiers attachment and transfer to target folder",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "je5docBHfuydQ9VI3epbeu",
+            "4Eh0mBipqwdh1Kdo2o9W2b",
+            "3nKBrgupDalhmtNnWt1XMQ",
+            "hnidxcduO0njqexv8b5Gw0"
+         ],
+         "repoInfo": {
+            "repoHandle": "A1vyoY2G7QnG5YL-gt-2145530-2020-07-08T18:52:33.422Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "je5docBHfuydQ9VI3epbeu",
+      "objectName": "ConnFPMTSignin1",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Z_YvonneS/FPMT_Signin",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This connection will uses in all other FPMT service to get cookie",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "8fVQU8lpDqotxGo-gt-2254908-2020-07-08T21:47:16.954Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "4Eh0mBipqwdh1Kdo2o9W2b",
+      "objectName": "FileConnUniqueIdentifiers",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Z_YvonneS/FPMT_UI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "File connection download the UniqueIdentifiers file",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "hMi4tciSrZMSPfX-gt-914020-2020-07-08T18:52:30.127Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "3nKBrgupDalhmtNnWt1XMQ",
+      "objectName": "mt_FPMTUI",
+      "objectType": "MTT",
+      "path": "/Explore/Z_YvonneS/FPMT_UI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0Z000000000039"
+         }
+      }
+   },
+   {
+      "objectGuid": "hnidxcduO0njqexv8b5Gw0",
+      "objectName": "AppConnUniqueIdentifiers",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Z_YvonneS/FPMT_UI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "App Connection to get Unique Identifiers attachment",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "n7wporzYLnzYLnz-gt-2123798-2020-07-08T18:52:33.222Z::conn.xml"
+         }
+      }
+   }
+]

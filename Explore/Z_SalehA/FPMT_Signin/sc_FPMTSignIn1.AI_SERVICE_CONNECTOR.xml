@@ -1,0 +1,73 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>YvtpeFRqXpIW7WH-gt-2281548-2020-07-08T21:47:16.808Z::svc.xml</types1:EntryId>
+      <types1:Name>sc_FPMTSignIn1</types1:Name>
+      <types1:ParentFlowIds>8fVQU8lpDqotxGo-gt-2254908-2020-07-08T21:47:16.954Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Signin FPMT Deployment Test</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>saleh.aal@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-07-08T21:47:17Z</types1:CreationDate>
+      <types1:ModifiedBy>OFM_Service_DEV</types1:ModifiedBy>
+      <types1:ModificationDate>2020-07-23T15:52:53Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="sc_FPMTSignIn1"
+                            label=""
+                            name="sc_FPMTSignIn1"
+                            uuid="343a87cc-00d8-4e93-af77-96ccf6c76fcc">
+            <description>Signin FPMT Deployment Test</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="GetSignin"
+                       maxRedirects="100"
+                       name="GetSignin"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="commaSeparated"
+                                        url="https://fpmtuat.gorpm.com/external/api/public/authentication/signin"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+    "username":"OFMdlITSIntegrationServices@ofm.wa.gov",
+    "password":"Fpmt2$2$"
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="SigninResponseCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                     <field description="" name="Cookie1" type="string">
+                        <xquery>{$RESTResponse/*:headers/*:header[@name='Set-Cookie'][1]/@value}</xquery>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>6NUvi09mcvQkRi5Hpbu941</types1:GUID>
+      <types1:DisplayName>sc_FPMTSignIn1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-08-07T17:53:27.984Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

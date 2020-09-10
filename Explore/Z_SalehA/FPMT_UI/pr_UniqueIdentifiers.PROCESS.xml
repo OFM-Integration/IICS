@@ -1,0 +1,395 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>A1vyoY2G7QnG5YL-gt-2145530-2020-07-08T18:52:33.422Z::pd.xml</types1:EntryId>
+      <types1:Name>pr_UniqueIdentifiers-1</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Invoke the service to get the Unique Identifiers attachment and transfer to target folder</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SecureAgent,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>saleh.aal@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-07-08T18:52:33Z</types1:CreationDate>
+      <types1:ModifiedBy>saleh.aal@ofm.wa.gov</types1:ModifiedBy>
+      <types1:ModificationDate>2020-07-09T00:36:04Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="pr_UniqueIdentifiers"
+                  name="pr_UniqueIdentifiers-1"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description>Invoke the service to get the Unique Identifiers attachment and transfer to target folder</description>
+            <tags>.agent:SecureAgent,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <output>
+               <field description="" name="OutAttachment" type="attachment">
+                  <options>
+                     <option hide="true" name="count">1</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tempFileWrite" type="reference">
+                  <options>
+                     <option name="referenceTo">FileConnUniqueIdentifiers-1:FileWriteTask</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">4Eh0mBipqwdh1Kdo2o9W2b</option>
+                  </options>
+               </field>
+               <field description="" name="tempDate" type="date">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempUIReponseCode" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempUIResponse" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempCookie" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="EmailTo" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">srithar.kaliyaperumal@ofm.wa.gov</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>SecureAgent</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="k8j7rx97" targetId="k9dcw5br"/>
+               </start>
+               <eventContainer id="k9dcw5br">
+                  <service id="k8j7rx96">
+                     <title>FPMT Signin</title>
+                     <serviceName>ConnFPMTSignin1:GetSignin</serviceName>
+                     <serviceGUID>je5docBHfuydQ9VI3epbeu</serviceGUID>
+                     <serviceInput/>
+                  </service>
+                  <flow id="k9dcw5bt">
+                     <assignment id="k9eoqzhb">
+                        <title>Assign Cookie</title>
+                        <operation source="formula" to="temp.tempCookie">
+                           <expression language="XQuery">if (fn:empty($output.Cookie1)) then "N"
+else if (fn:starts-with($output.Cookie1,".ASPX")) then "Y"
+else "Y"</expression>
+                        </operation>
+                        <link id="k9eoqzm4" targetId="k9dcw5es"/>
+                     </assignment>
+                     <container id="k9dcw5es" type="exclusive">
+                        <title>SignIn</title>
+                        <flow id="k9dcw5et">
+                           <assignment id="k9dcw5gd">
+                              <title>Assign Date</title>
+                              <operation source="formula" to="temp.tempDate">
+                                 <expression language="XQuery">fn:format-dateTime(fn:current-dateTime(),
+                 "[M01]-[D01]-[Y0001]") </expression>
+                              </operation>
+                              <link id="k9dcw5gl" targetId="k9efef1t"/>
+                           </assignment>
+                           <eventContainer id="k9efef1t">
+                              <service id="k9dcw5gk">
+                                 <title>ProcessGetUI</title>
+                                 <serviceName>AppConnUniqueIdentifiers-1:UniqueIdentifier </serviceName>
+                                 <serviceGUID>hnidxcduO0njqexv8b5Gw0</serviceGUID>
+                                 <serviceInput>
+                                    <parameter name="Date" source="field" updatable="true">temp.tempDate</parameter>
+                                    <parameter name="Cookie" source="field" updatable="true">output.Cookie1</parameter>
+                                 </serviceInput>
+                              </service>
+                              <flow id="k9efef1v">
+                                 <container id="k9eoqzki" type="exclusive">
+                                    <title>UniqueIdentifiersResponseCode</title>
+                                    <flow id="k9eoqzkj">
+                                       <assignment id="k9eoqzkx">
+                                          <title>Assignment to Content Format, File name</title>
+                                          <operation source="constant" to="temp.tempFileWrite[1]/format">Attachment</operation>
+                                          <operation source="constant" to="temp.tempFileWrite[1]/fileName">FPMTUniqueIdentifiers.csv</operation>
+                                          <link id="k9eoqzl8" targetId="k9szv0az"/>
+                                       </assignment>
+                                       <eventContainer id="k9szv0az">
+                                          <service id="k9eoqzl7">
+                                             <title>FileToTarget</title>
+                                             <serviceName>FileConnUniqueIdentifiers-1:TargetFile</serviceName>
+                                             <serviceGUID>4Eh0mBipqwdh1Kdo2o9W2b</serviceGUID>
+                                             <serviceInput>
+                                                <parameter name="fileWriteTask" source="field" updatable="true">temp.tempFileWrite</parameter>
+                                                <parameter name="attachment" source="field" updatable="true">output.GetUniqueIdentifiers</parameter>
+                                             </serviceInput>
+                                          </service>
+                                          <flow id="k9szv0b1">
+                                             <eventContainer id="k9szv0bh">
+                                                <service id="k9szv0bk">
+                                                   <title>Call DI to send file to AFRS</title>
+                                                   <serviceName>ICSExecuteTask</serviceName>
+                                                   <serviceGUID/>
+                                                   <serviceInput>
+                                                      <parameter name="Task Name" source="constant">mt_FPMTUI [MCT]</parameter>
+                                                      <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                                      <parameter name="Fail on Cloud Task Errors" source="constant">true</parameter>
+                                                      <parameter name="GUID" source="constant">3nKBrgupDalhmtNnWt1XMQ</parameter>
+                                                   </serviceInput>
+                                                </service>
+                                                <flow id="k9szv0bi">
+                                                   <container id="kbr5n8xh" type="exclusive">
+                                                      <title>UIRowCount</title>
+                                                      <flow id="kbr5n8xk">
+                                                         <eventContainer id="kbr5n931">
+                                                            <service id="kbr5n8yn">
+                                                               <title>MoveUIFile</title>
+                                                               <serviceName>avShellService</serviceName>
+                                                               <serviceGUID/>
+                                                               <serviceInput>
+                                                                  <parameter name="command" source="constant">AFRS_UIFPMTMoveToSFT.bat</parameter>
+                                                                  <parameter name="workingDirPath" source="constant">F:\IICS_Shared\Scripts</parameter>
+                                                               </serviceInput>
+                                                            </service>
+                                                            <flow id="kbr5n933">
+                                                               <service id="kbr5n94a">
+                                                                  <title>EmailUISucess</title>
+                                                                  <serviceName>pr_Email</serviceName>
+                                                                  <serviceGUID/>
+                                                                  <serviceInput>
+                                                                     <parameter name="EmailTo" source="field" updatable="true">temp.EmailTo</parameter>
+                                                                     <parameter name="Subject" source="formula">
+                                                                        <expression language="XQuery">"FPMT UI Process Succeeded."</expression>
+                                                                     </parameter>
+                                                                     <parameter name="EmailText" source="formula">
+                                                                        <expression language="XQuery">"FPMT UI process completed successfully."</expression>
+                                                                     </parameter>
+                                                                  </serviceInput>
+                                                               </service>
+                                                               <link id="kbr5n934" targetId="kbr5n931" type="containerLink"/>
+                                                            </flow>
+                                                            <flow id="kbr5n936">
+                                                               <throw id="kbr5n93i">
+                                                                  <title>MoveFileThrow</title>
+                                                                  <throwInput>
+                                                                     <parameter name="code" source="field" updatable="true">output.MoveUIFilefault[1]/code</parameter>
+                                                                     <parameter name="detail" source="field" updatable="true">output.MoveUIFilefault[1]/detail</parameter>
+                                                                     <parameter name="reason" source="field" updatable="true">output.MoveUIFilefault[1]/reason</parameter>
+                                                                  </throwInput>
+                                                               </throw>
+                                                            </flow>
+                                                            <link id="kbr5n932" targetId="kbr5n933" type="containerLink"/>
+                                                            <link id="kbr5n950" targetId="kbr5n94z"/>
+                                                            <events>
+                                                               <catch faultField="MoveUIFilefault" id="kbr5n930" interrupting="true">
+                                                                  <link id="kbr5n935" targetId="kbr5n936" type="containerLink"/>
+                                                               </catch>
+                                                            </events>
+                                                         </eventContainer>
+                                                         <end id="kbr5n94z"/>
+                                                      </flow>
+                                                      <flow id="kbr5n8xn">
+                                                         <service id="kbr5n90f">
+                                                            <title>EmailUIEmptyEmail</title>
+                                                            <serviceName>pr_Email</serviceName>
+                                                            <serviceGUID/>
+                                                            <serviceInput>
+                                                               <parameter name="EmailTo" source="field" updatable="true">temp.EmailTo</parameter>
+                                                               <parameter name="Subject" source="constant">FPMT UI Process Succeeded.</parameter>
+                                                               <parameter name="EmailText" source="formula">
+                                                                  <expression language="XQuery">"FPMT UI process completed successfully. The UI file is empty. No action required."
+</expression>
+                                                               </parameter>
+                                                            </serviceInput>
+                                                            <link id="kbr5n94q" targetId="kbr5n94p"/>
+                                                         </service>
+                                                         <end id="kbr5n94p">
+                                                            <title>End 3</title>
+                                                         </end>
+                                                      </flow>
+                                                      <link id="kbr5n8xj" targetId="kbr5n8xk" type="containerLink">
+                                                         <condition source="formula">
+                                                            <function name="greater-than">
+                                                               <arg name="left">{$output.SuccessTargetRows}</arg>
+                                                               <arg name="right">{0}</arg>
+                                                            </function>
+                                                         </condition>
+                                                      </link>
+                                                      <link id="kbr5n8xm" targetId="kbr5n8xn" type="containerLink"/>
+                                                   </container>
+                                                </flow>
+                                                <flow id="k9szv0bj">
+                                                   <throw id="k9szv0c4">
+                                                      <title>ThrowFPMTUIDIFileToAFRS</title>
+                                                      <throwInput>
+                                                         <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                                         <parameter name="detail" source="constant" updatable="true"/>
+                                                         <parameter name="reason" source="constant" updatable="true"/>
+                                                      </throwInput>
+                                                   </throw>
+                                                </flow>
+                                                <link id="k9szv0bl" targetId="k9szv0bi" type="containerLink"/>
+                                                <events>
+                                                   <catch faultField="faultInfo" id="k9szv0ad" interrupting="true">
+                                                      <link id="k9szv0bm" targetId="k9szv0bj" type="containerLink"/>
+                                                   </catch>
+                                                </events>
+                                             </eventContainer>
+                                          </flow>
+                                          <flow id="k9szv0b4">
+                                             <throw id="k9szv0bc">
+                                                <title>ThrowFile</title>
+                                                <throwInput>
+                                                   <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                                   <parameter name="detail" source="constant" updatable="true"/>
+                                                   <parameter name="reason" source="constant" updatable="true"/>
+                                                </throwInput>
+                                             </throw>
+                                          </flow>
+                                          <link id="k9szv0b0" targetId="k9szv0b1" type="containerLink"/>
+                                          <events>
+                                             <catch faultField="faultInfo" id="k9szv0ay" interrupting="true">
+                                                <link id="k9szv0b3" targetId="k9szv0b4" type="containerLink"/>
+                                             </catch>
+                                          </events>
+                                       </eventContainer>
+                                    </flow>
+                                    <flow id="k9eoqzkk">
+                                       <assignment id="k9n1l18z">
+                                          <title>Assignment to tempUIReponseCode, tempUIResponse</title>
+                                          <operation source="field" to="temp.tempUIReponseCode">output.UniqueIdentifiersResponseCode</operation>
+                                          <operation source="field" to="temp.tempUIResponse">output.UniqueIdentifiersResponse</operation>
+                                          <link id="k9x1tpoc" targetId="k9n1l193"/>
+                                       </assignment>
+                                       <service id="k9n1l193">
+                                          <title>EmailUIError</title>
+                                          <serviceName>pr_Email</serviceName>
+                                          <serviceGUID/>
+                                          <serviceInput>
+                                             <parameter name="EmailTo" source="field" updatable="true">temp.EmailTo</parameter>
+                                             <parameter name="Subject" source="constant">FPMT UI Failed</parameter>
+                                             <parameter name="EmailText" source="formula">
+                                                <expression language="XQuery">let $Text1 := "There was an error with download UI file from FPMT. Please check the log."
+
+let $Text2 := concat($Text1, "UI file response: ",$temp.tempUIResponse )
+
+return $Text2</expression>
+                                             </parameter>
+                                          </serviceInput>
+                                          <link id="k9n1l195" targetId="k9eoqzkl"/>
+                                       </service>
+                                       <end id="k9eoqzkl">
+                                          <title>End 2</title>
+                                       </end>
+                                    </flow>
+                                    <link id="k9eoqzkm" targetId="k9eoqzkj" type="containerLink">
+                                       <condition source="formula">
+                                          <function name="contains">
+                                             <arg name="left">{$output.UniqueIdentifiersResponseCode}</arg>
+                                             <arg name="right">200</arg>
+                                          </function>
+                                       </condition>
+                                    </link>
+                                    <link id="k9eoqzkn" targetId="k9eoqzkk" type="containerLink"/>
+                                 </container>
+                              </flow>
+                              <flow id="k9efef1y">
+                                 <throw id="k9eoqznp">
+                                    <title>ThrowUIAttachProcess</title>
+                                    <throwInput>
+                                       <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                       <parameter name="detail" source="constant" updatable="true"/>
+                                       <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                                    </throwInput>
+                                 </throw>
+                              </flow>
+                              <link id="k9efef1u" targetId="k9efef1v" type="containerLink"/>
+                              <events>
+                                 <catch faultField="faultInfo" id="k9efef1s" interrupting="true">
+                                    <link id="k9efef1x" targetId="k9efef1y" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                        </flow>
+                        <flow id="k9dcw5eu">
+                           <service id="k9eoqzm5">
+                              <title>Emailcookieempty</title>
+                              <serviceName>pr_Email</serviceName>
+                              <serviceGUID/>
+                              <serviceInput>
+                                 <parameter name="EmailTo" source="field" updatable="true">temp.EmailTo</parameter>
+                                 <parameter name="Subject" source="constant">FPMT Signin Failed</parameter>
+                                 <parameter name="EmailText" source="formula">
+                                    <expression language="XQuery">'There was an error with sign in FPMT. The cookie is empty. Please check the process log.'
+
+</expression>
+                                 </parameter>
+                              </serviceInput>
+                              <link id="k9eoqzm6" targetId="k9dcw5ev"/>
+                           </service>
+                           <end id="k9dcw5ev">
+                              <title>End 1</title>
+                           </end>
+                        </flow>
+                        <link id="k9dcw5ew" targetId="k9dcw5et" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$temp.tempCookie}</arg>
+                                 <arg name="right">Y</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="k9dcw5ex" targetId="k9dcw5eu" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <flow id="k9dcw5bw">
+                     <service id="k9ehzsar">
+                        <title>EmailSigninError</title>
+                        <serviceName>pr_Email</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="EmailTo" source="field" updatable="true">temp.EmailTo</parameter>
+                           <parameter name="Subject" source="constant">FPMT Signin Failed</parameter>
+                           <parameter name="EmailText" source="formula">
+                              <expression language="XQuery">'There was an error with sign in FPMT. Please check the log.'
+
+</expression>
+                           </parameter>
+                        </serviceInput>
+                        <link id="k9ehzsas" targetId="k9ehzsaj"/>
+                     </service>
+                     <end id="k9ehzsaj">
+                        <title>End 4</title>
+                     </end>
+                  </flow>
+                  <link id="k9dcw5bs" targetId="k9dcw5bt" type="containerLink"/>
+                  <events>
+                     <catch faultField="faultInfo" id="k9dcw5bq" interrupting="true">
+                        <link id="k9dcw5bv" targetId="k9dcw5bw" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>jt83Eyhd5KEfEZMKtig6gr</types1:GUID>
+      <types1:DisplayName>pr_UniqueIdentifiers</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-07-13T23:31:30.245Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

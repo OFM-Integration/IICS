@@ -1,0 +1,42 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>pG3jFIMeINciZBp-gt-31712650-2020-09-03T20:55:01.425Z::conn.xml</types1:EntryId>
+      <types1:Name>AppConnUniqueIdentifiers-2</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>App Connection to get Unique Identifiers attachment</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SecureAgent</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OFM_Service_DEV</types1:CreatedBy>
+      <types1:CreationDate>2020-09-03T20:55:01Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AppConnUniqueIdentifiers"
+                     label="AppConnUniqueIdentifiers"
+                     name="AppConnUniqueIdentifiers-2">
+            <description>App Connection to get Unique Identifiers attachment</description>
+            <tags>.agent:SecureAgent</tags>
+            <agent>SecureAgent</agent>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/sc_FPMTUniqueIdentifiers/sc_FPMTUniqueIdentifiers_svcDef.xml"
+                               guid="fnR9ddDSm41jQmJ971WuyF"
+                               name="sc_FPMTUniqueIdentifiers-2"
+                               supportsConnectionTest="false"
+                               uuid="343a87cc-00d8-4e93-af77-96ccf6c76fcc">
+               <description>Connect Unique Identifier service</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>9QRqcCN7ewNftaYiGxQN0l</types1:GUID>
+      <types1:DisplayName>AppConnUniqueIdentifiers</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-09-04T14:23:16.263Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

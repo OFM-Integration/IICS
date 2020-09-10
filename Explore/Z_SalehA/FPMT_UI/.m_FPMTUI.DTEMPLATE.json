@@ -1,0 +1,86 @@
+[
+   {
+      "objectGuid": "2bQ2Y6rRv4xdiOjkFHLtwt",
+      "objectName": "m_FPMTUI",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Z_YvonneS/FPMT_UI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "Use FPMT UI file and send only UI column to AFRS",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "13H7cIs7YMQlOmCqhzglQY",
+            "2z62ZYTqTKXiWFCAZ97ZAS"
+         ],
+         "repoInfo": {
+            "repoHandle": "010YZQ1700000000003Y"
+         }
+      }
+   },
+   {
+      "objectGuid": "13H7cIs7YMQlOmCqhzglQY",
+      "objectName": "FPMTUI_Target",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "FPMT UI file",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000002D"
+         }
+      }
+   },
+   {
+      "objectGuid": "2z62ZYTqTKXiWFCAZ97ZAS",
+      "objectName": "FPMTUI_Source",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "FPMT UI file",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B000000000020"
+         }
+      }
+   }
+]

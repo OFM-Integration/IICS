@@ -1,0 +1,89 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>eAzu2JQhtGci3zy-gt-914030-2020-07-08T18:52:33.065Z::svc.xml</types1:EntryId>
+      <types1:Name>sc_FPMTUniqueIdentifiers-1</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Connect Unique Identifier service</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>saleh.aal@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-07-08T18:52:33Z</types1:CreationDate>
+      <types1:ModifiedBy>OFM_Service_DEV</types1:ModifiedBy>
+      <types1:ModificationDate>2020-08-24T17:52:24Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OFM_Service_DEV</types1:PublishedBy>
+      <types1:PublicationDate>2020-08-24T17:52:40Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/sc_FPMTUniqueIdentifiers_1/sc_FPMTUniqueIdentifiers_1_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="sc_FPMTUniqueIdentifiers"
+                            label=""
+                            name="sc_FPMTUniqueIdentifiers-1"
+                            uuid="343a87cc-00d8-4e93-af77-96ccf6c76fcc">
+            <description>Connect Unique Identifier service</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="UniqueIdentifier "
+                       maxRedirects="100"
+                       name="UniqueIdentifier "
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Service Connection for Unique Identifier </description>
+                  <input>
+                     <parameter name="Date"
+                                nogen="true"
+                                required="false"
+                                testWith="03-31-2020"
+                                type="string"/>
+                     <parameter name="Cookie"
+                                nogen="true"
+                                required="false"
+                                testWith=".ASPXAUTH20A314F8-CA12-4AF2-9472-4AC545F0CF2B=1C2BCADBA1D3659CF5857B063B9F5FF58AC3F0AFEA529552F29861C417D251FB46A44A68E51B8529D17708A9028C9812771E9F9F958136759C685900BD7AD0919D13A2E839B5DF5A66DDD20D91A0AED08F2B6D58666E6EDF800B9E9939248E7EE610471BA60C83F354D7EABDB370E6CFAAF293F57779C8450347952053F30BFF8FAF500311D5B2861798993461352587414304E9B7BAF3DF3763D87B779A389495AC7B0E0536F6C363639040450E615A96CA1E2ACCE5F1EB254363C6D3A11693817C77CCA8C07C72AC827BE8B3572E8988B4A8C229548A9CC013EF4F3D3A5943E146C6AC476CF2D3F828ABF82DF3934D89CA04A215FF6DC016BC9B181E303905019BD785C72F341618E4EF4E0BF0DBAD;path=/;secure;HttpOnly"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://fpmtuat.gorpm.com/external/api/ext/AFRS/UniqueIdentifiers/?Date={$Date}"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="X-RKSecurityContext">51C6EA3A-7D3C-4A2F-8AC1-404F432F1EAF</header>
+                           <header name="Cookie">{$Cookie}</header>
+                           <header name="Content-Disposition">attachment; filename="UniqueIdentifiers.csv"</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field attachments="true"
+                            description=""
+                            name="GetUniqueIdentifiers"
+                            type="attachment"/>
+                     <field description=""
+                            entireResponse="true"
+                            name="UniqueIdentifiersResponse"
+                            type="string"/>
+                     <field description=""
+                            name="UniqueIdentifiersResponseCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>6QOQDxiuwZLiberZv2DrSC</types1:GUID>
+      <types1:DisplayName>sc_FPMTUniqueIdentifiers</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-08-31T18:17:16.274Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

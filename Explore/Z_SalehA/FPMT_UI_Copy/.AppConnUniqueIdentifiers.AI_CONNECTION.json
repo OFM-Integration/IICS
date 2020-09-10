@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "9QRqcCN7ewNftaYiGxQN0l",
+      "objectName": "AppConnUniqueIdentifiers",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Z_YvonneS/FPMT_UI_Copy",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "App Connection to get Unique Identifiers attachment",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "fnR9ddDSm41jQmJ971WuyF"
+         ],
+         "repoInfo": {
+            "repoHandle": "pG3jFIMeINciZBp-gt-31712650-2020-09-03T20:55:01.425Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "fnR9ddDSm41jQmJ971WuyF",
+      "objectName": "sc_FPMTUniqueIdentifiers",
+      "objectType": "AI_SERVICE_CONNECTOR",
+      "path": "/Explore/Z_YvonneS/FPMT_UI_Copy",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "Connect Unique Identifier service",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "hujATO9pH8sVYx8-gt-31340368-2020-09-03T20:55:01.011Z::svc.xml"
+         }
+      }
+   }
+]
