@@ -1,0 +1,76 @@
+[
+   {
+      "objectGuid": "0b4THPy6wVZgCUqSsLp12D",
+      "objectName": "mi_OFMAFRS_SFT_to_SecureAgent",
+      "objectType": "MI_TASK",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "moves files from AFRS SFT folder (INBOUND) and moves to SrcFiles\\FileListener_OFMAFRS_sft",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "f8buLmaSQGhcqwJQ3gXnWI",
+            "6dKHc1uY0vOk9iOoP3L84v"
+         ],
+         "repoInfo": {
+            "repoHandle": "35368"
+         }
+      }
+   },
+   {
+      "objectGuid": "f8buLmaSQGhcqwJQ3gXnWI",
+      "objectName": "fl_OFMAFRS_INTG105",
+      "objectType": "MI_FILE_LISTENER",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "listens to INBOUND folder on the AFRS folder structure",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "13441"
+         }
+      }
+   },
+   {
+      "objectGuid": "6dKHc1uY0vOk9iOoP3L84v",
+      "objectName": "SecureAgent",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ25000000000003"
+         }
+      }
+   }
+]

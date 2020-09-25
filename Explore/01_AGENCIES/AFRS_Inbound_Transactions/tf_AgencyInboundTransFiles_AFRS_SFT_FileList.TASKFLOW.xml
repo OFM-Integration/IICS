@@ -1,0 +1,312 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>EOvlp6oIuQaaabc-gt-22583885-2020-06-22T15:42:39.486Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_AgencyInboundTransFiles_AFRS_SFT_FileList</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description>Processes list of files found by the listener.  If more files are found during this time and placed in the source location, it will fail because the task can only run one at a time (not concurrently)
+https://www.youtube.com/watch?v=2GCAklmrB7c</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:CreatedBy>
+      <types1:CreationDate>2020-06-22T15:42:39Z</types1:CreationDate>
+      <types1:ModifiedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:ModifiedBy>
+      <types1:ModificationDate>2020-09-03T17:35:37Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:PublishedBy>
+      <types1:PublicationDate>2020-09-03T17:35:45Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_AgencyInboundTransFiles_AFRS_SFT_FileList/tf_AgencyInboundTransFiles_AFRS_SFT_FileList.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_AgencyInboundTransFiles_AFRS_SFT_FileList"
+                   name="tf_AgencyInboundTransFiles_AFRS_SFT_FileList"
+                   overrideAPIName="true">
+            <appliesTo/>
+            <description>Processes list of files found by the listener.  If more files are found during this time and placed in the source location, it will fail because the task can only run one at a time (not concurrently)
+https://www.youtube.com/watch?v=2GCAklmrB7c</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="fl_SrcFiles_FileListener_OFMAFRS_sft"
+                          type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">fmx2NYo6SWYeqsZ9JNRu2N</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="tempTargetFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempSourceFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempValidFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CountArrivedFiles" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CcurrentCountArrivedFiles" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="RemainingCountArrivedFiles" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="dt_AFRS_Inbound_Trans_File" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-AgencyInboundTrans</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <event eventSource="fileListenerTask:fl_SrcFiles_FileListener_OFMAFRS_sft"/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kbqrta2i" targetId="kbqrta2h"/>
+               </start>
+               <assignment id="kbqrta2h">
+                  <title>asn_SetFileListCounts</title>
+                  <operation source="formula" to="temp.CountArrivedFiles">
+                     <expression language="XQuery">list:count($input.fl_SrcFiles_FileListener_OFMAFRS_sft[1]/arrivedFiles)</expression>
+                  </operation>
+                  <operation source="constant" to="temp.CcurrentCountArrivedFiles">0</operation>
+                  <operation source="formula" to="temp.RemainingCountArrivedFiles">
+                     <expression language="XQuery">$temp.CountArrivedFiles - $temp.CcurrentCountArrivedFiles </expression>
+                  </operation>
+                  <link id="kbqrta5u" targetId="kbqrta03"/>
+               </assignment>
+               <container id="kbqrta03" type="exclusive">
+                  <title>dcn_MoreFiles</title>
+                  <flow id="kbqrta07">
+                     <assignment id="kbqrta5z">
+                        <title>asn_Variables</title>
+                        <operation source="formula" to="temp.tempTargetFileName">
+                           <expression language="XQuery">substring-before($input.fl_SrcFiles_FileListener_OFMAFRS_sft[1]/arrivedFiles[$temp.RemainingCountArrivedFiles]/name, '.')</expression>
+                        </operation>
+                        <operation source="formula"
+                                   to="temp.dt_AFRS_Inbound_Trans_File[1]/input[1]/target[1]/Target[1]/object">
+                           <expression language="XQuery">$input.fl_SrcFiles_FileListener_OFMAFRS_sft[1]/arrivedFiles[$temp.RemainingCountArrivedFiles]/name</expression>
+                        </operation>
+                        <operation source="formula" to="temp.tempSourceFileName">
+                           <expression language="XQuery">$input.fl_SrcFiles_FileListener_OFMAFRS_sft[1]/arrivedFiles[$temp.RemainingCountArrivedFiles]/name </expression>
+                        </operation>
+                        <link id="kbqrta60" targetId="kbqrta1e"/>
+                     </assignment>
+                     <container id="kbqrta1e" type="exclusive">
+                        <title>dcn_ValidFileName</title>
+                        <flow id="kbqrta1f">
+                           <eventContainer id="kbqrta6k">
+                              <service id="kbqrta1g">
+                                 <title>dt_AFRS_Inbound_Trans_File</title>
+                                 <serviceName>ICSExecuteDataTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                    <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                                    <parameter name="Task Name" source="constant" updatable="true">mt_AgencyInboundTrans</parameter>
+                                    <parameter name="GUID" source="constant" updatable="true">1i8sJR0hARYeoD79eMMAK5</parameter>
+                                    <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                    <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="mt-AgencyInboundTrans">temp.dt_AFRS_Inbound_Trans_File</operation>
+                                       <operation source="formula"
+                                                  to="mt-AgencyInboundTrans/input[1]/source[1]/Source[1]/object">
+                                          <expression language="XQuery">$input.fl_SrcFiles_FileListener_OFMAFRS_sft[1]/arrivedFiles[$temp.RemainingCountArrivedFiles]/name </expression>
+                                       </operation>
+                                       <operation source="formula"
+                                                  to="mt-AgencyInboundTrans/input[1]/target[1]/Target[1]/object">
+                                          <expression language="XQuery">$input.fl_SrcFiles_FileListener_OFMAFRS_sft[1]/arrivedFiles[$temp.RemainingCountArrivedFiles]/name </expression>
+                                       </operation>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput/>
+                              </service>
+                              <link id="kbqrta83" targetId="kbqrta82"/>
+                              <events>
+                                 <catch faultField="temp.dt_AFRS_Inbound_Trans_File/fault"
+                                        id="kbqrta6i"
+                                        interrupting="true"
+                                        name="error">
+                                    <suspend/>
+                                 </catch>
+                                 <catch faultField="temp.dt_AFRS_Inbound_Trans_File/fault"
+                                        id="kbqrta6j"
+                                        interrupting="true"
+                                        name="warning"/>
+                              </events>
+                           </eventContainer>
+                           <assignment id="kbqrta82">
+                              <title>asn_UpdateFileCounts</title>
+                              <operation source="formula" to="temp.CcurrentCountArrivedFiles">
+                                 <expression language="XQuery">$temp.CcurrentCountArrivedFiles + 1</expression>
+                              </operation>
+                              <operation source="formula" to="temp.RemainingCountArrivedFiles">
+                                 <expression language="XQuery">$temp.CountArrivedFiles - $temp.CcurrentCountArrivedFiles </expression>
+                              </operation>
+                              <link id="kbqrta84" targetId="kbqrta1z"/>
+                           </assignment>
+                           <jumpTo id="kbqrta1z">
+                              <link id="kbqrta20" targetId="kbqrta03"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="kbqrta1h">
+                           <service id="kbqrta1i">
+                              <title>Error Email - Invalid File</title>
+                              <serviceName>emailNotificationService</serviceName>
+                              <serviceGUID/>
+                              <serviceInput>
+                                 <parameter name="Email To" source="constant">kimberly.sullivan@ofm.wa.gov; OFMdlITSReleaseRequest@ofm.wa.gov</parameter>
+                                 <parameter name="Email Cc" source="constant"/>
+                                 <parameter name="Email Subject" source="constant">Error - Invalid Agency Inbound Transactions File</parameter>
+                                 <parameter name="Email Content Type" source="constant">html</parameter>
+                                 <parameter name="Email Body" source="constant">&lt;p&gt;{$temp.tempSourceFileName} was placed on the OFMAFRS-INTG105 SFT (INBOUND folder). Please review and investigate the file.&amp;nbsp; It is an invalid file for processing as its name does not end in 'AF105' followed by an appended date/timestamp.&lt;/p&gt;</parameter>
+                              </serviceInput>
+                              <serviceOutput/>
+                           </service>
+                           <link id="kbqrta1m" targetId="kbqrta1e" type="containerLink"/>
+                        </flow>
+                        <link id="kbqrta1j" targetId="kbqrta1f" type="containerLink">
+                           <condition source="formula">
+                              <function name="contains">
+                                 <arg name="left">{$temp.tempSourceFileName}</arg>
+                                 <arg name="right">AF105.D</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kbqrta1k" targetId="kbqrta1h" type="containerLink"/>
+                     </container>
+                     <link id="kbqrta08" targetId="kbqrta03" type="containerLink"/>
+                  </flow>
+                  <flow id="kbqrta0a">
+                     <link id="kbqrta0b" targetId="kbqrta03" type="containerLink"/>
+                  </flow>
+                  <link id="kbqrta06" targetId="kbqrta07" type="containerLink">
+                     <condition source="formula">
+                        <function name="not-equals">
+                           <arg name="left">{$temp.RemainingCountArrivedFiles}</arg>
+                           <arg name="right">{0}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="kbqrta09" targetId="kbqrta0a" type="containerLink"/>
+                  <link id="kbqrta1d" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-AgencyInboundTrans"
+                              isByCopy="true"
+                              name="mt-AgencyInboundTrans">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895">
+                  <description>This process object represents a taskflow specific file task field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Arrived Files" name="arrivedFiles" type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-arrivedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field label="Update Files" name="updatedFiles" type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-updatedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field label="Deleted Files" name="deletedFiles" type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-deletedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-arrivedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-arrivedFiles">
+                  <description>This process object represents a arrivedFiles structure of the file task field.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path" name="path" type="string"/>
+                     <field label="Name" name="name" type="string"/>
+                     <field label="Size" name="size" type="string"/>
+                     <field label="Last Modified" name="lastModified" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-updatedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-updatedFiles">
+                  <description>This process object represents a updatedFiles structure of the file task field.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path" name="path" type="string"/>
+                     <field label="Name" name="name" type="string"/>
+                     <field label="Size" name="size" type="string"/>
+                     <field label="Last Modified" name="lastModified" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-deletedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-deletedFiles">
+                  <description>This process object represents file listener task deletedFiles structure.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path" name="path" type="string"/>
+                     <field label="Name" name="name" type="string"/>
+                     <field label="Size" name="size" type="string"/>
+                     <field label="Last Modified" name="lastModified" type="string"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>5Mt8Mt5QBM7cdjWK9AhwuE</types1:GUID>
+      <types1:DisplayName>tf_AgencyInboundTransFiles_AFRS_SFT_FileList</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-09-25T18:25:41.803Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

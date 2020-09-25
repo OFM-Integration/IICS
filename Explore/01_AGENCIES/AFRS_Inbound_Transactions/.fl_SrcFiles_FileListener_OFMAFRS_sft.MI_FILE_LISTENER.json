@@ -1,0 +1,53 @@
+[
+   {
+      "objectGuid": "fmx2NYo6SWYeqsZ9JNRu2N",
+      "objectName": "fl_SrcFiles_FileListener_OFMAFRS_sft",
+      "objectType": "MI_FILE_LISTENER",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "listens to SrcFiles\\FileListener_OFMAFRS_sft folder.  This contains files moved from the AFRS SFT folder structure via mass ingestion",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "6dKHc1uY0vOk9iOoP3L84v"
+         ],
+         "repoInfo": {
+            "repoHandle": "13453"
+         }
+      }
+   },
+   {
+      "objectGuid": "6dKHc1uY0vOk9iOoP3L84v",
+      "objectName": "SecureAgent",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ25000000000003"
+         }
+      }
+   }
+]

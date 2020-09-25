@@ -1,0 +1,170 @@
+[
+   {
+      "objectGuid": "1i8sJR0hARYeoD79eMMAK5",
+      "objectName": "mt_AgencyInboundTrans",
+      "objectType": "MTT",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "6dKHc1uY0vOk9iOoP3L84v",
+            "61xubfulSqsids5wSODYol",
+            "9PBBF83RnxbbTYxJ6trygB",
+            "9NcMtsv8hGdbCESxIBQMYC",
+            "jRR7p2sBeGabZYz1sCzSOP"
+         ],
+         "repoInfo": {
+            "repoHandle": "010YZQ0Z000000000035"
+         }
+      }
+   },
+   {
+      "objectGuid": "6dKHc1uY0vOk9iOoP3L84v",
+      "objectName": "SecureAgent",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ25000000000003"
+         }
+      }
+   },
+   {
+      "objectGuid": "61xubfulSqsids5wSODYol",
+      "objectName": "m_AgencyInboundTransactions",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "takes files that are found on in SrcFiles/FileListener_OFMAFRS_sft and processes, transforming key if necessary.  Source and Target name are parameterized.",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ1700000000003S"
+         }
+      }
+   },
+   {
+      "objectGuid": "9PBBF83RnxbbTYxJ6trygB",
+      "objectName": "fw_950_key_then_record",
+      "objectType": "FWCONFIG",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "layout that chunks the key and then the record, no more granularity",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ2900000000000D"
+         }
+      }
+   },
+   {
+      "objectGuid": "9NcMtsv8hGdbCESxIBQMYC",
+      "objectName": "flatFile_Source_FileListener_OFMAFRS_sft",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B000000000029"
+         }
+      }
+   },
+   {
+      "objectGuid": "jRR7p2sBeGabZYz1sCzSOP",
+      "objectName": "flatFile_Target_OFMAFRS_sft",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000002A"
+         }
+      }
+   }
+]

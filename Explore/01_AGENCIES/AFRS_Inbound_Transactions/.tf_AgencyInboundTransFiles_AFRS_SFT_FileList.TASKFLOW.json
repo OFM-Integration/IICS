@@ -1,0 +1,76 @@
+[
+   {
+      "objectGuid": "5Mt8Mt5QBM7cdjWK9AhwuE",
+      "objectName": "tf_AgencyInboundTransFiles_AFRS_SFT_FileList",
+      "objectType": "TASKFLOW",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Processes list of files found by the listener.  If more files are found during this time and placed in the source location, it will fail because the task can only run one at a time (not concurrently)\nhttps://www.youtube.com/watch?v=2GCAklmrB7c",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "fmx2NYo6SWYeqsZ9JNRu2N",
+            "1i8sJR0hARYeoD79eMMAK5"
+         ],
+         "repoInfo": {
+            "repoHandle": "EOvlp6oIuQaaabc-gt-22583885-2020-06-22T15:42:39.486Z::tf.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "fmx2NYo6SWYeqsZ9JNRu2N",
+      "objectName": "fl_SrcFiles_FileListener_OFMAFRS_sft",
+      "objectType": "MI_FILE_LISTENER",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "listens to SrcFiles\\FileListener_OFMAFRS_sft folder.  This contains files moved from the AFRS SFT folder structure via mass ingestion",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "13453"
+         }
+      }
+   },
+   {
+      "objectGuid": "1i8sJR0hARYeoD79eMMAK5",
+      "objectName": "mt_AgencyInboundTrans",
+      "objectType": "MTT",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0Z000000000035"
+         }
+      }
+   }
+]

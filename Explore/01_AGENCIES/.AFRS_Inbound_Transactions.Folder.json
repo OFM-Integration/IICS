@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "7BXGXrcLhCQbWGFqLe6ZqS",
+      "objectName": "AFRS_Inbound_Transactions",
+      "objectType": "Folder",
+      "path": "/Explore/01_AGENCIES",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "processes files from Agencies containing AFRS transaction data.  Need to sweep SFT location for files, put data into correct (new) key, if needed, call a sproc to build out the 950 and give new file on SFT for AFRS to process.",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]
