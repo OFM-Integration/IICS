@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "0mFvYaV0ghXkQ8fk3Z9wSG",
+    "name" : "Hello World",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Hello World CAI Process",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

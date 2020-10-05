@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "avvC77oRchIlzt5ui3X0eQ",
+    "name" : "Z_JohnD",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Sandbox Development",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "8dG7EqzOQUueQBwoxgSMYT",
+    "name" : "Hello World",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "dz9Iqy3eHRi92qB-gt-16034376-2020-09-16T16:42:02.406Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Accepts on HTTP request, sets a static payload on the message, and then returns a response",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

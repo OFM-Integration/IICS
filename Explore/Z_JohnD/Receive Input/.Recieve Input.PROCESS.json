@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "4eHW85UbV2ylfW3kHR42uz",
+    "name" : "Recieve Input",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Pci9zhFtybduaa-gt-43606291-2020-09-16T17:11:16.67Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Accepts on HTTP request with an input message and then returns the input message as the payload",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

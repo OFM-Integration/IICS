@@ -1,0 +1,104 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>pnMUvIw8jIw8jIw-gt-16055733-2020-09-16T17:38:48.249Z::svc.xml</types1:EntryId>
+      <types1:Name>Thomas_Bayer-1</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>john.dover@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-09-16T17:38:48Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>john.dover@ofm.wa.gov</types1:PublishedBy>
+      <types1:PublicationDate>2020-09-16T17:38:52Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/Thomas_Bayer_1/Thomas_Bayer_1_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="Thomas Bayer"
+                            label=""
+                            name="Thomas_Bayer-1"
+                            uuid="01e5a29a-3498-4173-a959-eadf57c029d1">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category="Thomas Bayer"
+                       failOnError="true"
+                       forSearch="false"
+                       label="getInvoice"
+                       maxRedirects="100"
+                       name="getInvoice"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="invoiceID" required="false" testWith="12" type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://www.thomas-bayer.com/sqlrest/INVOICE/{$invoiceID}/"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="ID" property="ID" type="string"/>
+                     <field description=""
+                            name="CUSTOMERID"
+                            property="CUSTOMERID"
+                            type="string"/>
+                     <field description="" name="TOTAL" property="TOTAL" type="string"/>
+                     <field description=""
+                            name="responseCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                     <field description="" name="responseCodeXQuery" type="string">
+                        <xquery>$ResponseStatusCode</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Thomas Bayer"
+                       failOnError="true"
+                       forSearch="false"
+                       label="getCustomer"
+                       maxRedirects="100"
+                       name="getCustomer"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="customerID" required="false" testWith="12" type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="http://www.thomas-bayer.com/sqlrest/CUSTOMER/{$customerID}/"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="ID" property="ID" type="string"/>
+                     <field description=""
+                            name="FIRSTNAME"
+                            property="FIRSTNAME"
+                            type="string"/>
+                     <field description=""
+                            name="LASTNAME"
+                            property="LASTNAME"
+                            type="string"/>
+                     <field description="" name="STREET" property="STREET" type="string"/>
+                     <field description="" name="CITY" property="CITY" type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>4gmHzc5dpkpfx6k6z2nFsN</types1:GUID>
+      <types1:DisplayName>Thomas Bayer</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-10-05T19:39:13.262Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

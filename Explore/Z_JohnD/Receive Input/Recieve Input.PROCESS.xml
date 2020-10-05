@@ -1,0 +1,68 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Pci9zhFtybduaa-gt-43606291-2020-09-16T17:11:16.67Z::pd.xml</types1:EntryId>
+      <types1:Name>Recieve_Input</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Accepts on HTTP request with an input message and then returns the input message as the payload</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>john.dover@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-09-16T17:11:17Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>john.dover@ofm.wa.gov</types1:PublishedBy>
+      <types1:PublicationDate>2020-09-16T17:11:22Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Recieve_Input/Recieve_Input.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Recieve Input"
+                  name="Recieve_Input"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description>Accepts on HTTP request with an input message and then returns the input message as the payload</description>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="input" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="message" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kf5mnhkq" targetId="kf5mnhkp"/>
+               </start>
+               <assignment id="kf5mnhkp">
+                  <title>Configure Output</title>
+                  <operation source="field" to="output.message">input.input</operation>
+                  <link id="kf5mnhkr" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>4eHW85UbV2ylfW3kHR42uz</types1:GUID>
+      <types1:DisplayName>Recieve Input</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-10-05T19:39:13.333Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
