@@ -12,8 +12,9 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>john.dover@ofm.wa.gov</types1:CreatedBy>
       <types1:CreationDate>2020-09-16T17:38:48Z</types1:CreationDate>
-      <types1:ModifiedBy/>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModifiedBy>john.dover@ofm.wa.gov</types1:ModifiedBy>
+      <types1:ModificationDate>2020-10-05T19:41:00Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>john.dover@ofm.wa.gov</types1:PublishedBy>
       <types1:PublicationDate>2020-09-16T17:38:52Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/Thomas_Bayer_1/Thomas_Bayer_1_svcDef.xml</types1:PublishedContributionId>
@@ -100,5 +101,5 @@
       <types1:GUID>4gmHzc5dpkpfx6k6z2nFsN</types1:GUID>
       <types1:DisplayName>Thomas Bayer</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-10-05T19:39:13.262Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-10-05T20:01:17.7Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
