@@ -13,7 +13,7 @@
       },
       "contextAttributes" : null,
       "additionalInfo" : {
-        "description" : "Accepts on HTTP request, sets a static payload on the message, and then returns a response",
+        "description" : "Accepts on HTTP request, sets a static payload on the message, and then returns a response.",
         "contentType" : "application/json; charset=utf-8",
         "documentState" : "VALID"
       }

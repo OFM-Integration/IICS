@@ -4,7 +4,7 @@
       <types1:EntryId>dz9Iqy3eHRi92qB-gt-16034376-2020-09-16T16:42:02.406Z::pd.xml</types1:EntryId>
       <types1:Name>Hello_World</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Accepts on HTTP request, sets a static payload on the message, and then returns a response</types1:Description>
+      <types1:Description>Accepts on HTTP request, sets a static payload on the message, and then returns a response.</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.anonymous</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,7 +13,7 @@
       <types1:CreatedBy>john.dover@ofm.wa.gov</types1:CreatedBy>
       <types1:CreationDate>2020-09-16T16:42:02Z</types1:CreationDate>
       <types1:ModifiedBy>john.dover@ofm.wa.gov</types1:ModifiedBy>
-      <types1:ModificationDate>2020-10-05T20:00:27Z</types1:ModificationDate>
+      <types1:ModificationDate>2020-10-06T16:22:39Z</types1:ModificationDate>
       <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>john.dover@ofm.wa.gov</types1:PublishedBy>
       <types1:PublicationDate>2020-09-16T16:42:18Z</types1:PublicationDate>
@@ -26,7 +26,7 @@
                   name="Hello_World"
                   overrideAPIName="false">
             <appliesTo/>
-            <description>Accepts on HTTP request, sets a static payload on the message, and then returns a response</description>
+            <description>Accepts on HTTP request, sets a static payload on the message, and then returns a response.</description>
             <tags>.anonymous</tags>
             <generator>Informatica Process Designer 11</generator>
             <output>
@@ -58,5 +58,5 @@
       <types1:GUID>8dG7EqzOQUueQBwoxgSMYT</types1:GUID>
       <types1:DisplayName>Hello World</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-10-05T20:01:17.712Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-10-07T19:44:45.047Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
