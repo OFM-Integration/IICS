@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "avvC77oRchIlzt5ui3X0eQ",
+      "objectName": "Z_JohnD",
+      "objectType": "Project",
+      "path": "/Explore",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Sandbox Development",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

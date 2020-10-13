@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "0mFvYaV0ghXkQ8fk3Z9wSG",
+      "objectName": "Hello World",
+      "objectType": "Folder",
+      "path": "/Explore/Z_JohnD",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Hello World CAI Process",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]
