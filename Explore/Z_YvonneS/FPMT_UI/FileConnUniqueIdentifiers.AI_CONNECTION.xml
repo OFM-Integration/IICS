@@ -13,10 +13,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>saleh.aal@ofm.wa.gov</types1:CreatedBy>
       <types1:CreationDate>2020-07-08T18:52:30Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>OFM_Service_DEV</types1:ModifiedBy>
+      <types1:ModificationDate>2020-07-14T18:39:29Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>saleh.aal@ofm.wa.gov</types1:PublishedBy>
-      <types1:PublicationDate>2020-07-08T23:54:57Z</types1:PublicationDate>
+      <types1:PublishedBy>OFM_Service_DEV</types1:PublishedBy>
+      <types1:PublicationDate>2020-07-14T18:40:40Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/FileConnUniqueIdentifiers-1/FileConnUniqueIdentifiers-1.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -61,5 +62,5 @@
       <types1:GUID>4Eh0mBipqwdh1Kdo2o9W2b</types1:GUID>
       <types1:DisplayName>FileConnUniqueIdentifiers</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-07-13T23:31:27.968Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-10-14T17:03:10.044Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

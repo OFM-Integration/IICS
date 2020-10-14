@@ -6,7 +6,7 @@
       "path": "/Explore/Z_YvonneS/FPMT_UI",
       "metadata": {
          "additionalInfo": {
-            "contentType": null,
+            "contentType": "JSON",
             "description": "Load UI to EIStaging ",
             "documentState": "VALID"
          },
@@ -65,7 +65,7 @@
       "path": "/Explore/Z_YvonneS/FPMT_UI",
       "metadata": {
          "additionalInfo": {
-            "contentType": null,
+            "contentType": "JSON",
             "description": "Load FMPT UI to EIStaging ",
             "documentState": "VALID"
          },
