@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "0BzGJVZL5j2bLodJl2DIMV",
+      "objectName": "Z_Deployment_Test",
+      "objectType": "Project",
+      "path": "/Explore",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Using to test export, import, deployment",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

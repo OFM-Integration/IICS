@@ -1,0 +1,142 @@
+[
+   {
+      "objectGuid": "44nuGBLlMKEj3rvAygpe4w",
+      "objectName": "mt_fastrack",
+      "objectType": "MTT",
+      "path": "/Explore/Z_Deployment_Test",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "6dKHc1uY0vOk9iOoP3L84v",
+            "ieui93XEROZhbeCBwum6KM",
+            "4heilKnOwRcjjhl9s3Uvih",
+            "3eEZtLT82QPg5QgOPnbCcf"
+         ],
+         "repoInfo": {
+            "repoHandle": "010YZQ0Z00000000005V"
+         }
+      }
+   },
+   {
+      "objectGuid": "6dKHc1uY0vOk9iOoP3L84v",
+      "objectName": "SecureAgent",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ25000000000003"
+         }
+      }
+   },
+   {
+      "objectGuid": "ieui93XEROZhbeCBwum6KM",
+      "objectName": "fastrack_prod",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B000000000009"
+         }
+      }
+   },
+   {
+      "objectGuid": "4heilKnOwRcjjhl9s3Uvih",
+      "objectName": "fasttrack_test",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Z_Deployment_Test",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ1700000000004J"
+         }
+      }
+   },
+   {
+      "objectGuid": "3eEZtLT82QPg5QgOPnbCcf",
+      "objectName": "SFT_Deployment_Test",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "Test",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000002Q"
+         }
+      }
+   }
+]
