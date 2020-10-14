@@ -1,0 +1,761 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>iUQbgdwUiQLnzYL-gt-1270772-2020-02-27T22:44:52.132Z::gt.xml</types1:EntryId>
+      <types1:Name>Update_Lead_Status</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Update a lead's status using this guide.</types1:Description>
+      <types1:AppliesTo>Salesforce:Lead</types1:AppliesTo>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:CreatedBy>
+      <types1:CreationDate>2020-02-27T22:44:52Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         displayName="Update Lead Status"
+                         doneOnEndStep="true"
+                         name="Update_Lead_Status">
+            <description>Update a lead's status using this guide.</description>
+            <appliesTo>Salesforce:Lead</appliesTo>
+            <generator>ActiveVOS Screenflow Editor 1.3</generator>
+            <possibleOutcomes>
+               <outcome id="outcome_1300808491669">Assigned</outcome>
+               <outcome id="outcome_1300808491670">Nurture</outcome>
+               <outcome id="outcome_1300808491671">Closed - Not Converted</outcome>
+               <outcome id="outcome_1300808491672">Closed - Unreachable</outcome>
+               <outcome id="outcome_1300808892922">Status Not Updated</outcome>
+            </possibleOutcomes>
+            <viewerTemplate/>
+            <flow>
+               <startScreen id="aesf-1298915447744">
+                  <title>Update Status</title>
+                  <body contentType="text/html">&lt;div&gt;This guide updates a lead's status.
+				&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Possible
+				Outcomes:&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Update Status to
+				Assigned&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;Update Status to
+				Nurture (not a good fit at this
+				time)&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;Close the
+				Lead (no interest or
+				unreachable)&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;table style="width:
+				100%;"
+				border="1"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Object
+				ID:&lt;/b&gt; &lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;input name="Id"
+				required="required" value="Id*"&gt;
+				&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Object
+				Type:&lt;/b&gt; &lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;input
+				name="object type" required="required"
+				value="object type*"
+				size="20"&gt;
+				&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt; </body>
+                  <actions>
+                     <action id="aesf-1298915447744_to_aesf-1298915447749"
+                             targetScreen="aesf-1298915447749">Continue</action>
+                  </actions>
+               </startScreen>
+               <screen id="aesf-1298915447749">
+                  <title>Did You Speak With The Prospect?</title>
+                  <body contentType="text/html">&lt;div&gt;&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title="" alt="" style="float: right;"&gt;Have you spoken with or
+				received response email from &lt;input name="Name"
+				readonly="readonly" style="-moz-appearance: none; background-color:
+				lightgrey; border: none;" value="Full Name"&gt;
+				?&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Tip&lt;/b&gt;&lt;/div&gt;&lt;blockquote&gt;You
+				can close the lead now by selecting the&lt;b&gt; Invalid
+				Contact
+				Info&lt;/b&gt; button if:&lt;br&gt;&lt;ul&gt;&lt;li&gt;The prospect
+				no longer works at the organization&lt;/li&gt;&lt;li&gt;The
+				answering message at the phone
+				number provided is for a different
+				person&lt;/li&gt;&lt;li&gt;Email you've sent was returned as
+				'undeliverable'&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1298915447749_to_aesf-1298915447750"
+                             targetScreen="aesf-1298915447750">Yes</action>
+                     <action id="aesf-1298915447749_to_aesf-1298915447751"
+                             targetScreen="aesf-1298915447751">No</action>
+                     <action id="aesf-1298915447749_to_aesf-1298915447765"
+                             targetScreen="aesf-1298915447765">Invalid Contact Info</action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="Name" readonly="true" required="false" type="string">
+                        <options>
+                           <option name="length">121</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="aesf-1298915447750">
+                  <title>What Was The Result?</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float: right;"&gt;&lt;ul&gt;&lt;li&gt;What was
+				the
+				result of your conversation with the
+				prospect?&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;What are the next
+				steps?&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1298915447750_to_aesf-1298915447760"
+                             targetScreen="aesf-1298915447760">Qualified - Assign to Sales Rep</action>
+                     <action id="aesf-1298915447750_to_aesf-1298915447761"
+                             targetScreen="aesf-1298915447761">Nurture</action>
+                     <action id="aesf-1298915447750_to_aesf-1298915447762"
+                             targetScreen="aesf-1298915447762">Close - No Interest</action>
+                     <action id="aesf-1298915447750_to_aesf-1315400017774"
+                             targetScreen="aesf-1315400017774">Other</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1298915447760">
+                  <title>Assign The Lead</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/user_list.png"
+				title=""
+				alt="" style="float: right;"&gt;&lt;br&gt;&lt;br&gt;This
+				lead has
+				been qualified and should be assigned
+				to a Sales
+				Rep.&lt;br&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;To
+				Do&lt;/b&gt;&lt;/div&gt;&lt;blockquote&gt;&lt;div&gt;Assign a Sales
+				Rep as the
+				owner of this
+				Lead&lt;br&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;&lt;b&gt;Note&lt;br&gt;&lt;/b&gt;&lt;blockquote&gt;Pressing
+				Continue will change the lead's status
+				to
+				"Assigned"&lt;br&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/div&gt; </body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1298915447760_to_aesf-1298956887927"
+                             targetScreen="aesf-1298956887927">Continue</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1298915447751">
+                  <title>Send 'First Contact Attempt' email now?</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title="" alt="" style="float: right;"&gt;&lt;/p&gt;&lt;p&gt;This is
+				the first attempt at contacting this
+				prospect&lt;/p&gt;&lt;div&gt;&lt;b&gt;To
+				Do&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Leave voice
+				message&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;Try
+				contacting via
+				email&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1298915447751_to_aesf-1316614357360"
+                             targetScreen="aesf-1316614357360">Send email now</action>
+                     <action id="aesf-1298915447751_to_aesf-1301834767328"
+                             targetScreen="aesf-1301834767328">Later</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767329">
+                  <title>First attempt completed</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float:
+				right;"&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;By now
+				you should
+				have&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;li&gt;Left a
+				voice message&lt;br&gt;&lt;/li&gt;&lt;li&gt;Sent an
+				email&lt;br&gt;&lt;/li&gt;&lt;/ol&gt;&lt;br&gt;&lt;b&gt;Next
+				step&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;blockquote&gt;Resume this
+				guide when your reminder comes
+				due&lt;br&gt;&lt;/blockquote&gt; </body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767329_to_aesf-1301834767330"
+                             targetScreen="aesf-1301834767330">Resume</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767330">
+                  <title>Did the prospect respond to your first voice or email message?
+			</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float: right;"&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767330_to_aesf-1301834767331"
+                             targetScreen="aesf-1301834767331">Yes - Spoke With Customer</action>
+                     <action id="aesf-1301834767330_to_aesf-1301834767332"
+                             targetScreen="aesf-1301834767332">No Response</action>
+                     <action id="aesf-1301834767330_to_aesf-1301834767348"
+                             targetScreen="aesf-1301834767348">Yes - Responded To Email Message</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767348">
+                  <title>Do you have enough info to complete lead qualification?
+			</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float:
+				right;"&gt;&lt;br&gt;&lt;blockquote&gt;This
+				prospect has shown at
+				least a mild
+				interest by responding to your
+				email
+				message.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Although
+				you have
+				not spoken directly with the customer, you may have been
+				provided
+				with enough information to determine if this is a potential
+				opportunity or if this lead should be
+				closed.&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt; </body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767348_to_aesf-1301834767349"
+                             targetScreen="aesf-1301834767349">Yes</action>
+                     <action id="aesf-1301834767348_to_aesf-1301834767350"
+                             targetScreen="aesf-1301834767350">No</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767350">
+                  <title>Call or email the prospect a second time</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float: right;"&gt;&lt;b&gt;&lt;br&gt;What to
+				do&lt;/b&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Call the prospect
+				now&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Leave a voice message if you do
+				not
+				connect&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;Follow
+				up with a personalized email to the prospect with your contact info,
+				and suggest a date and time when
+				you plan to call
+				back&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt; </body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767350_to_aesf-1301834767351"
+                             targetScreen="aesf-1301834767351">Done</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767394">
+                  <title>Second attempt completed</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float:
+				right;"&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;By now
+				you should
+				have&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;li&gt;Left at
+				least two voice messages, and&lt;br&gt;&lt;/li&gt;&lt;li&gt;Sent at
+				least two
+				emails&lt;br&gt;&lt;/li&gt;&lt;/ol&gt;&lt;br&gt;&lt;b&gt;Next
+				step&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;blockquote&gt;Resume this
+				guide when your reminder comes
+				due&lt;br&gt;&lt;/blockquote&gt; </body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767394_to_aesf-1301834767352"
+                             targetScreen="aesf-1301834767352">Resume</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767352">
+                  <title>Do you have enough info to complete qualification after your
+				second attempt?</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float:
+				right;"&gt;&lt;br&gt;&lt;blockquote&gt;Did the
+				prospect respond with
+				enough
+				information to determine if this is a
+				potential
+				opportunity?&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;If
+				not, leave
+				a final voice
+				message...&lt;/div&gt;&lt;/blockquote&gt; </body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767352_to_aesf-1301834767353"
+                             targetScreen="aesf-1301834767353">Yes</action>
+                     <action id="aesf-1301834767352_to_aesf-1301834767397"
+                             targetScreen="aesf-1301834767397">No</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767397">
+                  <title>Have you heard back from this prospect?</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float:
+				right;"&gt;&lt;blockquote&gt;&lt;br&gt;&lt;/blockquote&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767397_to_aesf-1301834767398"
+                             targetScreen="aesf-1301834767398">Yes</action>
+                     <action id="aesf-1301834767397_to_aesf-1301834767429"
+                             targetScreen="aesf-1301834767429">No</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767429">
+                  <title>Make your third call now</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float: right;"&gt;&lt;b&gt;&lt;br&gt;What to
+				do&lt;/b&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Call the prospect
+				now&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Leave a voice message if you do
+				not
+				connect&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;Follow
+				up with a personalized email to the prospect with your contact info,
+				and suggest a date and time when
+				you plan to call
+				back&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt; </body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767429_to_aesf-1301834767399"
+                             targetScreen="aesf-1301834767399">Done</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767417">
+                  <title>Third attempt completed</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float:
+				right;"&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;By now
+				you should
+				have&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;li&gt;Left at
+				least three voice messages, and&lt;br&gt;&lt;/li&gt;&lt;li&gt;Sent
+				at least three
+				emails&lt;br&gt;&lt;/li&gt;&lt;/ol&gt;&lt;br&gt;&lt;b&gt;Next
+				step&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;blockquote&gt;Resume this
+				guide when your reminder comes
+				due&lt;br&gt;&lt;/blockquote&gt; </body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767417_to_aesf-1301834767445"
+                             targetScreen="aesf-1301834767445">Resume</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767445">
+                  <title>Do you have enough info to complete qualification after your
+				third attempt?</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float:
+				right;"&gt;&lt;br&gt;&lt;blockquote&gt;Did the
+				prospect respond with
+				enough
+				information to determine if this is a
+				potential
+				opportunity?&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;If
+				not, leave
+				one final voice
+				message...&lt;/div&gt;&lt;/blockquote&gt; </body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767445_to_aesf-1301834767446"
+                             targetScreen="aesf-1301834767446">Yes</action>
+                     <action id="aesf-1301834767445_to_aesf-1301834767447"
+                             targetScreen="aesf-1301834767447">No</action>
+                  </actions>
+               </screen>
+               <screen id="aesf-1301834767447">
+                  <title>Can you turn this lead into a future opportunity?</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float: right;"&gt;&lt;blockquote&gt;Do you
+				have enough
+				information at this point to
+				determine if this could be a
+				real
+				opportunity?&lt;/blockquote&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action id="aesf-1301834767447_to_aesf-1301834767485"
+                             targetScreen="aesf-1301834767485">Yes</action>
+                     <action id="aesf-1301834767447_to_aesf-1301834767450"
+                             targetScreen="aesf-1301834767450">No - Close Lead</action>
+                  </actions>
+               </screen>
+               <service id="aesf-1298956887927">
+                  <title>Update Status to Assigned</title>
+                  <serviceName>Salesforce:sfUpdateFieldService</serviceName>
+                  <serviceInput>
+                     <parameter name="ObjectType" source="constant" updatable="false">Salesforce:Lead</parameter>
+                     <parameter name="Field Name" source="constant" updatable="false">Status</parameter>
+                     <parameter name="Field Value" source="constant" updatable="false">Assigned</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1298956887927_to_aesf-1298956887928"
+                             targetScreen="aesf-1298956887928">Continue</action>
+                  </actions>
+               </service>
+               <service id="aesf-1298915447761">
+                  <title>Nurture Lead</title>
+                  <serviceName>Salesforce:sfUpdateFieldService</serviceName>
+                  <serviceInput>
+                     <parameter name="ObjectType" source="constant" updatable="false">Salesforce:Lead</parameter>
+                     <parameter name="Field Name" source="constant" updatable="false">Status</parameter>
+                     <parameter name="Field Value" source="constant" updatable="false">Nuture</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1298915447761_to_aesf-1298956887929"
+                             targetScreen="aesf-1298956887929">Continue</action>
+                  </actions>
+               </service>
+               <service id="aesf-1298915447762">
+                  <title>Close - Not Converted</title>
+                  <serviceName>Salesforce:sfUpdateFieldService</serviceName>
+                  <serviceInput>
+                     <parameter name="ObjectType" source="constant" updatable="false">Salesforce:Lead</parameter>
+                     <parameter name="Field Name" source="constant" updatable="false">Status</parameter>
+                     <parameter name="Field Value" source="constant" updatable="false">Closed - Not Converted</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1298915447762_to_aesf-1298956887930"
+                             targetScreen="aesf-1298956887930">Continue</action>
+                  </actions>
+               </service>
+               <service id="aesf-1316614357360">
+                  <title>Send Tried-To-Reach-You email</title>
+                  <serviceName>Salesforce:sfSendFreeFormEmailService</serviceName>
+                  <serviceInput>
+                     <parameter name="Recipient Object" source="field" updatable="false">Id</parameter>
+                     <parameter name="Subject" source="constant" updatable="false">Tried to reach you</parameter>
+                     <parameter name="Body" source="constant" updatable="false">&lt;div&gt;&lt;div&gt;Hi
+					{!FirstName},&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Our
+					Product&lt;/i&gt; is the leader
+					in...&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Customers
+					of &lt;i&gt;our product&lt;/i&gt; are experiencing these
+					benefits:&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Better...&lt;br&gt;&lt;/li&gt;&lt;li&gt;Faster...&lt;br&gt;&lt;/li&gt;&lt;li&gt;More
+					Reliable...&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;Contact
+					&lt;i&gt;our company&lt;/i&gt; to learn more about &lt;i&gt;our
+					product&lt;/i&gt; and how to evaluate &lt;i&gt;our
+					product&lt;/i&gt; free for
+					30=days.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Regards,&lt;/div&gt;&lt;div&gt;&lt;i&gt;our
+					company&lt;/i&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1316614357360_to_aesf-1298915447756"
+                             targetScreen="aesf-1298915447756">Continue</action>
+                  </actions>
+               </service>
+               <service id="aesf-1301834767450">
+                  <title>Close Lead</title>
+                  <serviceName>Salesforce:sfUpdateFieldService</serviceName>
+                  <serviceInput>
+                     <parameter name="ObjectType" source="constant" updatable="false">Salesforce:Lead</parameter>
+                     <parameter name="Field Name" source="constant" updatable="false">Status</parameter>
+                     <parameter name="Field Value" source="constant" updatable="false">Closed</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1301834767450_to_aesf-1301834767452"
+                             targetScreen="aesf-1301834767452">Continue</action>
+                  </actions>
+               </service>
+               <service id="aesf-1298915447765">
+                  <title>Close The Lead</title>
+                  <serviceName>Salesforce:sfUpdateFieldService</serviceName>
+                  <serviceInput>
+                     <parameter name="ObjectType" source="constant" updatable="false">Salesforce:Lead</parameter>
+                     <parameter name="Field Name" source="constant" updatable="false">Status</parameter>
+                     <parameter name="Field Value" source="constant" updatable="false">Closed</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1298915447765_to_aesf-1298915447766"
+                             targetScreen="aesf-1298915447766">Continue</action>
+                  </actions>
+               </service>
+               <create id="aesf-1315400017774">
+                  <title>Log a Call</title>
+                  <entityName>Salesforce:Task</entityName>
+                  <createInput>
+                     <parameter id="Subject" name="Subject" source="constant" updatable="false">Call</parameter>
+                     <parameter id="Status" name="Status" source="constant" updatable="false">Completed</parameter>
+                     <parameter id="Priority"
+                                name="Priority"
+                                source="constant"
+                                updatable="false">Normal</parameter>
+                     <parameter id="OwnerId" name="OwnerId" source="formula" updatable="false">current_user
+					data( $hostContext/sf:arg[@name = "UserId"])</parameter>
+                     <parameter id="Description"
+                                name="Description"
+                                source="screen"
+                                updatable="false">screen.Description</parameter>
+                     <parameter xmlns:avosSf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                                name="WhoId"
+                                source="field">Id</parameter>
+                  </createInput>
+                  <screen id="aesf-1315400017774-servicescreen">
+                     <title>Log a Call</title>
+                     <body contentType="text/html">&lt;p&gt;Call description:&lt;br&gt;&lt;br&gt; &lt;input title="Double click on field to change field properties" type="text" name="screen.Description" value="Description"&gt; &lt;/p&gt;</body>
+                     <actionPrompt/>
+                     <actions/>
+                     <screenData skipIfRequiredFilled="false">
+                        <screenDataItem name="screen.Description"
+                                        readonly="false"
+                                        required="false"
+                                        type="textarea">
+                           <options>
+                              <option name="length">32000</option>
+                           </options>
+                        </screenDataItem>
+                     </screenData>
+                  </screen>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1315400017774_to_aesf-1298956887931"
+                             targetScreen="aesf-1298956887931">Continue</action>
+                  </actions>
+               </create>
+               <create id="aesf-1301834767328">
+                  <title>Create Reminder Task 1</title>
+                  <entityName>Salesforce:Task</entityName>
+                  <createInput>
+                     <parameter id="Subject" name="Subject" source="constant" updatable="false">First Contact Attempt Reminder</parameter>
+                     <parameter id="ActivityDate"
+                                name="ActivityDate"
+                                source="screen"
+                                updatable="false">screen.ActivityDate</parameter>
+                     <parameter id="Status" name="Status" source="constant" updatable="false">Not Started</parameter>
+                     <parameter id="Priority"
+                                name="Priority"
+                                source="constant"
+                                updatable="false">Normal</parameter>
+                     <parameter id="Description"
+                                name="Description"
+                                source="constant"
+                                updatable="false">First contact attempt with customer was unsuccessful. Reminder to follow up.</parameter>
+                     <parameter xmlns:avosSf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                                name="WhoId"
+                                source="field">Id</parameter>
+                  </createInput>
+                  <screen id="aesf-1301834767328-servicescreen">
+                     <title>Create Reminder Task 1</title>
+                     <body contentType="text/html">&lt;p&gt;Please enter the date for the reminder task:&lt;br&gt;&lt;br&gt; &lt;input title="Double click on field to change field properties" type="text" name="screen.ActivityDate" value="Due Date Only"&gt; &lt;/p&gt;</body>
+                     <actionPrompt/>
+                     <actions/>
+                     <screenData skipIfRequiredFilled="false">
+                        <screenDataItem name="screen.ActivityDate"
+                                        readonly="false"
+                                        required="false"
+                                        type="date"/>
+                     </screenData>
+                  </screen>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1301834767328_to_aesf-1301834767329"
+                             targetScreen="aesf-1301834767329">Continue</action>
+                  </actions>
+               </create>
+               <create id="aesf-1301834767351">
+                  <title>Create Reminder Task 2</title>
+                  <entityName>Salesforce:Task</entityName>
+                  <createInput>
+                     <parameter id="Subject" name="Subject" source="constant" updatable="false">Second Contact Attempt Reminder</parameter>
+                     <parameter id="ActivityDate"
+                                name="ActivityDate"
+                                source="screen"
+                                updatable="false">screen.ActivityDate</parameter>
+                     <parameter id="Status" name="Status" source="constant" updatable="false">Not Started</parameter>
+                     <parameter id="Priority"
+                                name="Priority"
+                                source="constant"
+                                updatable="false">Normal</parameter>
+                     <parameter id="Description"
+                                name="Description"
+                                source="constant"
+                                updatable="false">Second contact attempt with customer was unsuccessful. Reminder to follow up.</parameter>
+                     <parameter xmlns:avosSf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                                name="WhoId"
+                                source="field">Id</parameter>
+                  </createInput>
+                  <screen id="aesf-1301834767351-servicescreen">
+                     <title>Create Reminder Task 2</title>
+                     <body contentType="text/html">&lt;p&gt;Please enter the date for the reminder task:&lt;br&gt;&lt;br&gt; &lt;input title="Double click on field to change field properties" type="text" name="screen.ActivityDate" value="Due Date Only"&gt; &lt;br&gt;&lt;br&gt;&lt;/p&gt;</body>
+                     <actionPrompt/>
+                     <actions/>
+                     <screenData skipIfRequiredFilled="false">
+                        <screenDataItem name="screen.ActivityDate"
+                                        readonly="false"
+                                        required="false"
+                                        type="date"/>
+                     </screenData>
+                  </screen>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1301834767351_to_aesf-1301834767394"
+                             targetScreen="aesf-1301834767394">Continue</action>
+                  </actions>
+               </create>
+               <create id="aesf-1301834767399">
+                  <title>Create Reminder Task 3</title>
+                  <entityName>Salesforce:Task</entityName>
+                  <createInput>
+                     <parameter id="Subject" name="Subject" source="constant" updatable="false">Third Contact Attempt Reminder</parameter>
+                     <parameter id="ActivityDate"
+                                name="ActivityDate"
+                                source="screen"
+                                updatable="false">screen.ActivityDate</parameter>
+                     <parameter id="Status" name="Status" source="constant" updatable="false">Not Started</parameter>
+                     <parameter id="Priority"
+                                name="Priority"
+                                source="constant"
+                                updatable="false">Normal</parameter>
+                     <parameter id="Description"
+                                name="Description"
+                                source="constant"
+                                updatable="false">Third contact attempt with customer was unsuccessful. Reminder to follow up.</parameter>
+                     <parameter xmlns:avosSf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                                name="WhoId"
+                                source="field">Id</parameter>
+                  </createInput>
+                  <screen id="aesf-1301834767399-servicescreen">
+                     <title>Create Reminder Task 3</title>
+                     <body contentType="text/html">&lt;p&gt;Please enter the date for the reminder task:&lt;br&gt;&lt;br&gt; &lt;input title="Double click on field to change field properties" type="text" name="screen.ActivityDate" value="Due Date Only"&gt; &lt;/p&gt;</body>
+                     <actionPrompt/>
+                     <actions/>
+                     <screenData skipIfRequiredFilled="false">
+                        <screenDataItem name="screen.ActivityDate"
+                                        readonly="false"
+                                        required="false"
+                                        type="date"/>
+                     </screenData>
+                  </screen>
+                  <actions>
+                     <action alt=""
+                             id="aesf-1301834767399_to_aesf-1301834767417"
+                             targetScreen="aesf-1301834767417">Continue</action>
+                  </actions>
+               </create>
+               <endScreen id="aesf-1298956887928" outcomeId="outcome_1300808491669">
+                  <title>Lead Has Been Qualified and Assigned</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/assigned.png"
+				title=""
+				alt="" style="float: right;"&gt;&lt;blockquote&gt;The lead
+				status
+				has been updated to
+				"Assigned".&lt;/blockquote&gt;</body>
+               </endScreen>
+               <endScreen id="aesf-1298956887929" outcomeId="outcome_1300808491670">
+                  <title>Lead Status Set to Nurture</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/future_op.png"
+				title=""
+				alt="" style="float:
+				right;"&gt;&lt;br&gt;&lt;blockquote&gt;The lead
+				status has been set
+				to
+				Nurture&lt;/blockquote&gt;</body>
+               </endScreen>
+               <endScreen id="aesf-1298956887930" outcomeId="outcome_1300808491671">
+                  <title>Lead Status updated to "Closed - Not Converted"</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/closed.png"
+				title="" alt=""
+				style="float: right;"&gt;&lt;blockquote&gt;The lead
+				status was
+				updated to "Closed - Not
+				Converted"&lt;/blockquote&gt; </body>
+               </endScreen>
+               <endScreen id="aesf-1298956887931" outcomeId="outcome_1300808892922">
+                  <title>Lead Status has NOT been updated</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/guide.png"
+				title="" alt=""
+				style="float: right;"&gt;&lt;br&gt;The lead status
+				has
+				&lt;b&gt;NOT&lt;/b&gt; been updated</body>
+               </endScreen>
+               <endScreen id="aesf-1301834767485" outcomeId="outcome_1300808892922">
+                  <title>Done - Reminder Added</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png"
+				title=""
+				alt="" style="float: right;"&gt;&lt;blockquote&gt;Do you
+				have enough
+				information at this point to
+				determine if this could be a
+				real
+				opportunity?&lt;/blockquote&gt;</body>
+               </endScreen>
+               <endScreen id="aesf-1301834767452" outcomeId="outcome_1300808491672">
+                  <title>The lead status has been updated to "Closed - Unreachable"
+			</title>
+                  <body contentType="text/html">The lead status has been updated to "Closed -
+				Unreachable"</body>
+               </endScreen>
+               <endScreen id="aesf-1298915447766" outcomeId="outcome_1300808491672">
+                  <title>Done - Closed - Invalid</title>
+                  <body contentType="text/html">&lt;img
+				src="/activevos-central/avccatalog/project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/unsatisfied.png"
+				title=""
+				alt="" style="float: right;"&gt;&lt;blockquote&gt;The lead
+				status
+				was &lt;b&gt;Closed -
+				Invalid&lt;/b&gt;&lt;/blockquote&gt; </body>
+               </endScreen>
+               <jumpTo id="aesf-1298915447756" targetTitle="Create Reminder Task 1">
+                  <actions>
+                     <action id="aesf-1298915447756_to_aesf-1301834767328"
+                             targetScreen="aesf-1301834767328">Continue</action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="aesf-1301834767331" targetTitle="What Was The Result?">
+                  <actions>
+                     <action id="aesf-1301834767331_to_aesf-1298915447750"
+                             targetScreen="aesf-1298915447750">Continue</action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="aesf-1301834767332"
+                       targetTitle="Call or email the prospect a second time">
+                  <actions>
+                     <action id="aesf-1301834767332_to_aesf-1301834767350"
+                             targetScreen="aesf-1301834767350">Continue</action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="aesf-1301834767349" targetTitle="What Was The Result?">
+                  <actions>
+                     <action id="aesf-1301834767349_to_aesf-1298915447750"
+                             targetScreen="aesf-1298915447750">Continue</action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="aesf-1301834767353" targetTitle="What Was The Result?">
+                  <actions>
+                     <action id="aesf-1301834767353_to_aesf-1298915447750"
+                             targetScreen="aesf-1298915447750">Continue</action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="aesf-1301834767398" targetTitle="What Was The Result?">
+                  <actions>
+                     <action id="aesf-1301834767398_to_aesf-1298915447750"
+                             targetScreen="aesf-1298915447750">Continue</action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="aesf-1301834767446" targetTitle="What Was The Result?">
+                  <actions>
+                     <action id="aesf-1301834767446_to_aesf-1298915447750"
+                             targetScreen="aesf-1298915447750">Continue</action>
+                  </actions>
+               </jumpTo>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>jKXIoStkqsBdK5LDWtEmA6</types1:GUID>
+      <types1:DisplayName>Update Lead Status</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-10-14T20:43:37.311Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

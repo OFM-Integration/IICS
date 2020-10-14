@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "jKXIoStkqsBdK5LDWtEmA6",
+      "objectName": "Update Lead Status",
+      "objectType": "GUIDE",
+      "path": "/Explore/Online-Guide-Samples",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Update a lead's status using this guide.",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "iUQbgdwUiQLnzYL-gt-1270772-2020-02-27T22:44:52.132Z::gt.xml"
+         }
+      }
+   }
+]
