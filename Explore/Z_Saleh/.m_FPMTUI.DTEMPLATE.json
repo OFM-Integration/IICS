@@ -6,7 +6,7 @@
       "path": "/Explore/Z_Saleh",
       "metadata": {
          "additionalInfo": {
-            "contentType": null,
+            "contentType": "JSON",
             "description": "Use FPMT UI file and send only UI column to AFRS",
             "documentState": "VALID"
          },
