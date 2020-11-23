@@ -1,0 +1,507 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>8Xi6w7zsZvEIAkR-gt-23964054-2020-06-29T15:38:17.963Z::pd.xml</types1:EntryId>
+      <types1:Name>pr_AgencyAFRSInboundFiles</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>API documentation: https://docs.informatica.com/integration-cloud/cloud-data-integration/current-version/rest-api-reference/platform-rest-api-version-2-resources.html</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SecureAgent</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:CreatedBy>
+      <types1:CreationDate>2020-06-29T15:38:18Z</types1:CreationDate>
+      <types1:ModifiedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:ModifiedBy>
+      <types1:ModificationDate>2020-11-09T21:49:40Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:PublishedBy>
+      <types1:PublicationDate>2020-11-09T21:49:46Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.pr_AgencyAFRSInboundFiles/pr_AgencyAFRSInboundFiles.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="pr_AgencyAFRSInboundFiles"
+                  name="pr_AgencyAFRSInboundFiles"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description>API documentation: https://docs.informatica.com/integration-cloud/cloud-data-integration/current-version/rest-api-reference/platform-rest-api-version-2-resources.html</description>
+            <tags>.agent:SecureAgent</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="fileEvent" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">ac-AFRSInboundTrans:PlainFileContent</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="var_FileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempICSessionID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempMTID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempMTname" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempLoginResponse" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempDeleteResponse" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempCreateMTResponse" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="EmailToAddress" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempICSessionIDHasAValue" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempCurrDateTime" type="datetime">
+                  <options>
+                     <option name="thirtyMinutesIncrement">true</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempmtIDHasAValue" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempExecutionState" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tempExecutionStateHasAValue" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>SecureAgent</targetLocation>
+               <event eventSource="ac-AFRSInboundTrans:AFRSInboundTrans"/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kc0of26t" targetId="kc0of26s"/>
+               </start>
+               <assignment id="kc0of26s">
+                  <title>Assignment to var_FileName, EmailToAddress</title>
+                  <operation source="constant" to="temp.var_FileName">{$input.fileEvent[1]/fileInfo[1]/fullName}</operation>
+                  <operation source="constant" to="temp.EmailToAddress">kimberly.sullivan@ofm.wa.gov</operation>
+                  <link id="ke8njl0a" targetId="ke8njl09"/>
+               </assignment>
+               <container id="ke8njl09" type="exclusive">
+                  <title>var_FileName</title>
+                  <flow id="ke8njl0d">
+                     <eventContainer id="ke8njl15">
+                        <service id="ke8njl1o">
+                           <title>Login</title>
+                           <serviceName>ac-IICS-API:Login</serviceName>
+                           <serviceGUID>1O4kHJ1x7RveeyqQpWgAqE</serviceGUID>
+                           <serviceInput/>
+                        </service>
+                        <flow id="ke8njl16">
+                           <assignment id="ke8njl17">
+                              <title>Assign icSessionID</title>
+                              <operation source="formula" to="temp.tempICSessionID">
+                                 <expression language="XQuery">$output.LoginSessionIDfromFullXML
+</expression>
+                              </operation>
+                              <operation source="formula" to="temp.tempICSessionIDHasAValue">
+                                 <expression language="XQuery">if (fn:exists($output.LoginSessionIDfromFullXML))  then "Y" else "N"</expression>
+                              </operation>
+                              <link id="ke8njl1s" targetId="ke8njl18"/>
+                           </assignment>
+                           <container id="ke8njl18" type="exclusive">
+                              <title>Have icSessionID?</title>
+                              <flow id="ke8njl19">
+                                 <assignment id="ke8njl1a">
+                                    <title>Assign Mapping Task Name</title>
+                                    <operation source="formula" to="temp.tempCurrDateTime">
+                                       <expression language="XQuery">fn:current-dateTime()</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.tempMTname">
+                                       <expression language="XQuery">fn:concat('mt_AgencyInboundTrans_Dynamic_', util:format($temp.tempCurrDateTime, "yyyyMMdd_HmmssSSS", "America/Los_Angeles", 'us'))</expression>
+                                    </operation>
+                                    <link id="ke8njl1w" targetId="ke8njl1b"/>
+                                 </assignment>
+                                 <assignment id="ke8njl1c">
+                                    <title>Assignment to tempCreateMTResponse, tempMTID etc.</title>
+                                    <operation source="formula" to="temp.tempCreateMTResponse">
+                                       <expression language="XQuery">$output.CreateMappingTaskResponseCode </expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.tempMTID">
+                                       <expression language="XQuery">$output.CreateMappingTaskmtIDfromFullXML </expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.tempmtIDHasAValue">
+                                       <expression language="XQuery">if (fn:exists($output.CreateMappingTaskmtIDfromFullXML)) then "Y" else "N"</expression>
+                                    </operation>
+                                    <link id="ke8njl1y" targetId="ke8njl1d"/>
+                                 </assignment>
+                                 <service id="ke8njl1b">
+                                    <title>CreateMappingTaskForAgencyInboundTransFiles</title>
+                                    <serviceName>ac-IICS-API:CreateMappingTask_mt_AFRSInboundTrans</serviceName>
+                                    <serviceGUID>1O4kHJ1x7RveeyqQpWgAqE</serviceGUID>
+                                    <serviceInput>
+                                       <parameter name="MTnameWithDate" source="field" updatable="true">temp.tempMTname</parameter>
+                                       <parameter name="icSessionID" source="field" updatable="true">temp.tempICSessionID</parameter>
+                                       <parameter name="InputFileName" source="field" updatable="true">temp.var_FileName</parameter>
+                                    </serviceInput>
+                                    <link id="ke8njl1x" targetId="ke8njl1c"/>
+                                 </service>
+                                 <container id="ke8njl1d" type="exclusive">
+                                    <title>Have mtID?</title>
+                                    <flow id="ke8njl1e">
+                                       <service id="ke8njl1f">
+                                          <title>Execute Mapping Task</title>
+                                          <serviceName>ac-IICS-API:ExecuteMappingTask</serviceName>
+                                          <serviceGUID>1O4kHJ1x7RveeyqQpWgAqE</serviceGUID>
+                                          <serviceInput>
+                                             <parameter name="ID" source="field" updatable="true">temp.tempMTID</parameter>
+                                             <parameter name="icSessionID" source="field" updatable="true">temp.tempICSessionID</parameter>
+                                          </serviceInput>
+                                          <link id="kfh5bkpj" targetId="kfh5bkpi"/>
+                                       </service>
+                                       <service id="ke8njl1g">
+                                          <title>CheckExecutionStatus</title>
+                                          <serviceName>ac-IICS-API:CheckExecutionStatus</serviceName>
+                                          <serviceGUID>1O4kHJ1x7RveeyqQpWgAqE</serviceGUID>
+                                          <serviceInput>
+                                             <parameter name="icSessionID" source="field" updatable="true">temp.tempICSessionID</parameter>
+                                             <parameter name="ID" source="field" updatable="true">temp.tempMTID</parameter>
+                                          </serviceInput>
+                                          <link id="kfh5bkua" targetId="kfh5bku9"/>
+                                       </service>
+                                       <wait id="kfh5bkpi">
+                                          <title>Wait For Mapping Task to complete</title>
+                                          <duration source="formula">
+                                             <function name="duration_expression">
+                                                <arg name="value">5</arg>
+                                                <arg name="scale">S</arg>
+                                                <arg name="businessDays"/>
+                                             </function>
+                                          </duration>
+                                          <link id="kfh5bkpk" targetId="ke8njl1g"/>
+                                       </wait>
+                                       <assignment id="kfh5bku9">
+                                          <title>Assignment to tempExecutionState, tempExecutionStateHasAValue</title>
+                                          <operation source="formula" to="temp.tempExecutionState">
+                                             <expression language="XQuery">$output.CheckExecutionState </expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.tempExecutionStateHasAValue">
+                                             <expression language="XQuery">if (fn:exists($output.CheckExecutionState)) then "Y" else "N"</expression>
+                                          </operation>
+                                          <link id="kgcojfet" targetId="kgcojfes"/>
+                                       </assignment>
+                                       <container id="kgcojfes" type="exclusive">
+                                          <title>Has Execution State?</title>
+                                          <flow id="kgcojfew">
+                                             <container id="kgcojfgh" type="exclusive">
+                                                <title>Done executing?</title>
+                                                <flow id="kgcojfgi">
+                                                   <jumpTo id="kgcojfgj">
+                                                      <link id="kgcojfh3" targetId="kfh5bkpi"/>
+                                                   </jumpTo>
+                                                </flow>
+                                                <flow id="kgcojfgk">
+                                                   <container id="kgcojfgl" type="exclusive">
+                                                      <title>Successful execution?</title>
+                                                      <flow id="kgcojfgm">
+                                                         <service id="kgcojfgn">
+                                                            <title>Delete Dynamic MCT</title>
+                                                            <serviceName>ac-IICS-API:DeleteMappingTask</serviceName>
+                                                            <serviceGUID>1O4kHJ1x7RveeyqQpWgAqE</serviceGUID>
+                                                            <serviceInput>
+                                                               <parameter name="ID" source="field" updatable="true">temp.tempMTID</parameter>
+                                                               <parameter name="icSessionID" source="field" updatable="true">output.LoginSessionIDfromFullXML</parameter>
+                                                            </serviceInput>
+                                                            <link id="kgcojfh6" targetId="kgcojfgo"/>
+                                                         </service>
+                                                         <assignment id="kgcojfgo">
+                                                            <title>Assignment to tempDeleteResponse</title>
+                                                            <operation source="formula" to="temp.tempDeleteResponse">
+                                                               <expression language="XQuery">$output.DeleteResponseCode</expression>
+                                                            </operation>
+                                                            <link id="kgcojfh7" targetId="kgcojfgp"/>
+                                                         </assignment>
+                                                         <container id="kgcojfgp" type="exclusive">
+                                                            <title>Successful delete?</title>
+                                                            <flow id="kgcojfgq">
+                                                               <service id="kgcojfgr">
+                                                                  <title>Logout3</title>
+                                                                  <serviceName>ac-IICS-API:Logout</serviceName>
+                                                                  <serviceGUID>1O4kHJ1x7RveeyqQpWgAqE</serviceGUID>
+                                                                  <serviceInput>
+                                                                     <parameter name="infaSessionID" source="field" updatable="true">temp.tempICSessionID</parameter>
+                                                                  </serviceInput>
+                                                                  <link id="kgcojfha" targetId="kgcojfgs"/>
+                                                               </service>
+                                                               <end id="kgcojfgs"/>
+                                                            </flow>
+                                                            <flow id="kgcojfgt">
+                                                               <service id="kgcojfgu">
+                                                                  <title>SendFailureDeleteEmail</title>
+                                                                  <serviceName>pr_Email</serviceName>
+                                                                  <serviceGUID/>
+                                                                  <serviceInput>
+                                                                     <parameter name="EmailTo" source="field" updatable="true">temp.EmailToAddress</parameter>
+                                                                     <parameter name="Subject" source="constant">Failure when executing 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles - post execution mapping task cleanup failed</parameter>
+                                                                     <parameter name="EmailText" source="formula">
+                                                                        <expression language="XQuery">fn:concat('A failure occurred in 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles
+when deleting the dynamically created mapping task ID, ',  $temp.tempMTID, ').  Please check the monitor.')</expression>
+                                                                     </parameter>
+                                                                  </serviceInput>
+                                                                  <link id="kgcojfhb" targetId="kgcojfgv"/>
+                                                               </service>
+                                                               <service id="kgcojfgv">
+                                                                  <title>Logout4</title>
+                                                                  <serviceName>ac-IICS-API:Logout</serviceName>
+                                                                  <serviceGUID>1O4kHJ1x7RveeyqQpWgAqE</serviceGUID>
+                                                                  <serviceInput>
+                                                                     <parameter name="infaSessionID" source="field" updatable="true">temp.tempICSessionID</parameter>
+                                                                  </serviceInput>
+                                                                  <link id="kgcojfhc" targetId="kgcojfgw"/>
+                                                               </service>
+                                                               <end id="kgcojfgw">
+                                                                  <title>End 6</title>
+                                                               </end>
+                                                            </flow>
+                                                            <link id="kgcojfh8" targetId="kgcojfgq" type="containerLink">
+                                                               <condition source="formula">
+                                                                  <function name="string-equals">
+                                                                     <arg name="left">{$temp.tempDeleteResponse}</arg>
+                                                                     <arg name="right">200</arg>
+                                                                  </function>
+                                                               </condition>
+                                                            </link>
+                                                            <link id="kgcojfh9" targetId="kgcojfgt" type="containerLink"/>
+                                                         </container>
+                                                      </flow>
+                                                      <flow id="kgcojfgx">
+                                                         <service id="kgcojfgy">
+                                                            <title>SendFailureExecutionEmail</title>
+                                                            <serviceName>pr_Email</serviceName>
+                                                            <serviceGUID/>
+                                                            <serviceInput>
+                                                               <parameter name="EmailTo" source="field" updatable="true">temp.EmailToAddress</parameter>
+                                                               <parameter name="Subject" source="constant">Failure when executing 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles - file processing encountered an error</parameter>
+                                                               <parameter name="EmailText" source="formula">
+                                                                  <expression language="XQuery">fn:concat('A failure occurred in 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles
+when executing the dynamically created mapping task ID (', $temp.tempMTID, ').  The execution state of the task is ', $temp.tempExecutionState, '.  Please check the application integration console, ensure the credentials are valid, and work to process the source file (', $temp.var_FileName, ').    Note: state value of 2 means the task completed with errors, state value of 3 means the task failed to complete.')</expression>
+                                                               </parameter>
+                                                            </serviceInput>
+                                                            <link id="kgcojfhd" targetId="kgcojfgz"/>
+                                                         </service>
+                                                         <service id="kgcojfgz">
+                                                            <title>Logout2</title>
+                                                            <serviceName>ac-IICS-API:Logout</serviceName>
+                                                            <serviceGUID>1O4kHJ1x7RveeyqQpWgAqE</serviceGUID>
+                                                            <serviceInput>
+                                                               <parameter name="infaSessionID" source="field" updatable="true">temp.tempICSessionID</parameter>
+                                                            </serviceInput>
+                                                            <link id="kgcojfhe" targetId="kgcojfh0"/>
+                                                         </service>
+                                                         <end id="kgcojfh0">
+                                                            <title>End 3</title>
+                                                         </end>
+                                                      </flow>
+                                                      <link id="kgcojfh4" targetId="kgcojfgm" type="containerLink">
+                                                         <condition source="formula">
+                                                            <function name="string-equals">
+                                                               <arg name="left">{$temp.tempExecutionState}</arg>
+                                                               <arg name="right">1</arg>
+                                                            </function>
+                                                         </condition>
+                                                      </link>
+                                                      <link id="kgcojfh5" targetId="kgcojfgx" type="containerLink"/>
+                                                   </container>
+                                                </flow>
+                                                <link id="kgcojfh1" targetId="kgcojfgi" type="containerLink">
+                                                   <condition source="formula">
+                                                      <function name="string-equals">
+                                                         <arg name="left">{$temp.tempExecutionState}</arg>
+                                                         <arg name="right">4</arg>
+                                                      </function>
+                                                   </condition>
+                                                </link>
+                                                <link id="kgcojfh2" targetId="kgcojfgk" type="containerLink"/>
+                                             </container>
+                                          </flow>
+                                          <flow id="kgcojfez">
+                                             <jumpTo id="kgcojffv">
+                                                <link id="kgcojffw" targetId="kfh5bkpi"/>
+                                             </jumpTo>
+                                          </flow>
+                                          <link id="kgcojfev" targetId="kgcojfew" type="containerLink">
+                                             <condition source="formula">
+                                                <function name="string-equals">
+                                                   <arg name="left">{$temp.tempExecutionStateHasAValue}</arg>
+                                                   <arg name="right">Y</arg>
+                                                </function>
+                                             </condition>
+                                          </link>
+                                          <link id="kgcojfey" targetId="kgcojfez" type="containerLink"/>
+                                       </container>
+                                    </flow>
+                                    <flow id="ke8njl1h">
+                                       <service id="kfh7xoli">
+                                          <title>SendFailureEmailNoMTID</title>
+                                          <serviceName>pr_Email</serviceName>
+                                          <serviceGUID/>
+                                          <serviceInput>
+                                             <parameter name="EmailTo" source="field" updatable="true">temp.EmailToAddress</parameter>
+                                             <parameter name="Subject" source="constant">Failure when executing 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles - No mapping task ID</parameter>
+                                             <parameter name="EmailText" source="formula">
+                                                <expression language="XQuery">fn:concat('A failure occurred in 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles
+when creating a mapping task.  No mapping task was returned by the IICS API.  Please check the application integration console, ensure the credentials are valid, and work to process the source file (', $temp.var_FileName, ').')</expression>
+                                             </parameter>
+                                          </serviceInput>
+                                          <link id="kgcoh2gk" targetId="kgcoh2gj"/>
+                                       </service>
+                                       <service id="kgcoh2gj">
+                                          <title>Logout</title>
+                                          <serviceName>ac-IICS-API:Logout</serviceName>
+                                          <serviceGUID>1O4kHJ1x7RveeyqQpWgAqE</serviceGUID>
+                                          <serviceInput>
+                                             <parameter name="infaSessionID" source="field" updatable="true">temp.tempICSessionID</parameter>
+                                          </serviceInput>
+                                          <link id="kgcoh2gl" targetId="kfh7xoq9"/>
+                                       </service>
+                                       <end id="kfh7xoq9">
+                                          <title>End 4</title>
+                                       </end>
+                                    </flow>
+                                    <link id="ke8njl1z" targetId="ke8njl1e" type="containerLink">
+                                       <condition source="formula">
+                                          <function name="string-equals">
+                                             <arg name="left">{$temp.tempmtIDHasAValue}</arg>
+                                             <arg name="right">Y</arg>
+                                          </function>
+                                       </condition>
+                                    </link>
+                                    <link id="ke8njl20" targetId="ke8njl1h" type="containerLink"/>
+                                 </container>
+                              </flow>
+                              <flow id="ke8njl1i">
+                                 <service id="ke8njl1j">
+                                    <title>SendFailureEmailNoSessionID</title>
+                                    <serviceName>pr_Email</serviceName>
+                                    <serviceGUID/>
+                                    <serviceInput>
+                                       <parameter name="EmailTo" source="field" updatable="true">temp.EmailToAddress</parameter>
+                                       <parameter name="Subject" source="constant">Failure when executing 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles - No icSessionID returned by API </parameter>
+                                       <parameter name="EmailText" source="formula">
+                                          <expression language="XQuery">fn:concat('A failure occurred in the 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles process for obtaining an icSessionID via IICS API as part of the logon call.  Please check the application integration console, ensure the credentials are valid, and work to process the source file (', $temp.var_FileName, ').')</expression>
+                                       </parameter>
+                                    </serviceInput>
+                                    <link id="ke8njl24" targetId="ke8njl1k"/>
+                                 </service>
+                                 <end id="ke8njl1k">
+                                    <title>End 2</title>
+                                 </end>
+                              </flow>
+                              <link id="ke8njl1t" targetId="ke8njl19" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="string-equals">
+                                       <arg name="left">{$temp.tempICSessionIDHasAValue}</arg>
+                                       <arg name="right">Y</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="ke8njl1u" targetId="ke8njl1i" type="containerLink"/>
+                           </container>
+                        </flow>
+                        <flow id="ke8njl1l">
+                           <service id="ke8njl1m">
+                              <title>SendFailureEmailLogon</title>
+                              <serviceName>pr_Email</serviceName>
+                              <serviceGUID/>
+                              <serviceInput>
+                                 <parameter name="EmailTo" source="field" updatable="true">temp.EmailToAddress</parameter>
+                                 <parameter name="Subject" source="constant">Failure when executing 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles - IICS Login Failed</parameter>
+                                 <parameter name="EmailText" source="formula">
+                                    <expression language="XQuery">fn:concat('A failure occurred when executing 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles process for logging onto the IICS API. Please check the application integration console, ensure the credentials are valid, and work to process the source file (', $temp.var_FileName, ').')</expression>
+                                 </parameter>
+                              </serviceInput>
+                              <link id="ke8njl25" targetId="ke8njl1n"/>
+                           </service>
+                           <end id="ke8njl1n">
+                              <title>End 1</title>
+                           </end>
+                        </flow>
+                        <link id="ke8njl1p" targetId="ke8njl16" type="containerLink"/>
+                        <events>
+                           <catch faultField="LoginFaultInfo" id="kcwgoryo" interrupting="true">
+                              <link id="ke8njl1q" targetId="ke8njl1l" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                  </flow>
+                  <flow id="ke8njl0g">
+                     <service id="ke8njl2v">
+                        <title>sendBadFileEmail</title>
+                        <serviceName>pr_Email</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="EmailTo" source="field" updatable="true">temp.EmailToAddress</parameter>
+                           <parameter name="Subject" source="constant">Failure when executing 01_AGENCIES/AFRS_Inbound_Transactions/pr_AgencyAFRSInboundFiles - Bad File Routed By AFRS</parameter>
+                           <parameter name="EmailText" source="formula">
+                              <expression language="XQuery">fn:concat($temp.var_FileName, 
+' was placed on the OFMAFRS-INTG SFT (OFM/INTG/INBOUND folder).  Please review and investigate the file.  It is an invalid file for processing as its name does not end in "AF105" followed by an appended date/timestamp.')</expression>
+                           </parameter>
+                        </serviceInput>
+                        <link id="kfh7xoql" targetId="kfh7xoqk"/>
+                     </service>
+                     <end id="kfh7xoqk">
+                        <title>End 5</title>
+                     </end>
+                  </flow>
+                  <link id="ke8njl0c" targetId="ke8njl0d" type="containerLink">
+                     <condition source="formula">
+                        <function name="contains">
+                           <arg name="left">{$temp.var_FileName}</arg>
+                           <arg name="right">AF105.D</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="ke8njl0f" targetId="ke8njl0g" type="containerLink"/>
+               </container>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>jnNxSNXV50Tl4vmTx2VqKk</types1:GUID>
+      <types1:DisplayName>pr_AgencyAFRSInboundFiles</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-11-23T19:27:11.959Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

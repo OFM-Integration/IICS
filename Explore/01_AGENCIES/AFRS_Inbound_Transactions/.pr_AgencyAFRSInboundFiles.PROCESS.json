@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "jnNxSNXV50Tl4vmTx2VqKk",
+      "objectName": "pr_AgencyAFRSInboundFiles",
+      "objectType": "PROCESS",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "API documentation: https://docs.informatica.com/integration-cloud/cloud-data-integration/current-version/rest-api-reference/platform-rest-api-version-2-resources.html",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "1O4kHJ1x7RveeyqQpWgAqE"
+         ],
+         "repoInfo": {
+            "repoHandle": "8Xi6w7zsZvEIAkR-gt-23964054-2020-06-29T15:38:17.963Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "1O4kHJ1x7RveeyqQpWgAqE",
+      "objectName": "ac-IICS-API",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/01_AGENCIES/AFRS_Inbound_Transactions",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "app connector for IICS REST API",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "gfT6sFsdsFsdsFs-gt-6885273-2020-07-21T22:02:24.104Z::conn.xml"
+         }
+      }
+   }
+]

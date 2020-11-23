@@ -1,0 +1,477 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>fRLdqcgm8lnCmp6-gt-2847700-2020-07-14T16:51:54.083Z::svc.xml</types1:EntryId>
+      <types1:Name>sc_IICS_REST_API</types1:Name>
+      <types1:ParentFlowIds>gfT6sFsdsFsdsFs-gt-6885273-2020-07-21T22:02:24.104Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>IICS REST API</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:CreatedBy>
+      <types1:CreationDate>2020-07-14T16:51:54Z</types1:CreationDate>
+      <types1:ModifiedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:ModifiedBy>
+      <types1:ModificationDate>2020-10-16T21:34:20Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:PublishedBy>
+      <types1:PublicationDate>2020-10-16T21:35:57Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/sc_IICS_REST_API/sc_IICS_REST_API_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="sc_IICS_REST_API"
+                            label=""
+                            name="sc_IICS_REST_API"
+                            uuid="0ee19d23-0a32-4711-8bea-a8cf3d944f19">
+            <description>IICS REST API</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Login"
+                       maxRedirects="100"
+                       name="Login"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="commaSeparated"
+                                        url="https://dm-us.informaticacloud.com/saas/public/core/v3/login"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+	"username":"OFM_APIService_Dev",
+	"password":"4C1PJuCrYl6F"
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="LoginResponseCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                     <field description="" name="LoginHeaderDate" type="string">
+                        <xquery>{$RESTResponse/*:headers/*:header[@name='Date'][1]/@value}</xquery>
+                     </field>
+                     <field description=""
+                            name="LoginFullXMLPayload"
+                            type="string"
+                            xmlElement="."/>
+                     <field description="" name="LoginOrgNameFromfullXML" type="string">
+                        <xquery>{let $input:=$LoginFullXMLPayload 
+return $input/products/baseApiUrl/text()}</xquery>
+                     </field>
+                     <field description="" name="LoginSessionIDfromFullXML" type="string">
+                        <xquery>{let $input:=$LoginFullXMLPayload 
+return $input/userInfo/sessionId/text()}</xquery>
+                     </field>
+                     <field description=""
+                            entireResponse="true"
+                            name="payload"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="CreateMappingTask_mt_AFRSInboundTrans"
+                       maxRedirects="100"
+                       name="CreateMappingTask_mt_AFRSInboundTrans"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="MTnameWithDate"
+                                required="true"
+                                testWith="mt_AgencyInboundTransTEST_20201015_1"
+                                type="string"/>
+                     <parameter name="icSessionID"
+                                required="true"
+                                testWith="7iAQtW617TtlaWNS95JfaQ"
+                                type="string"/>
+                     <parameter name="InputFileName"
+                                required="true"
+                                testWith="KS1AF105.D201015.T110300000"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="commaSeparated"
+                                        url="https://na1.dm-us.informaticacloud.com/saas/api/v2/mttask/"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="icSessionID">{$icSessionID}</header>
+                        </httpHeaders>
+                        <body>{{
+    "@type": "mtTask",
+  
+    "orgId": "010YZQ",
+    "name": "{$MTnameWithDate}",
+    "description": "",
+    "createTime": "2020-06-17T12:40:09.000Z",
+    "updateTime": "2020-06-18T20:15:34.000Z",
+    "createdBy": "kimberly.sullivan@ofm.wa.gov.saml",
+    "updatedBy": "kimberly.sullivan@ofm.wa.gov.saml",
+    "agentId": "010YZQ08000000000003",
+    "runtimeEnvironmentId": "010YZQ25000000000003",
+    "maxLogs": 10,
+    "verbose": false,
+    "lastRunTime": 1599255564000,
+    "mappingId": "010YZQ1700000000003S",
+    "shortDescription": "",
+    "sessionProperties": {{}},
+    "enableCrossSchemaPushdown": true,
+    "autoTunedApplied": false,
+    "paramFileType": "PARAM_FILE_LOCAL",
+    "parameterFileEncoding": "UTF-8",
+    "parameters": [
+        {{
+            "@type": "mtTaskParameter",
+            "id": 75143629,
+            "name": "$Source$",
+            "type": "EXTENDED_SOURCE",
+            "label": "Source",
+            "uiProperties": {{
+                "connectionParameterized": "false",
+                "isMsrcFilterParameterized": "false",
+                "isMsrcSortParameterized": "false",
+                "objlabel": "in_SourceName",
+                "objectParameterized": "true",
+                "objDesc": ""
+            }},
+            "sourceConnectionId": "010YZQ0B000000000029",
+            "newFlatFile": false,
+            "newObject": false,
+            "showBusinessNames": true,
+            "naturalOrder": true,
+            "truncateTarget": false,
+            "bulkApiDBTarget": false,
+            "srcFFAttrs": {{
+                "@type": "flatFileAttrs",
+                "id": 14147680,
+                "delimiter": ",",
+                "textQualifier": "\"",
+                "escapeChar": "",
+                "headerLineNo": 1,
+                "firstDataRow": 2,
+                "fwConfigId": "010YZQ2900000000000D"
+            }},
+            "customFuncCfg": {{
+                "@type": "customFuncConfig",
+                "id": -1,
+                "connections": [],
+                "inputMap": [],
+                "outputFields": []
+            }},
+            "tgtFieldRefs": {{}},
+            "targetUpdateColumns": [],
+            "extendedObject": {{
+                "@type": "extendedObject",
+                "object": {{
+                    "@type": "mObject",
+                    "name": "{$InputFileName}",
+                    "label": "sample_source_DONOTDELETE",
+                    "metadataUpdated": false,
+                    "relations": [],
+                    "children": []
+                }},
+                "filters": [],
+                "sortFields": []
+            }},
+            "runtimeAttrs": {{}},
+            "isRESTModernSource": true,
+            "isFileList": false,
+            "handleSpecialChars": false,
+            "frsAsset": false,
+            "dynamicFileName": false,
+            "tgtObjectAttributes": {{}},
+            "runtimeParameterData": {{
+                "@type": "mtTaskRuntimeParameterData",
+                "isConnectionRuntimeParameter": false,
+                "isObjectRuntimeParameter": false,
+                "objectParameterName": "in_SourceName"
+            }},
+            "overriddenFields": []
+        }},
+        {{
+            "@type": "mtTaskParameter",
+            "id": 75143632,
+            "name": "$Target$",
+            "type": "TARGET",
+            "label": "Target",
+            "uiProperties": {{
+                "connectionParameterized": "false",
+                "objlabel": "in_TargetName",
+                "objectParameterized": "true",
+                "objDesc": "",
+                "defaultTargetUpdateColumns": "",
+                "noCreateTarget": "true"
+            }},
+            "targetConnectionId": "010YZQ0B00000000002A",
+            "targetObject": "{$InputFileName}",
+            "targetObjectLabel": "sample_target_DONOTDELETE",
+            "newFlatFile": false,
+            "newObject": false,
+            "showBusinessNames": true,
+            "naturalOrder": true,
+            "truncateTarget": false,
+            "bulkApiDBTarget": false,
+            "operationType": "Insert",
+            "tgtFFAttrs": {{
+                "@type": "flatFileAttrs",
+                "id": 14147683,
+                "delimiter": ",",
+                "textQualifier": "none",
+                "escapeChar": "",
+                "headerLineNo": 1,
+                "fwConfigId": "010YZQ2900000000000D"
+            }},
+            "customFuncCfg": {{
+                "@type": "customFuncConfig",
+                "id": -1,
+                "connections": [],
+                "inputMap": [],
+                "outputFields": []
+            }},
+            "tgtFieldRefs": {{}},
+            "targetUpdateColumns": [],
+            "extendedObject": {{
+                "@type": "extendedObject",
+                "filters": [],
+                "sortFields": []
+            }},
+            "runtimeAttrs": {{}},
+            "isRESTModernSource": true,
+            "isFileList": false,
+            "handleSpecialChars": false,
+            "frsAsset": false,
+            "dynamicFileName": false,
+            "tgtObjectAttributes": {{}},
+            "runtimeParameterData": {{
+                "@type": "mtTaskRuntimeParameterData",
+                "isConnectionRuntimeParameter": false,
+                "isObjectRuntimeParameter": false,
+                "objectParameterName": "in_TargetName"
+            }},
+            "overriddenFields": []
+        }}
+    ],
+    "sequences": [],
+    "inOutParameters": [],
+    "connRuntimeAttrs": []
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="CreateMappingTaskResponseCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                     <field description=""
+                            name="CreateMappingTaskFullXMLPayload"
+                            type="string"
+                            xmlElement="."/>
+                     <field description=""
+                            name="CreateMappingTaskmtIDfromFullXML"
+                            type="string">
+                        <xquery>{let $input:=$CreateMappingTaskFullXMLPayload
+return $input/id/text()}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="DeleteMappingTask"
+                       maxRedirects="100"
+                       name="DeleteMappingTask"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="ID"
+                                required="true"
+                                testWith="010YZQ0Z000000000061"
+                                type="string"/>
+                     <parameter name="icSessionID"
+                                required="true"
+                                testWith="7iAQtW617TtlaWNS95JfaQ"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="commaSeparated"
+                                        url="https://na1.dm-us.informaticacloud.com/saas/api/v2/mttask/{$ID}"
+                                        verb="DELETE">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="icSessionID">{$icSessionID}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="DeleteResponseCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="ExecuteMappingTask"
+                       maxRedirects="100"
+                       name="ExecuteMappingTask"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="ID"
+                                required="true"
+                                testWith="010YZQ0Z000000000061"
+                                type="string"/>
+                     <parameter name="icSessionID"
+                                required="true"
+                                testWith="7iAQtW617TtlaWNS95JfaQ"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="commaSeparated"
+                                        url="https://na1.dm-us.informaticacloud.com/saas/api/v2/job"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="icSessionID">{$icSessionID}</header>
+                        </httpHeaders>
+                        <body>{{
+"@type":"job",
+"taskId": "{$ID}",
+"taskType": "MTT"
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="CheckExecutionStatus"
+                       maxRedirects="100"
+                       name="CheckExecutionStatus"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="icSessionID"
+                                required="true"
+                                testWith="4VMi8lDbOxogG7YupcShup"
+                                type="string"/>
+                     <parameter name="ID"
+                                required="true"
+                                testWith="010YZQ0Z000000000064"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="commaSeparated"
+                                        url="https://na1.dm-us.informaticacloud.com/saas/api/v2/activity/activityLog?taskId={$ID}"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="icSessionID">{$icSessionID}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="CheckExecutionStatusResponse"
+                            responseStatusCode="true"
+                            type="string"/>
+                     <field description=""
+                            name="CheckExecutionStatusFullXMLPayload"
+                            type="string"
+                            xmlElement="."/>
+                     <field description="" name="CheckExecutionStatusErrorMsg" type="string">
+                        <xquery>{let $input:=$CheckExecutionStatusFullXMLPayload
+return $input/emptyName/entries/errorMsg/text()}</xquery>
+                     </field>
+                     <field description=""
+                            name="CheckExecutionStatusFailedTargetRows"
+                            type="string">
+                        <xquery>{let $input:=$CheckExecutionStatusFullXMLPayload 
+return $input/emptyName/failedTargetRows/text()}</xquery>
+                     </field>
+                     <field description=""
+                            name="CheckExecutionStatusTargetSuccessRows"
+                            type="string">
+                        <xquery>{let $input:=$CheckExecutionStatusFullXMLPayload
+return $input/emptyName/successTargetRows/text()}</xquery>
+                     </field>
+                     <field description=""
+                            name="CheckExecutionStatusSourceSuccessRows"
+                            type="string">
+                        <xquery>{let $input:=$CheckExecutionStatusFullXMLPayload
+return $input/emptyName/successSourceRows/text()}</xquery>
+                     </field>
+                     <field description="" name="CheckExecutionState" type="string">
+                        <xquery>{let $input:=$CheckExecutionStatusFullXMLPayload
+return $input/emptyName/state/text()}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Logout"
+                       maxRedirects="100"
+                       name="Logout"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="infaSessionID"
+                                required="true"
+                                testWith="4NOL4r59ChrbLkiKkaDq6W"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="commaSeparated"
+                                        url="https://dm-us.informaticacloud.com/saas/public/core/v3/logout"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="INFA-SESSION-ID">{$infaSessionID}</header>
+                        </httpHeaders>
+                        <body/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="DeleteResponseCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>9EeUHOVFUaDg4zVYj3w1Eq</types1:GUID>
+      <types1:DisplayName>sc_IICS_REST_API</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-11-23T19:27:11.797Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
