@@ -1,0 +1,616 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>GBdxPVIKchzt1Y6-gt-26595918-2020-09-01T18:38:54.52Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_MULConnection</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>srithar.kaliyaperumal@ofm.wa.gov</types1:CreatedBy>
+      <types1:CreationDate>2020-09-01T18:38:55Z</types1:CreationDate>
+      <types1:ModifiedBy>srithar.kaliyaperumal@ofm.wa.gov</types1:ModifiedBy>
+      <types1:ModificationDate>2020-12-04T17:43:34Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:PublishedBy>
+      <types1:PublicationDate>2020-12-01T23:00:23Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_MULConnection/tf_MULConnection.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_MULConnection"
+                   name="tf_MULConnection"
+                   overrideAPIName="true">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="EIStagingStatus" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="SWTitleStatus" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="FPMTTransStatus" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="FPMT_LoginExpDate" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="OFMICSFT" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="FPMTSFT" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="OFMICSFTStatus" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="FPMTSFTStatus" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="OFMICSFTCommandOutputFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Command output file to check if it errored"
+                      name="OFMAFRSSFTCommandOutputFileName"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="FPMTSFTCommandOutputFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="OFMICCommandOutputCheckTarget" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="OFMAFRSCommandOutputCheckTarget" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="FPMTCommandOutputCheckTarget" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="OFMAFRSSFTStatus" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="environment" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="dt_GetErrorCode_OFMAFRS" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-GetCommandErrorCode</option>
+                  </options>
+               </field>
+               <field description="" name="OFMAFRS-SFT" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="dt_GetErrorCode_FPMT" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-GetCommandErrorCode</option>
+                  </options>
+               </field>
+               <field description="" name="FPMT-SFT" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="dt_GetErrorCode_OFMIC" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-GetCommandErrorCode</option>
+                  </options>
+               </field>
+               <field description="" name="OFM-IC SFT" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="dtEIStaging" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:st-EIStaging</option>
+                  </options>
+               </field>
+               <field description="" name="dtSWTitle" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:st-SWTitles</option>
+                  </options>
+               </field>
+               <field description="" name="dtFPMTTransactions" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:st-FPMT-AFRSTransaction</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ki56168s" targetId="ki561683"/>
+               </start>
+               <assignment id="ki561683">
+                  <title>Assign Environment</title>
+                  <operation source="formula" to="temp.environment">
+                     <expression language="XQuery">if(util:getOrganizationId()='3b2ygT0ktfmfKKGdJW38W5') then 'Dev' else if(util:getOrganizationId()='3U9wlCsAZhRhx1hmCVmo4l') then 'QA' else if(util:getOrganizationId()='0L2NKZrE70feIaRIJY4DyX') then 'Prod' else ''</expression>
+                  </operation>
+                  <link id="ki561685" targetId="ki56167b"/>
+               </assignment>
+               <assignment id="ki56166s">
+                  <title>asn_SFT_Variables</title>
+                  <operation source="constant" to="temp.OFMAFRSSFTCommandOutputFileName">TestConnOFMAFRSSFTTempDirOutput.txt</operation>
+                  <operation source="constant" to="temp.OFMICSFTCommandOutputFileName">TestConnOFMICSFTTempDirOutput.txt</operation>
+                  <operation source="constant" to="temp.FPMTSFTCommandOutputFileName">TestConnOFMFPMTSFTTempDirOutput.txt</operation>
+                  <operation source="constant" to="temp.FPMTCommandOutputCheckTarget">Test_FPMT_SFT.txt</operation>
+                  <operation source="constant" to="temp.OFMAFRSCommandOutputCheckTarget">Test_OFMAFRS_SFT.txt</operation>
+                  <operation source="constant" to="temp.OFMICCommandOutputCheckTarget">Test_OFMIC_SFT.txt</operation>
+                  <link id="ki56166u" targetId="ki561666"/>
+               </assignment>
+               <assignment id="ki561638">
+                  <title>AssignConn</title>
+                  <operation source="formula" to="temp.EIStagingStatus">
+                     <expression language="XQuery">if($temp.dtEIStaging[1]/output[1]/Task_Status = '1') then 'Succeeded'
+else 'Failed'
+
+ 
+
+ </expression>
+                  </operation>
+                  <operation source="formula" to="temp.SWTitleStatus">
+                     <expression language="XQuery">if($temp.dtSWTitle[1]/output[1]/Task_Status  = '1') then 'Succeeded'
+else 'Failed'
+
+ 
+
+ </expression>
+                  </operation>
+                  <operation source="formula" to="temp.FPMTTransStatus">
+                     <expression language="XQuery">if($temp.dtFPMTTransactions[1]/output[1]/Task_Status  = '1') then 'Succeeded'
+else 'Failed'
+
+ 
+
+ </expression>
+                  </operation>
+                  <operation source="constant" to="temp.FPMT_LoginExpDate">01/28/2021</operation>
+                  <operation source="formula" to="temp.OFMICSFTStatus">
+                     <expression language="XQuery">if($temp.dt_GetErrorCode_OFMIC[1]/inout[1]/TypeOfFileFound  ='success') then 'Succeeded' else 'Failed'</expression>
+                  </operation>
+                  <operation source="formula" to="temp.FPMTSFTStatus">
+                     <expression language="XQuery">if($temp.dt_GetErrorCode_FPMT[1]/inout[1]/TypeOfFileFound   ='success') then 'Succeeded' else 'Failed'</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OFMAFRSSFTStatus">
+                     <expression language="XQuery">if($temp.dt_GetErrorCode_OFMAFRS[1]/inout[1]/TypeOfFileFound = 'success') then 'Succeeded' else 'Failed' </expression>
+                  </operation>
+                  <link id="ki56163a" targetId="ki56162q"/>
+               </assignment>
+               <container id="ki56167b" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="ki56167c">
+                     <service id="ki56167d">
+                        <title>dtEIStaging</title>
+                        <serviceName>ICSExecuteDataTask</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                           <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                           <parameter name="Task Name" source="constant" updatable="true">st_EIStaging</parameter>
+                           <parameter name="GUID" source="constant" updatable="true">2TL7Zkhrq4pjeV48TZIl8U</parameter>
+                           <parameter name="Task Type" source="constant" updatable="true">SAAS_DSS</parameter>
+                           <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                           <parameter name="taskField" source="nested">
+                              <operation source="field" to="st-EIStaging">temp.dtEIStaging</operation>
+                           </parameter>
+                        </serviceInput>
+                        <serviceOutput>
+                           <operation source="field" to="temp.dtEIStaging/output/Object_Name">Object Name</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Run_Id">Run Id</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Log_Id">Log Id</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Task_Id">Task Id</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Task_Status">Task Status</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Success_Source_Rows">Success Source Rows</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Failed_Source_Rows">Failed Source Rows</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Success_Target_Rows">Success Target Rows</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Failed_Target_Rows">Failed Target Rows</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Start_Time">Start Time</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/End_Time">End Time</operation>
+                           <operation source="field" to="temp.dtEIStaging/output/Error_Message">Error Message</operation>
+                        </serviceOutput>
+                     </service>
+                     <link id="ki56167l" targetId="ki56167b" type="containerLink"/>
+                  </flow>
+                  <flow id="ki56167e">
+                     <service id="ki56167f">
+                        <title>dtSWTitle</title>
+                        <serviceName>ICSExecuteDataTask</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                           <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                           <parameter name="Task Name" source="constant" updatable="true">st_SWTitles</parameter>
+                           <parameter name="GUID" source="constant" updatable="true">3GsKsFo7kXqgiQmy5Qx3yQ</parameter>
+                           <parameter name="Task Type" source="constant" updatable="true">SAAS_DSS</parameter>
+                           <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                           <parameter name="taskField" source="nested">
+                              <operation source="field" to="st-SWTitles">temp.dtSWTitle</operation>
+                           </parameter>
+                        </serviceInput>
+                        <serviceOutput>
+                           <operation source="field" to="temp.dtSWTitle/output/Object_Name">Object Name</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Run_Id">Run Id</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Log_Id">Log Id</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Task_Id">Task Id</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Task_Status">Task Status</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Success_Source_Rows">Success Source Rows</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Failed_Source_Rows">Failed Source Rows</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Success_Target_Rows">Success Target Rows</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Failed_Target_Rows">Failed Target Rows</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Start_Time">Start Time</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/End_Time">End Time</operation>
+                           <operation source="field" to="temp.dtSWTitle/output/Error_Message">Error Message</operation>
+                        </serviceOutput>
+                     </service>
+                     <link id="ki56167m" targetId="ki56167b" type="containerLink"/>
+                  </flow>
+                  <flow id="ki56167g">
+                     <service id="ki56167h">
+                        <title>dtFPMTTransactions</title>
+                        <serviceName>ICSExecuteDataTask</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                           <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                           <parameter name="Task Name" source="constant" updatable="true">st_FPMT_AFRSTransaction</parameter>
+                           <parameter name="GUID" source="constant" updatable="true">aWCwNNN5Bfblf7Ndc7Xius</parameter>
+                           <parameter name="Task Type" source="constant" updatable="true">SAAS_DSS</parameter>
+                           <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                           <parameter name="taskField" source="nested">
+                              <operation source="field" to="st-FPMT-AFRSTransaction">temp.dtFPMTTransactions</operation>
+                           </parameter>
+                        </serviceInput>
+                        <serviceOutput>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Object_Name">Object Name</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Run_Id">Run Id</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Log_Id">Log Id</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Task_Id">Task Id</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Task_Status">Task Status</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Success_Source_Rows">Success Source Rows</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Failed_Source_Rows">Failed Source Rows</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Success_Target_Rows">Success Target Rows</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Failed_Target_Rows">Failed Target Rows</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Start_Time">Start Time</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/End_Time">End Time</operation>
+                           <operation source="field" to="temp.dtFPMTTransactions/output/Error_Message">Error Message</operation>
+                        </serviceOutput>
+                     </service>
+                     <link id="ki56167n" targetId="ki56167b" type="containerLink"/>
+                  </flow>
+                  <link id="ki56167i" targetId="ki56167c" type="containerLink"/>
+                  <link id="ki56167j" targetId="ki56167e" type="containerLink"/>
+                  <link id="ki56167k" targetId="ki56167g" type="containerLink"/>
+                  <link id="ki56167p" targetId="ki56166s"/>
+               </container>
+               <service id="ki561666">
+                  <title>OFM-IC SFT</title>
+                  <serviceName>ICSExecuteCommandTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">OFM-IC SFT</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                     <parameter name="Runtime Environment" source="constant">010YZQ25000000000003:SecureAgent</parameter>
+                     <parameter name="Script Name" source="constant">F:\IICS_Shared\Scripts\Verify_OFMICSFT.bat</parameter>
+                     <parameter name="Input Arguments" source="constant"/>
+                     <parameter name="Work Directory" source="constant"/>
+                     <parameter name="RuntimeEnvGUID" source="constant">6dKHc1uY0vOk9iOoP3L84v</parameter>
+                  </serviceInput>
+                  <serviceOutput>
+                     <operation source="field" to="temp.OFM-IC SFT/output/Run_Id">Run Id</operation>
+                     <operation source="field" to="temp.OFM-IC SFT/output/Start_Time">Start Time</operation>
+                     <operation source="field" to="temp.OFM-IC SFT/output/End_Time">End Time</operation>
+                     <operation source="field" to="temp.OFM-IC SFT/output/Exit_Code">Exit Code</operation>
+                     <operation source="field" to="temp.OFM-IC SFT/output/Execution_Status">Execution Status</operation>
+                     <operation source="field" to="temp.OFM-IC SFT/output/Std_Error">Std Error</operation>
+                  </serviceOutput>
+                  <link id="ki561668" targetId="ki56165s"/>
+               </service>
+               <service id="ki56165s">
+                  <title>dt_GetErrorCode_OFMIC</title>
+                  <serviceName>ICSExecuteDataTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                     <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                     <parameter name="Task Name" source="constant" updatable="true">mt_GetCommandErrorCode</parameter>
+                     <parameter name="GUID" source="constant" updatable="true">3gyOgY6eigebDXvYniIqqd</parameter>
+                     <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                     <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                     <parameter name="taskField" source="nested">
+                        <operation source="field" to="mt-GetCommandErrorCode">temp.dt_GetErrorCode_OFMIC</operation>
+                        <operation source="field"
+                                   to="mt-GetCommandErrorCode/input[1]/source[1]/Source[1]/object">temp.OFMICSFTCommandOutputFileName</operation>
+                        <operation source="field"
+                                   to="mt-GetCommandErrorCode/input[1]/target[1]/Target[1]/object">temp.OFMICCommandOutputCheckTarget</operation>
+                        <operation source="constant" to="mt-GetCommandErrorCode/inout[1]/TypeOfFileFound">''</operation>
+                     </parameter>
+                  </serviceInput>
+                  <serviceOutput>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMIC/output/Object_Name">Object Name</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMIC/output/Run_Id">Run Id</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMIC/output/Log_Id">Log Id</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMIC/output/Task_Id">Task Id</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMIC/output/Task_Status">Task Status</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_OFMIC/output/Success_Source_Rows">Success Source Rows</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_OFMIC/output/Failed_Source_Rows">Failed Source Rows</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_OFMIC/output/Success_Target_Rows">Success Target Rows</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_OFMIC/output/Failed_Target_Rows">Failed Target Rows</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMIC/output/Start_Time">Start Time</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMIC/output/End_Time">End Time</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMIC/output/Error_Message">Error Message</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMIC/inout/TypeOfFileFound">TypeOfFileFound</operation>
+                  </serviceOutput>
+                  <link id="ki56165u" targetId="ki561656"/>
+               </service>
+               <service id="ki561656">
+                  <title>FPMT-SFT</title>
+                  <serviceName>ICSExecuteCommandTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">FPMT-SFT</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                     <parameter name="Runtime Environment" source="constant">010YZQ25000000000003:SecureAgent</parameter>
+                     <parameter name="Script Name" source="constant">F:\IICS_Shared\Scripts\Verify_FPMTSFT.bat</parameter>
+                     <parameter name="Input Arguments" source="constant"/>
+                     <parameter name="Work Directory" source="constant"/>
+                     <parameter name="RuntimeEnvGUID" source="constant">6dKHc1uY0vOk9iOoP3L84v</parameter>
+                  </serviceInput>
+                  <serviceOutput>
+                     <operation source="field" to="temp.FPMT-SFT/output/Run_Id">Run Id</operation>
+                     <operation source="field" to="temp.FPMT-SFT/output/Start_Time">Start Time</operation>
+                     <operation source="field" to="temp.FPMT-SFT/output/End_Time">End Time</operation>
+                     <operation source="field" to="temp.FPMT-SFT/output/Exit_Code">Exit Code</operation>
+                     <operation source="field" to="temp.FPMT-SFT/output/Execution_Status">Execution Status</operation>
+                     <operation source="field" to="temp.FPMT-SFT/output/Std_Error">Std Error</operation>
+                  </serviceOutput>
+                  <link id="ki561658" targetId="ki56164s"/>
+               </service>
+               <service id="ki56164s">
+                  <title>dt_GetErrorCode_FPMT</title>
+                  <serviceName>ICSExecuteDataTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                     <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                     <parameter name="Task Name" source="constant" updatable="true">mt_GetCommandErrorCode</parameter>
+                     <parameter name="GUID" source="constant" updatable="true">3gyOgY6eigebDXvYniIqqd</parameter>
+                     <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                     <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                     <parameter name="taskField" source="nested">
+                        <operation source="field" to="mt-GetCommandErrorCode">temp.dt_GetErrorCode_FPMT</operation>
+                        <operation source="field"
+                                   to="mt-GetCommandErrorCode/input[1]/source[1]/Source[1]/object">temp.FPMTSFTCommandOutputFileName</operation>
+                        <operation source="field"
+                                   to="mt-GetCommandErrorCode/input[1]/target[1]/Target[1]/object">temp.FPMTCommandOutputCheckTarget</operation>
+                        <operation source="constant" to="mt-GetCommandErrorCode/inout[1]/TypeOfFileFound">''</operation>
+                     </parameter>
+                  </serviceInput>
+                  <serviceOutput>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Object_Name">Object Name</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Run_Id">Run Id</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Log_Id">Log Id</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Task_Id">Task Id</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Task_Status">Task Status</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_FPMT/output/Success_Source_Rows">Success Source Rows</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Failed_Source_Rows">Failed Source Rows</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_FPMT/output/Success_Target_Rows">Success Target Rows</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Failed_Target_Rows">Failed Target Rows</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Start_Time">Start Time</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/End_Time">End Time</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Error_Message">Error Message</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_FPMT/inout/TypeOfFileFound">TypeOfFileFound</operation>
+                  </serviceOutput>
+                  <link id="ki56164u" targetId="ki561646"/>
+               </service>
+               <service id="ki561646">
+                  <title>OFMAFRS-SFT</title>
+                  <serviceName>ICSExecuteCommandTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">OFMAFRS-SFT</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                     <parameter name="Runtime Environment" source="constant">010YZQ25000000000003:SecureAgent</parameter>
+                     <parameter name="Script Name" source="constant">F:\IICS_Shared\Scripts\Verify_OFMAFRSSFT.bat</parameter>
+                     <parameter name="Input Arguments" source="constant"/>
+                     <parameter name="Work Directory" source="constant"/>
+                     <parameter name="RuntimeEnvGUID" source="constant">6dKHc1uY0vOk9iOoP3L84v</parameter>
+                  </serviceInput>
+                  <serviceOutput>
+                     <operation source="field" to="temp.OFMAFRS-SFT/output/Run_Id">Run Id</operation>
+                     <operation source="field" to="temp.OFMAFRS-SFT/output/Start_Time">Start Time</operation>
+                     <operation source="field" to="temp.OFMAFRS-SFT/output/End_Time">End Time</operation>
+                     <operation source="field" to="temp.OFMAFRS-SFT/output/Exit_Code">Exit Code</operation>
+                     <operation source="field" to="temp.OFMAFRS-SFT/output/Execution_Status">Execution Status</operation>
+                     <operation source="field" to="temp.OFMAFRS-SFT/output/Std_Error">Std Error</operation>
+                  </serviceOutput>
+                  <link id="ki561648" targetId="ki56163s"/>
+               </service>
+               <service id="ki56163s">
+                  <title>dt_GetErrorCode_OFMAFRS</title>
+                  <serviceName>ICSExecuteDataTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                     <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                     <parameter name="Task Name" source="constant" updatable="true">mt_GetCommandErrorCode</parameter>
+                     <parameter name="GUID" source="constant" updatable="true">3gyOgY6eigebDXvYniIqqd</parameter>
+                     <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                     <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                     <parameter name="taskField" source="nested">
+                        <operation source="field" to="mt-GetCommandErrorCode">temp.dt_GetErrorCode_OFMAFRS</operation>
+                        <operation source="field"
+                                   to="mt-GetCommandErrorCode/input[1]/source[1]/Source[1]/object">temp.OFMAFRSSFTCommandOutputFileName</operation>
+                        <operation source="field"
+                                   to="mt-GetCommandErrorCode/input[1]/target[1]/Target[1]/object">temp.OFMAFRSCommandOutputCheckTarget</operation>
+                        <operation source="constant" to="mt-GetCommandErrorCode/inout[1]/TypeOfFileFound">''</operation>
+                     </parameter>
+                  </serviceInput>
+                  <serviceOutput>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMAFRS/output/Object_Name">Object Name</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMAFRS/output/Run_Id">Run Id</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMAFRS/output/Log_Id">Log Id</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMAFRS/output/Task_Id">Task Id</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMAFRS/output/Task_Status">Task Status</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_OFMAFRS/output/Success_Source_Rows">Success Source Rows</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_OFMAFRS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_OFMAFRS/output/Success_Target_Rows">Success Target Rows</operation>
+                     <operation source="field"
+                                to="temp.dt_GetErrorCode_OFMAFRS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMAFRS/output/Start_Time">Start Time</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMAFRS/output/End_Time">End Time</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMAFRS/output/Error_Message">Error Message</operation>
+                     <operation source="field" to="temp.dt_GetErrorCode_OFMAFRS/inout/TypeOfFileFound">TypeOfFileFound</operation>
+                  </serviceOutput>
+                  <link id="ki56163u" targetId="ki561638"/>
+               </service>
+               <service id="ki56162q">
+                  <title>Email</title>
+                  <serviceName>emailNotificationService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Email To" source="constant">ofmdlitsintegrationservices@ofm.wa.gov</parameter>
+                     <parameter name="Email Cc" source="constant"/>
+                     <parameter name="Email Subject" source="formula">
+                        <expression language="XQuery">fn:concat('IICS MUL_CheckConnections - ', $temp.environment)</expression>
+                     </parameter>
+                     <parameter name="Email Content Type" source="constant">html</parameter>
+                     <parameter name="Email Body" source="constant">&lt;p&gt;TaskFlow 02_MULCheckConnections/tf_MULConnnection ran in {$temp.environment}.&amp;nbsp; Please see the list of statuses below.&amp;nbsp; If there was a failure, please investigate what failed and why. &amp;nbsp;&lt;br&gt;&lt;br&gt;Note: Please be cautious regarding SFT failures related to the password because those accounts may become locked due to too many failed attempts.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SFT connections:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;OFM-IC (connection object SFT_IC) = {$temp.OFMICSFTStatus}&lt;/p&gt;
+&lt;p&gt;OFM-AFRS (connection objects SFT_OFMAFRS_INTG105_inbound and SFT_OFMAFRS_INTG105_AFRS) = {$temp.OFMAFRSSFTStatus}&lt;/p&gt;
+&lt;p&gt;OFM-PFMT (script files Common_Variables.bat and FPMT_SetVariables.bat) = {$temp.FPMTSFTStatus}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SQL database connections:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;EIStaging =&amp;nbsp;{$temp.EIStagingStatus}&lt;/p&gt;
+&lt;p&gt;FPMT = {$temp.FPMTTransStatus}&lt;/p&gt;
+&lt;p&gt;statewide_titles = {$temp.SWTitleStatus}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Expiration Dates:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;FPMT_Login: {$temp.FPMT_LoginExpDate}&lt;/p&gt;</parameter>
+                  </serviceInput>
+                  <serviceOutput/>
+                  <link id="ki56162s" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-GetCommandErrorCode"
+                              isByCopy="true"
+                              name="mt-GetCommandErrorCode">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="st-EIStaging"
+                              isByCopy="true"
+                              name="st-EIStaging">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="st-SWTitles"
+                              isByCopy="true"
+                              name="st-SWTitles">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="st-FPMT-AFRSTransaction"
+                              isByCopy="true"
+                              name="st-FPMT-AFRSTransaction">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>i5h583h0x2viCLq5PPeByO</types1:GUID>
+      <types1:DisplayName>tf_MULConnection</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-12-04T18:28:59.766Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

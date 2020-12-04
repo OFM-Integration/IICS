@@ -1,0 +1,86 @@
+[
+   {
+      "objectGuid": "hENC18A1KKyfJqzpyWiwm0",
+      "objectName": "GetCommandErrorCode",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "finds the error code from command tasks by parsing code in name of output file",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "aGmorERMxqkeKANHBgNTih",
+            "k7EqXrN93cUghGAqc9gBQM"
+         ],
+         "repoInfo": {
+            "repoHandle": "010YZQ1700000000004N"
+         }
+      }
+   },
+   {
+      "objectGuid": "aGmorERMxqkeKANHBgNTih",
+      "objectName": "flatFile_Source",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000U"
+         }
+      }
+   },
+   {
+      "objectGuid": "k7EqXrN93cUghGAqc9gBQM",
+      "objectName": "flatFile_Target",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000T"
+         }
+      }
+   }
+]

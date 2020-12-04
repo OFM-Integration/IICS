@@ -1,0 +1,165 @@
+[
+   {
+      "objectGuid": "i5h583h0x2viCLq5PPeByO",
+      "objectName": "tf_MULConnection",
+      "objectType": "TASKFLOW",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "6dKHc1uY0vOk9iOoP3L84v",
+            "2TL7Zkhrq4pjeV48TZIl8U",
+            "3GsKsFo7kXqgiQmy5Qx3yQ",
+            "aWCwNNN5Bfblf7Ndc7Xius",
+            "3gyOgY6eigebDXvYniIqqd"
+         ],
+         "repoInfo": {
+            "repoHandle": "GBdxPVIKchzt1Y6-gt-26595918-2020-09-01T18:38:54.52Z::tf.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "6dKHc1uY0vOk9iOoP3L84v",
+      "objectName": "SecureAgent",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ25000000000003"
+         }
+      }
+   },
+   {
+      "objectGuid": "2TL7Zkhrq4pjeV48TZIl8U",
+      "objectName": "st_EIStaging",
+      "objectType": "DSS",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "Check EIStaging ",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0I00000000000T"
+         }
+      }
+   },
+   {
+      "objectGuid": "3GsKsFo7kXqgiQmy5Qx3yQ",
+      "objectName": "st_SWTitles",
+      "objectType": "DSS",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0I00000000000W"
+         }
+      }
+   },
+   {
+      "objectGuid": "aWCwNNN5Bfblf7Ndc7Xius",
+      "objectName": "st_FPMT_AFRSTransaction",
+      "objectType": "DSS",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0I00000000000V"
+         }
+      }
+   },
+   {
+      "objectGuid": "3gyOgY6eigebDXvYniIqqd",
+      "objectName": "mt_GetCommandErrorCode",
+      "objectType": "MTT",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0Z000000000071"
+         }
+      }
+   }
+]

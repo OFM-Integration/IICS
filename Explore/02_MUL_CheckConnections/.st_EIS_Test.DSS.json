@@ -1,0 +1,86 @@
+[
+   {
+      "objectGuid": "g5PVC2dFcclh7wNU3idUQL",
+      "objectName": "st_EIS_Test",
+      "objectType": "DSS",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "9HhRG5SR1OGdAvHnRO3nQv",
+            "k7EqXrN93cUghGAqc9gBQM"
+         ],
+         "repoInfo": {
+            "repoHandle": "010YZQ0I00000000000U"
+         }
+      }
+   },
+   {
+      "objectGuid": "9HhRG5SR1OGdAvHnRO3nQv",
+      "objectName": "EIS_Test",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "Test EIStaging",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000002M"
+         }
+      }
+   },
+   {
+      "objectGuid": "k7EqXrN93cUghGAqc9gBQM",
+      "objectName": "flatFile_Target",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000T"
+         }
+      }
+   }
+]

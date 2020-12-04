@@ -1,0 +1,86 @@
+[
+   {
+      "objectGuid": "aWCwNNN5Bfblf7Ndc7Xius",
+      "objectName": "st_FPMT_AFRSTransaction",
+      "objectType": "DSS",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "0XDVH8oqa7Ue0haolkhGCg",
+            "k7EqXrN93cUghGAqc9gBQM"
+         ],
+         "repoInfo": {
+            "repoHandle": "010YZQ0I00000000000V"
+         }
+      }
+   },
+   {
+      "objectGuid": "0XDVH8oqa7Ue0haolkhGCg",
+      "objectName": "FPMT",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000001C"
+         }
+      }
+   },
+   {
+      "objectGuid": "k7EqXrN93cUghGAqc9gBQM",
+      "objectName": "flatFile_Target",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000T"
+         }
+      }
+   }
+]

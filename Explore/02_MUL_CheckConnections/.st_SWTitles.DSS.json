@@ -1,0 +1,86 @@
+[
+   {
+      "objectGuid": "3GsKsFo7kXqgiQmy5Qx3yQ",
+      "objectName": "st_SWTitles",
+      "objectType": "DSS",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "k7EqXrN93cUghGAqc9gBQM",
+            "1wFs4LGpbpJlBRZyWaBOGI"
+         ],
+         "repoInfo": {
+            "repoHandle": "010YZQ0I00000000000W"
+         }
+      }
+   },
+   {
+      "objectGuid": "k7EqXrN93cUghGAqc9gBQM",
+      "objectName": "flatFile_Target",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000T"
+         }
+      }
+   },
+   {
+      "objectGuid": "1wFs4LGpbpJlBRZyWaBOGI",
+      "objectName": "statewide_titles",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000G"
+         }
+      }
+   }
+]

@@ -1,0 +1,170 @@
+[
+   {
+      "objectGuid": "3gyOgY6eigebDXvYniIqqd",
+      "objectName": "mt_GetCommandErrorCode",
+      "objectType": "MTT",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "6dKHc1uY0vOk9iOoP3L84v",
+            "hENC18A1KKyfJqzpyWiwm0",
+            "fea9pOS3Eodc1yTxeKtBUx",
+            "k7EqXrN93cUghGAqc9gBQM",
+            "aGmorERMxqkeKANHBgNTih"
+         ],
+         "repoInfo": {
+            "repoHandle": "010YZQ0Z000000000071"
+         }
+      }
+   },
+   {
+      "objectGuid": "6dKHc1uY0vOk9iOoP3L84v",
+      "objectName": "SecureAgent",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ25000000000003"
+         }
+      }
+   },
+   {
+      "objectGuid": "hENC18A1KKyfJqzpyWiwm0",
+      "objectName": "GetCommandErrorCode",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "finds the error code from command tasks by parsing code in name of output file",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ1700000000004N"
+         }
+      }
+   },
+   {
+      "objectGuid": "fea9pOS3Eodc1yTxeKtBUx",
+      "objectName": "fw_DummyString",
+      "objectType": "FWCONFIG",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ2900000000000G"
+         }
+      }
+   },
+   {
+      "objectGuid": "k7EqXrN93cUghGAqc9gBQM",
+      "objectName": "flatFile_Target",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000T"
+         }
+      }
+   },
+   {
+      "objectGuid": "aGmorERMxqkeKANHBgNTih",
+      "objectName": "flatFile_Source",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ0B00000000000U"
+         }
+      }
+   }
+]

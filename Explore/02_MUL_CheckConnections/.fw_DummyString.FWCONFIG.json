@@ -1,0 +1,29 @@
+[
+   {
+      "objectGuid": "fea9pOS3Eodc1yTxeKtBUx",
+      "objectName": "fw_DummyString",
+      "objectType": "FWCONFIG",
+      "path": "/Explore/02_MUL_CheckConnections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "010YZQ2900000000000G"
+         }
+      }
+   }
+]
