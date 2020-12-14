@@ -12,11 +12,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>srithar.kaliyaperumal@ofm.wa.gov</types1:CreatedBy>
       <types1:CreationDate>2020-09-01T18:38:55Z</types1:CreationDate>
-      <types1:ModifiedBy>srithar.kaliyaperumal@ofm.wa.gov</types1:ModifiedBy>
-      <types1:ModificationDate>2020-12-04T17:43:34Z</types1:ModificationDate>
+      <types1:ModifiedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:ModifiedBy>
+      <types1:ModificationDate>2020-12-14T20:39:30Z</types1:ModificationDate>
       <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>kimberly.sullivan@ofm.wa.gov.SAML</types1:PublishedBy>
-      <types1:PublicationDate>2020-12-01T23:00:23Z</types1:PublicationDate>
+      <types1:PublicationDate>2020-12-14T20:37:31Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_MULConnection/tf_MULConnection.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -181,7 +181,7 @@
                   <operation source="constant" to="temp.FPMTCommandOutputCheckTarget">Test_FPMT_SFT.txt</operation>
                   <operation source="constant" to="temp.OFMAFRSCommandOutputCheckTarget">Test_OFMAFRS_SFT.txt</operation>
                   <operation source="constant" to="temp.OFMICCommandOutputCheckTarget">Test_OFMIC_SFT.txt</operation>
-                  <link id="ki56166u" targetId="ki561666"/>
+                  <link id="ki56166u" targetId="kioyobxm"/>
                </assignment>
                <assignment id="ki561638">
                   <title>AssignConn</title>
@@ -327,29 +327,105 @@ else 'Failed'
                   <link id="ki56167k" targetId="ki56167g" type="containerLink"/>
                   <link id="ki56167p" targetId="ki56166s"/>
                </container>
-               <service id="ki561666">
-                  <title>OFM-IC SFT</title>
-                  <serviceName>ICSExecuteCommandTask</serviceName>
-                  <serviceGUID/>
-                  <serviceInput>
-                     <parameter name="Task Name" source="constant">OFM-IC SFT</parameter>
-                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
-                     <parameter name="Runtime Environment" source="constant">010YZQ25000000000003:SecureAgent</parameter>
-                     <parameter name="Script Name" source="constant">F:\IICS_Shared\Scripts\Verify_OFMICSFT.bat</parameter>
-                     <parameter name="Input Arguments" source="constant"/>
-                     <parameter name="Work Directory" source="constant"/>
-                     <parameter name="RuntimeEnvGUID" source="constant">6dKHc1uY0vOk9iOoP3L84v</parameter>
-                  </serviceInput>
-                  <serviceOutput>
-                     <operation source="field" to="temp.OFM-IC SFT/output/Run_Id">Run Id</operation>
-                     <operation source="field" to="temp.OFM-IC SFT/output/Start_Time">Start Time</operation>
-                     <operation source="field" to="temp.OFM-IC SFT/output/End_Time">End Time</operation>
-                     <operation source="field" to="temp.OFM-IC SFT/output/Exit_Code">Exit Code</operation>
-                     <operation source="field" to="temp.OFM-IC SFT/output/Execution_Status">Execution Status</operation>
-                     <operation source="field" to="temp.OFM-IC SFT/output/Std_Error">Std Error</operation>
-                  </serviceOutput>
+               <eventContainer id="kioyobxm">
+                  <service id="ki561666">
+                     <title>OFM-IC SFT</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">OFM-IC SFT</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">010YZQ25000000000003:SecureAgent</parameter>
+                        <parameter name="Script Name" source="constant">F:\IICS_Shared\Scripts\Verify_OFMICSFT.bat </parameter>
+                        <parameter name="Input Arguments" source="constant">"{$temp.environment}"</parameter>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">6dKHc1uY0vOk9iOoP3L84v</parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.OFM-IC SFT/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.OFM-IC SFT/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.OFM-IC SFT/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.OFM-IC SFT/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.OFM-IC SFT/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.OFM-IC SFT/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
                   <link id="ki561668" targetId="ki56165s"/>
-               </service>
+                  <events>
+                     <catch faultField="temp.OFM-IC SFT/fault"
+                            id="kioyobxl"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kioyoc1c">
+                  <service id="ki561656">
+                     <title>FPMT-SFT</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">FPMT-SFT</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">010YZQ25000000000003:SecureAgent</parameter>
+                        <parameter name="Script Name" source="constant">F:\IICS_Shared\Scripts\Verify_FPMTSFT.bat</parameter>
+                        <parameter name="Input Arguments" source="constant">"{$temp.environment}"</parameter>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">6dKHc1uY0vOk9iOoP3L84v</parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.FPMT-SFT/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.FPMT-SFT/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.FPMT-SFT/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.FPMT-SFT/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.FPMT-SFT/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.FPMT-SFT/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ki561658" targetId="ki56164s"/>
+                  <events>
+                     <catch faultField="temp.FPMT-SFT/fault"
+                            id="kioyoc1b"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kioyoc1x">
+                  <service id="ki561646">
+                     <title>OFMAFRS-SFT</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">OFMAFRS-SFT</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">010YZQ25000000000003:SecureAgent</parameter>
+                        <parameter name="Script Name" source="constant">F:\IICS_Shared\Scripts\Verify_OFMAFRSSFT.bat</parameter>
+                        <parameter name="Input Arguments" source="constant">"{$temp.environment}"</parameter>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">6dKHc1uY0vOk9iOoP3L84v</parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.OFMAFRS-SFT/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.OFMAFRS-SFT/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.OFMAFRS-SFT/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.OFMAFRS-SFT/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.OFMAFRS-SFT/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.OFMAFRS-SFT/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ki561648" targetId="ki56163s"/>
+                  <events>
+                     <catch faultField="temp.OFMAFRS-SFT/fault"
+                            id="kioyoc1w"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
                <service id="ki56165s">
                   <title>dt_GetErrorCode_OFMIC</title>
                   <serviceName>ICSExecuteDataTask</serviceName>
@@ -389,30 +465,7 @@ else 'Failed'
                      <operation source="field" to="temp.dt_GetErrorCode_OFMIC/output/Error_Message">Error Message</operation>
                      <operation source="field" to="temp.dt_GetErrorCode_OFMIC/inout/TypeOfFileFound">TypeOfFileFound</operation>
                   </serviceOutput>
-                  <link id="ki56165u" targetId="ki561656"/>
-               </service>
-               <service id="ki561656">
-                  <title>FPMT-SFT</title>
-                  <serviceName>ICSExecuteCommandTask</serviceName>
-                  <serviceGUID/>
-                  <serviceInput>
-                     <parameter name="Task Name" source="constant">FPMT-SFT</parameter>
-                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
-                     <parameter name="Runtime Environment" source="constant">010YZQ25000000000003:SecureAgent</parameter>
-                     <parameter name="Script Name" source="constant">F:\IICS_Shared\Scripts\Verify_FPMTSFT.bat</parameter>
-                     <parameter name="Input Arguments" source="constant"/>
-                     <parameter name="Work Directory" source="constant"/>
-                     <parameter name="RuntimeEnvGUID" source="constant">6dKHc1uY0vOk9iOoP3L84v</parameter>
-                  </serviceInput>
-                  <serviceOutput>
-                     <operation source="field" to="temp.FPMT-SFT/output/Run_Id">Run Id</operation>
-                     <operation source="field" to="temp.FPMT-SFT/output/Start_Time">Start Time</operation>
-                     <operation source="field" to="temp.FPMT-SFT/output/End_Time">End Time</operation>
-                     <operation source="field" to="temp.FPMT-SFT/output/Exit_Code">Exit Code</operation>
-                     <operation source="field" to="temp.FPMT-SFT/output/Execution_Status">Execution Status</operation>
-                     <operation source="field" to="temp.FPMT-SFT/output/Std_Error">Std Error</operation>
-                  </serviceOutput>
-                  <link id="ki561658" targetId="ki56164s"/>
+                  <link id="ki56165u" targetId="kioyoc1c"/>
                </service>
                <service id="ki56164s">
                   <title>dt_GetErrorCode_FPMT</title>
@@ -451,30 +504,7 @@ else 'Failed'
                      <operation source="field" to="temp.dt_GetErrorCode_FPMT/output/Error_Message">Error Message</operation>
                      <operation source="field" to="temp.dt_GetErrorCode_FPMT/inout/TypeOfFileFound">TypeOfFileFound</operation>
                   </serviceOutput>
-                  <link id="ki56164u" targetId="ki561646"/>
-               </service>
-               <service id="ki561646">
-                  <title>OFMAFRS-SFT</title>
-                  <serviceName>ICSExecuteCommandTask</serviceName>
-                  <serviceGUID/>
-                  <serviceInput>
-                     <parameter name="Task Name" source="constant">OFMAFRS-SFT</parameter>
-                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
-                     <parameter name="Runtime Environment" source="constant">010YZQ25000000000003:SecureAgent</parameter>
-                     <parameter name="Script Name" source="constant">F:\IICS_Shared\Scripts\Verify_OFMAFRSSFT.bat</parameter>
-                     <parameter name="Input Arguments" source="constant"/>
-                     <parameter name="Work Directory" source="constant"/>
-                     <parameter name="RuntimeEnvGUID" source="constant">6dKHc1uY0vOk9iOoP3L84v</parameter>
-                  </serviceInput>
-                  <serviceOutput>
-                     <operation source="field" to="temp.OFMAFRS-SFT/output/Run_Id">Run Id</operation>
-                     <operation source="field" to="temp.OFMAFRS-SFT/output/Start_Time">Start Time</operation>
-                     <operation source="field" to="temp.OFMAFRS-SFT/output/End_Time">End Time</operation>
-                     <operation source="field" to="temp.OFMAFRS-SFT/output/Exit_Code">Exit Code</operation>
-                     <operation source="field" to="temp.OFMAFRS-SFT/output/Execution_Status">Execution Status</operation>
-                     <operation source="field" to="temp.OFMAFRS-SFT/output/Std_Error">Std Error</operation>
-                  </serviceOutput>
-                  <link id="ki561648" targetId="ki56163s"/>
+                  <link id="ki56164u" targetId="kioyoc1x"/>
                </service>
                <service id="ki56163s">
                   <title>dt_GetErrorCode_OFMAFRS</title>
@@ -612,5 +642,5 @@ else 'Failed'
       <types1:GUID>i5h583h0x2viCLq5PPeByO</types1:GUID>
       <types1:DisplayName>tf_MULConnection</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-12-04T18:28:59.766Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-12-14T20:44:36.798Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
